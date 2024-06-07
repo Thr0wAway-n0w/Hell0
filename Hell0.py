@@ -900,8 +900,10 @@ def tfiles():
     print(" ")
     print("                            \033[91m5\033[95m) Firearm Manuals                               \033[91m6\033[95m) US Military Manuals")                                                                        
     print(" ")
-    print("                                               \033[41m SELECT NON-OPTION FOR MAIN MENU\033[0m ")
+    print("                                                             \033[91m7\033[0m\033[0m \033[0m) \033[31mRUN")
     print(" ")
+    print("                               \033[94m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Anarchist Cookbook")
+    print("                                                                       \033[91m  ~~~~~~~~~~~~~")     
     choice = input("\033[94mSelect an option: ")
     if choice == "1":
         clear_screen()
@@ -922,13 +924,78 @@ def tfiles():
         tfiles()   
     elif choice == "6":
         os.system("lynx $dump http://pdf.textfiles.com/manuals/MILITARY/")
-        tfiles()   
+        tfiles()
+    elif choice == "7":
+        clear_screen()
+        ascii_banner()
+        header()
+        what_now()
+    elif choice == "Anarchist Cookbook":
+        print(" ")
+        print("\033[96mAnarchist Cookbook")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mThe Classic Banned Text. Also contains the Updated JollyRoger Version, Scams, Hacks, Lock picking, Incindiaries, Weapons, Inflict pain/Torture, and anything that goes BOOM ":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        tfiles()     
+    elif choice == "Black Circle":
+        print(" ")
+        print("\033[96mBlack Circle")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mBlack Circle Productions, an IRC-centric anarchy and hacking group from the mid 90's, wrote this series of files to encourage people to cause mayhem":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        tfiles() 
+    elif choice == "DoomsDay":
+        print(" ")
+        print("\033[96mDooms Day")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mA lot of survivalist files are dedicated to preparing for a coming collapse of society, assuming the worst and preparing for it. They're not waiting for the calvary; they're looking to eat the horses if they come this way.":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        tfiles() 
+    elif choice == "Omnipotent Inc.":
+        print(" ")
+        print("\033[96mOmnipotent Inc.")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mThe Reflex created files for Anarchy (bombs, poisons made from common plants, ect.) as well as Revenge. His hallmarks were good spelling, nice formatting, and intense hate of a guy named 'Rumpus'":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        tfiles()
+    elif choice == "Firearm Manuals":
+        print(" ")
+        print("\033[96mFirearm Manuals")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mEnough Said...":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        tfiles() 
+    elif choice == "US Military Manuals":
+        print(" ")
+        print("\033[96mUS Military Manuals")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mBroad assortment from Dear ol' Uncle Sam. Weapons, Tanks, Situational Training, Marksmanship, etc":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        tfiles()                                           
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
         clear_screen()
         ascii_banner()
-        main_menu() 
+        tfiles() 
 
 def osintio():
     print("\033[0mBot's Found On Telegram")  
