@@ -21,8 +21,11 @@ def yeep():
     os.system('sudo apt install gnome-terminal')
     os.system('sudo apt install gnome-terminal-data')
 import os
+os.system('pip3 install tk')
+os.system('pip3 install termcolor')
 import subprocess
 import re
+import tk
 import termcolor
 import colorama
 from termcolor import colored
@@ -86,9 +89,9 @@ from colorama import init
 from PIL import ImageEnhance
 from ascii_magic import AsciiArt
 from geopy.distance import geodesic
+import tk
 from tkinter import *
 from tkinter import simpledialog
-import tkinter as tk
 import base64
 import curses, random
 import webbrowser
