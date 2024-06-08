@@ -225,10 +225,11 @@ def ascii_banner():
     
 def JIGSAW():
     try:
-        my_art = AsciiArt.from_url('https://i.pinimg.com/550x/85/ae/d6/85aed6f1d787c528dd75db5e8c4bf143.jpg')      
+        my_art = AsciiArt.from_url('https://img.wattpad.com/cover/197146462-256-k606889.jpg')      
     except OSError as e:
         print(f'Could not load the image, server said: {e.code} {e.msg}')
     my_art.to_terminal()
+    
 
 def multi_banner():
     print("            \033[93m⣀⣤⠶⠖⢛⣻⡿\033[31m                         ⣀⡔                 ")
