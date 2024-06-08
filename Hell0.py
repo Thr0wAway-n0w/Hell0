@@ -21,11 +21,8 @@ def yeep():
     os.system('sudo apt install gnome-terminal')
     os.system('sudo apt install gnome-terminal-data')
 import os
-os.system('pip3 install tk')
-os.system('pip3 install termcolor')
 import subprocess
 import re
-import tk
 import termcolor
 import colorama
 from termcolor import colored
@@ -89,9 +86,9 @@ from colorama import init
 from PIL import ImageEnhance
 from ascii_magic import AsciiArt
 from geopy.distance import geodesic
-import tk
 from tkinter import *
 from tkinter import simpledialog
+import tkinter as tk
 import base64
 import curses, random
 import webbrowser
@@ -222,6 +219,13 @@ def search_email(email, script_name):
 def ascii_banner():
     try:
         my_art = AsciiArt.from_url('https://i.postimg.cc/Jhbhr2hT/Screenshot-2024-04-21-at-05-13-59-e21459f8019688f030e3fd2ddf70830b-jpg-JPEG-Image-338-600-pixels.png')      
+    except OSError as e:
+        print(f'Could not load the image, server said: {e.code} {e.msg}')
+    my_art.to_terminal()
+    
+def JIGSAW():
+    try:
+        my_art = AsciiArt.from_url('https://i.pinimg.com/550x/85/ae/d6/85aed6f1d787c528dd75db5e8c4bf143.jpg')      
     except OSError as e:
         print(f'Could not load the image, server said: {e.code} {e.msg}')
     my_art.to_terminal()
@@ -1511,6 +1515,122 @@ def chop_chop():
     print(colored("                             OPTIMIZING WiFi                           ", 'red', attrs=['reverse', 'blink', 'bold']))
     print("\033[0mYOU HAVE \033[91m30\033[0m SECONDS\033[0m TO\033[0m \033[91mDISCONNECT\033[0m THEN \033[91mRECONNECT\033[0m YOUR WIFI. \033[91mCHOP CHOP!!!\033[0m")
 
+def deepfakes():
+    print("coming soon")
+    time.sleep(1)
+    jigsaw()
+
+def social():
+    clear_screen()
+    JIGSAW()
+    print(colored("SOCIAL MEDIA", 'red', attrs=['reverse', 'blink', 'bold']))
+    header()
+    print("                      \033[91m1\033[0m) TikTokBots                                                                     \033[91m2\033[0m) InstaSham                   ")                                
+    print(" ")
+    print("                                \033[94m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m TikTokBots")
+    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    choice = input('Take Your Pick: ')
+    if choice == "1":
+        webbrowser.open("https://fireliker.com")
+        social()
+    elif choice == "2":
+        webbrowser.open("https://www.idigic.net/trial/")
+        social()
+    elif choice == "TikTokBots":
+        print(" ")
+        print("\033[96mTikTokBot")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mAllows for over 200 video views Instantly. Cooldown time of 7 minutes before you can use it again":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        social()
+    elif choice == "InstaSham":    
+        print(" ")
+        print("\033[96mInstaGram Bots")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mEnough said. Only 10 per free trial so just switch to a different ip on your VPN and you can continue":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        social()
+    elif choice == "666":
+        jigsaw()
+    else:
+        print("\033[91m INVALID SELECTION\033[0m")
+        time.sleep(1)
+        change()
+        social()  
+    
+def jigsaw():
+    clear_screen()
+    JIGSAW()
+    print(colored("PUPPET MASTER MENU", 'red', attrs=['reverse', 'blink', 'bold']))
+    header()
+    print("                      \033[91m1\033[0m) Details                     \033[91m2\033[0m) Social Media                     \033[91m3\033[0m) DeepFakes          ") 
+    print(" ")
+    print("                                \033[94m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Details")
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
+    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    choice = input("\033[94mSelect an option: ")
+    if choice == "1":
+        print(colored("CTRL + X TO EXIT PUPPET DETAILS", 'red', attrs=['reverse', 'blink', 'bold']))        
+        os.system("git clone https://github.com/jaskaran2002/Sock-Puppet-Generator.git")
+        os.chdir("Sock-Puppet-Generator")
+        os.system("git fetch")
+        os.system("git pull")
+        os.system("python3 main.py")
+        time.sleep(3)
+        os.system("nano output.json")
+        clear_screen()
+        ascii_banner()
+        change()
+        jigsaw()
+    elif choice == "2":
+        social()
+    elif choice == "3":
+        deepfakes()
+    elif choice == "Details":
+        print(" ")
+        print("\033[96mPuppet Details")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mRandom Generate Background Details and Specifics for Your Puppet.":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        jigsaw()
+    elif choice == "Social Media":
+        print(" ")
+        print("\033[96mSocial Bots")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mHave Bots Like Your Socks Content to Establish False Length of Time On Accounts. Use Switch VPN Ip Address To Continue Free Trials Indefinetly":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        jigsaw()
+    elif choice == "DeepFakes":
+        print(" ")
+        print("\033[96mDeepFakes")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mAvatar for Profile. Extra Ai Goodies":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        jigsaw()
+    elif choice == "666":
+        unclassified_menu()
+    else:
+        print("\033[91m INVALID SELECTION\033[0m")
+        time.sleep(1)
+        clear_screen()
+        change()
+        jigsaw()  
+
 def unclassified_menu():
     change()
     clear_screen()
@@ -1518,12 +1638,11 @@ def unclassified_menu():
     print(colored("Unclassified-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("\033[91m1\033[0m) WebHound")
-    print("\033[91m2\033[0m) Ominis-Osint")
-    print("\033[91m3\033[0m) SockPuppet")
-    print("\033[91m4)\033[40m Run\033[0m")    
+    print("                      \033[91m1\033[0m) WebHound                      \033[91m2\033[0m) Ominis-Osint                      \033[91m3\033[0m) SockPuppet")  
+    print(" ")
     print("                               \033[94m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m WebHound")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
+    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
         clear_screen()
@@ -1552,18 +1671,7 @@ def unclassified_menu():
         os.system("python3 ominis.py")
         what_now()
     elif choice == "3":
-        print(colored("CTRL + X TO EXIT PUPPET DETAILS", 'red', attrs=['reverse', 'blink', 'bold']))        
-        os.system("git clone https://github.com/jaskaran2002/Sock-Puppet-Generator.git")
-        os.chdir("Sock-Puppet-Generator")
-        os.system("git fetch")
-        os.system("git pull")
-        os.system("python3 main.py")
-        time.sleep(3)
-        os.system("nano output.json")
-        clear_screen()
-        ascii_banner()
-        change()
-        unclassified_menu()
+        jigsaw()
     elif choice == "4":
         clear_screen()
         ascii_banner()
@@ -1593,11 +1701,14 @@ def unclassified_menu():
         print("\033[96mSockPuppet")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mGenerate Random Personal Details For SockPuppet Accounts":
+        for char in " \033[92mSome Tools To Aid in Crafting a Believable False Persona Online.":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
         unclassified_menu()
+    elif choice == "666":
+        change()
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
