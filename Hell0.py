@@ -839,10 +839,10 @@ def passw():
     header()
     print("                  \033[91m1\033[0m) Pwnd                           \033[91m2\033[0m) HashBreak                           \033[91m3\033[0m) SecLists                                       ") 
     print(" ")
-    print("                                               \033[41m SELECT NON-OPTION FOR MAIN MENU\033[0m ")
     print(" ")
     print("                                 \033[94m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m HashBreak")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")      
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
+    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input("\033[94mSelect an option: ")
     if choice == "1":
         pwnd()
@@ -891,6 +891,8 @@ def passw():
             time.sleep(.04)  
         time.sleep(3)
         passw()      
+    elif choice == "666":
+        forbidden()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
@@ -907,10 +909,10 @@ def tfiles():
     print(" ")
     print("                            \033[91m5\033[95m) Firearm Manuals                               \033[91m6\033[95m) US Military Manuals")                                                                        
     print(" ")
-    print("                                                             \033[91m7\033[0m\033[0m \033[0m) \033[31mRUN")
     print(" ")
     print("                               \033[94m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Anarchist Cookbook")
-    print("                                                                       \033[91m  ~~~~~~~~~~~~~")     
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
+    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input("\033[94mSelect an option: ")
     if choice == "1":
         clear_screen()
@@ -932,17 +934,14 @@ def tfiles():
     elif choice == "6":
         os.system("lynx $dump http://pdf.textfiles.com/manuals/MILITARY/")
         tfiles()
-    elif choice == "7":
-        clear_screen()
-        ascii_banner()
-        header()
-        what_now()
+    elif choice == "666":
+        forbidden()
     elif choice == "Anarchist Cookbook":
         print(" ")
         print("\033[96mAnarchist Cookbook")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mThe Classic Banned Text. Also contains the Updated JollyRoger Version, Scams, Hacks, Lock picking, Incindiaries, Weapons, Inflict pain/Torture, and anything that goes BOOM ":
+        for char in " \033[92mThe Classic Banned Text. Also contains the Updated JollyRoger Version, Scams, Hacks, Lock picking, Incindiaries, Weapons, Inflict pain/Torture, and anything that goes BOOM. CTRL + C to Exit ":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
@@ -952,7 +951,7 @@ def tfiles():
         print("\033[96mBlack Circle")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mBlack Circle Productions, an IRC-centric anarchy and hacking group from the mid 90's, wrote this series of files to encourage people to cause mayhem":
+        for char in " \033[92mBlack Circle Productions, an IRC-centric anarchy and hacking group from the mid 90's, wrote this series of files to encourage people to cause mayhem. CTRL + C to Exit":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
@@ -962,7 +961,7 @@ def tfiles():
         print("\033[96mDooms Day")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mA lot of survivalist files are dedicated to preparing for a coming collapse of society, assuming the worst and preparing for it. They're not waiting for the calvary; they're looking to eat the horses if they come this way.":
+        for char in " \033[92mA lot of survivalist files are dedicated to preparing for a coming collapse of society, assuming the worst and preparing for it. They're not waiting for the calvary; they're looking to eat the horses if they come this way. CTRL + C to Exit":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
@@ -972,7 +971,7 @@ def tfiles():
         print("\033[96mOmnipotent Inc.")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mThe Reflex created files for Anarchy (bombs, poisons made from common plants, ect.) as well as Revenge. His hallmarks were good spelling, nice formatting, and intense hate of a guy named 'Rumpus'":
+        for char in " \033[92mThe Reflex created files for Anarchy (bombs, poisons made from common plants, ect.) as well as Revenge. His hallmarks were good spelling, nice formatting, and intense hate of a guy named 'Rumpus' CTRL + C to Exit":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
@@ -982,7 +981,7 @@ def tfiles():
         print("\033[96mFirearm Manuals")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mEnough Said...":
+        for char in " \033[92mEnough Said...CTRL + C to Exit":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
@@ -992,7 +991,7 @@ def tfiles():
         print("\033[96mUS Military Manuals")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mBroad assortment from Dear ol' Uncle Sam. Weapons, Tanks, Situational Training, Marksmanship, etc":
+        for char in " \033[92mBroad assortment from Dear ol' Uncle Sam. Weapons, Tanks, Situational Training, Marksmanship, etc. CTRL + C to Exit":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
@@ -1037,7 +1036,8 @@ def breach():
     print("                                               \033[41m SELECT NON-OPTION FOR MAIN MENU\033[0m ")
     print(" ")
     print("                                 \033[94m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m LeakSeek")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")   
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
+    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
         osintio() 
@@ -1068,6 +1068,8 @@ def breach():
             time.sleep(.04)  
         time.sleep(3)
         breach()
+    elif choice == "666":
+        forbidden()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
@@ -1528,6 +1530,7 @@ def social():
     print("                      \033[91m1\033[0m) TikTokBots                                                                     \033[91m2\033[0m) InstaSham                   ")                                
     print(" ")
     print("                                \033[94m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m TikTokBots")
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
     print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input('Take Your Pick: ')
     if choice == "1":
