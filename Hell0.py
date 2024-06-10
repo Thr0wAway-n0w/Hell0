@@ -172,6 +172,14 @@ async def main():
     await session.get('http://example.com')
     await session.close()
 
+def footer():
+    print(" ")
+    print("                                                   \033[90mGo\033[93m BACK \033[97mor \033[90mGo To \033[31mHELL\033[0m")
+    print(" ")
+    print("                                 \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[0m")
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
+    print(" ")
+
 def install_pipenv():
     os.system('pip3 install pipenv')
    
@@ -335,9 +343,9 @@ def devil():
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠈⠠⠀⠂⠀⠐⠈⠀⢁⠀⠉⠐⠠⣀⠠⠀⠄⠂⡀⠂⠄⠀⠄⠁⠌⡐⠠⠀⠄⠀⠀⠠⠀⠒⠤⠀⠌⠐⠀⠰⠁⠠⠁⠀⣿⣿⣿⣿⣿⣿⣧⢿⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⡀⠀⠀⠠⠀⡀⠐⠠⠈⠄⠁⠂⠄⠁⢀⠈⠀⠄⠁⡀⠈⠀⡀⠄⠀⠄⠀⡀⠄⠁⠂⠁⠂⠄⠂⢀⠀⡈⠂⠀⠀⠀⡆⣿⣿⣿⣿⣿⣿⣿⣼⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠠⠀⠀⠀⠐⠀⠠⠀⠀⠀⠈⠀⠄⠁⠂⡀⠂⠄⡁⢀⠐⡀⠄⠂⡐⢀⠂⢄⠔⠊⠁⠁⠀⠠⠀⠀⡀⢠⠁⠀⠠⠀⢡⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠄⠂⠀⠐⠠⠀⠀⠀⢀⣠⡄⣠⢀⠁⠒⠂⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣠⡤⣀⠀⠀⠀⠀⠀⡇⠀⢀⠀⢡⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
-    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⡀⠀⠠⠀⠀⠀⠀⣿⣿⡃⣟⣳⣧⠀⠀⠀⠀⢀⠀⠠⡀⠀⠀⠀⢴⣿⣻⢛⣻⣷⠀⠀⠀⠀⠃⡇⠀⠀⡄⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⣿⣿
-    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠄⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⡀⠄⠐⠇⠈⠀⠀⠀⠈⠉⠈⠉⠁⠀⠀⠀⠀⡀⠁⠀⠀⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
+    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠄⠂⠀⠐⠠⠀⠀⠀\033[31m⢀⣠⡄⣠\033[0m⢀⠁⠒⠂⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀\033[31m⣠⣠⡤⣀\033[0m⠀⠀⠀⠀⠀⡇⠀⢀⠀⢡⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
+    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⡀⠀⠠⠀⠀⠀⠀\033[31m⣿⣿⡃⣟⣳⣧\033[0m⠀⠀⠀⠀⢀⠀⠠⡀⠀⠀⠀\033[31m⢴⣿⣻⢛⣻⣷\033[0m⠀⠀⠀⠀⠃⡇⠀⠀⡄⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⣿⣿
+    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠄⠀⠀⠀⠀\033[31m⠉⠉⠉⠉\033[0m⠀⠀⠀⠀⠀⡀⠄⠐⠇⠈⠀⠀⠀\033[31m⠈⠉⠈⠉⠁\033[0m⠀⠀⠀⠀⡀⠁⠀⠀⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⡀⠀⠀⡈⠀⠀⠀⠐⢀⡈⠀⠀⠀⠀⠀⠄⠈⠀⠀⠀⠀⠡⠀⠄⠂⡀⠀⠀⠈⠀⠠⠔⠀⠀⠀⠀⠈⢳⠄⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠐⠀⠌⠀⠂⠄⠀⠄⢂⠠⠁⠌⠀⠀⠀⠀⠀⠀⠀⠈⡀⠀⠄⡁⠄⠠⢀⠀⢐⡀⠁⠀⠊⠀⢜⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠐⠈⢀⠀⠀⠀⠀⠀⠀⠀⠀⢁⠠⠐⠐⠋⠀⠀⠀⠀⠀⠀⠀⣱⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣿⣿
@@ -388,9 +396,9 @@ def devil():
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠈⠠⠀⠂⠀⠐⠈⠀⢁⠀⠉⠐⠠⣀⠠⠀⠄⠂⡀⠂⠄⠀⠄⠁⠌⡐⠠⠀⠄⠀⠀⠠⠀⠒⠤⠀⠌⠐⠀⠰⠁⠠⠁⠀⣿⣿⣿⣿⣿⣿⣧⢿⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⡀⠀⠀⠠⠀⡀⠐⠠⠈⠄⠁⠂⠄⠁⢀⠈⠀⠄⠁⡀⠈⠀⡀⠄⠀⠄⠀⡀⠄⠁⠂⠁⠂⠄⠂⢀⠀⡈⠂⠀⠀⠀⡆⣿⣿⣿⣿⣿⣿⣿⣼⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠠⠀⠀⠀⠐⠀⠠⠀⠀⠀⠈⠀⠄⠁⠂⡀⠂⠄⡁⢀⠐⡀⠄⠂⡐⢀⠂⢄⠔⠊⠁⠁⠀⠠⠀⠀⡀⢠⠁⠀⠠⠀⢡⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠄⠂⠀⠐⠠⠀⠀⠀\033[11m\033[41m⢀⣠⡄⣠\033[0m⢀⠁⠒⠂⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀\033[31m\033[41m⣠⣠⡤⣀\033[0m⠀⠀⠀⠀⠀⡇⠀⢀⠀⢡⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
-    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⡀⠀⠠⠀⠀⠀⠀\033[31m\033[41m⣿⣿⡃⣟⣳⣧\033[0m⠀⠀⠀⠀⢀⠀⠠⡀⠀⠀⠀\033[31m\033[41m⢴⣿⣻⢛⣻⣷\033[0m⠀⠀⠀⠀⠃⡇⠀⠀⡄⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⣿⣿
-    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠄⠀⠀⠀⠀\033[31m\033[41m⠉⠉⠉⠉\033[0m⠀⠀⠀⠀⠀⡀⠄⠐⠇⠈⠀⠀⠀\033[31m\033[41m⠈⠉⠈⠉⠁\033[0m⠀⠀⠀⠀⡀⠁⠀⠀⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
+    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠄⠂⠀⠐⠠⠀⠀⠀\033[31m⢀⣠⡄⣠\033[0m⢀⠁⠒⠂⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀\033[31m⣠⣠⡤⣀\033[0m⠀⠀⠀⠀⠀⡇⠀⢀⠀⢡⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
+    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⡀⠀⠠⠀⠀⠀⠀\033[31m⣿⣿⡃⣟⣳⣧\033[0m⠀⠀⠀⠀⢀⠀⠠⡀⠀⠀⠀\033[31m⢴⣿⣻⢛⣻⣷\033[0m⠀⠀⠀⠀⠃⡇⠀⠀⡄⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⣿⣿
+    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠄⠀⠀⠀⠀\033[31m⠉⠉⠉⠉\033[0m⠀⠀⠀⠀⠀⡀⠄⠐⠇⠈⠀⠀⠀\033[31m⠈⠉⠈⠉⠁\033[0m⠀⠀⠀⠀⡀⠁⠀⠀⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⡀⠀⠀⡈⠀⠀⠀⠐⢀⡈⠀⠀⠀⠀⠀⠄⠈⠀⠀⠀⠀⠡⠀⠄⠂⡀⠀⠀⠈⠀⠠⠔⠀⠀⠀⠀⠈⢳⠄⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠐⠀⠌⠀⠂⠄⠀⠄⢂⠠⠁⠌⠀⠀⠀⠀⠀⠀⠀⠈⡀⠀⠄⡁⠄⠠⢀⠀⢐⡀⠁⠀⠊⠀⢜⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠐⠈⢀⠀⠀⠀⠀⠀⠀⠀⠀⢁⠠⠐⠐⠋⠀⠀⠀⠀⠀⠀⠀⣱⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣿⣿
@@ -421,6 +429,8 @@ def clear_screen():
 
 def gahhh():
     clear_screen()
+    devil()
+    devil()
     devil()
     devil()
     devil()
@@ -477,16 +487,17 @@ def geo_menu():
     print(colored("Geo-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01)    
     header()
-    print("                      \033[92m1\033[0m) ZipCodes                                                               \033[92m2\033[0m) Go To \033[31mHELL          ")
+    print("                      \033[92m1\033[0m) ZipCodes")
+    footer()
     option = input("> ")
     if option == "1":
         clear_screen()
         zip_menu()
         what_now()
-    elif option == "2":
-        clear_screen
-        ascii_banner()
-        what_now()
+    elif option == "BACK":
+        main_menu()
+    elif option == "HELL":
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
@@ -838,12 +849,9 @@ def passw():
     ascii_banner()            
     print(colored("PASSWORDS", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("                  \033[91m1\033[0m) Pwnd                           \033[91m2\033[0m) HashBreak                           \033[91m3\033[0m) SecLists                                       ") 
-    print(" ")
-    print(" ")
-    print("                                 \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m HashBreak")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
-    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    print("                  \033[91m1\033[0m) Pwnd                             \033[91m2\033[0m) HashBreak                           \033[91m3\033[0m) SecLists                                       ") 
+    print("                  \033[90m   ~~~~                                ~~~~~~~~~                              ~~~~~~~~    \033[0m ")
+    footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
         pwnd()
@@ -892,14 +900,16 @@ def passw():
             time.sleep(.04)  
         time.sleep(3)
         passw()      
-    elif choice == "666":
+    elif choice == "BACK":
         forbidden()
+    elif choice == "HELL":
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
         clear_screen()
         ascii_banner()
-        main_menu() 
+        passw() 
         
 def tfiles():
     clear_screen()
@@ -909,11 +919,7 @@ def tfiles():
     print("             \033[91m1\033[0m) Anarchist Cookbook             \033[91m2\033[0m) Black Circle             \033[91m3\033[0m) DoomsDay             \033[91m4\033[0m) Omnipotent Inc.                                   ") 
     print(" ")
     print("                            \033[91m5\033[95m) Firearm Manuals                               \033[91m6\033[95m) US Military Manuals")                                                                        
-    print(" ")
-    print(" ")
-    print("                               \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Anarchist Cookbook")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
-    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
         clear_screen()
@@ -935,8 +941,10 @@ def tfiles():
     elif choice == "6":
         os.system("lynx $dump http://pdf.textfiles.com/manuals/MILITARY/")
         tfiles()
-    elif choice == "666":
+    elif choice == "BACK":
         forbidden()
+    elif choice == "HELL":
+        main_menu()
     elif choice == "Anarchist Cookbook":
         print(" ")
         print("\033[96mAnarchist Cookbook")
@@ -1032,13 +1040,8 @@ def breach():
     ascii_banner()            
     print(colored("DATA BREACH DATA", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("                      \033[92m1\033[0m) Bots                                                               \033[92m2\033[0m) LeakSeek          ") 
-    print(" ")
-    print("                                               \033[41m SELECT NON-OPTION FOR MAIN MENU\033[0m ")
-    print(" ")
-    print("                                 \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m LeakSeek")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
-    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    print("                      \033[91m1\033[0m) Bots                                                               \033[91m2\033[0m) LeakSeek          ") 
+    footer()
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
         osintio() 
@@ -1069,14 +1072,14 @@ def breach():
             time.sleep(.04)  
         time.sleep(3)
         breach()
-    elif choice == "666":
+    elif choice == "BACK":
         forbidden()
+    elif choice == "HELL":
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
-        ascii_banner()
-        main_menu() 
+        breach() 
         
 def forbidden():
     clear_screen()
@@ -1084,9 +1087,7 @@ def forbidden():
     print(colored("PASSWORDS/DATA LEAKS/FORBIDDEN KNOWLEDGE", 'red', attrs=['reverse', 'bold']))     
     header()
     print("                      \033[91m1\033[0m) Passwords                      \033[91m2\033[0m) DataBreach                     \033[91m3\033[0m) The Text Files          ") 
-    print(" ")
-    print("                                               \033[41m SELECT NON-OPTION FOR MAIN MENU\033[0m ")
-    print(" ")
+    footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
         passw()
@@ -1094,12 +1095,14 @@ def forbidden():
         breach()
     elif choice == "3":
         tfiles()
+    elif choice == "BACK":
+        main_menu()
+    elif choice == "HELL":
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
-        ascii_banner()
-        main_menu() 
+        forbidden() 
 def main_menu():
     clear_screen()
     ascii_banner()            
@@ -1155,8 +1158,6 @@ def main_menu():
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
-        ascii_banner()
         main_menu()         
 
 def again1():
@@ -1172,8 +1173,9 @@ def again1():
     elif choice == "2":
             menu() 
     else:
-        clear_screen()
-        main_menu()
+        print("\033[91m INVALID SELECTION\033[0m")
+        time.sleep(1)
+        menu()
         
 def again2():
     choice = input("New User to Search: ")
@@ -1188,7 +1190,7 @@ def again2():
     elif choice == "2":
             menu()
     else:
-        main_menu()
+        menu()
 def again3():
     choice = input("Enter a User or Email to search: ")
     subprocess.run(['python', 'slash.py', choice])
@@ -1202,7 +1204,9 @@ def again3():
     elif choice == "2":
             menu()
     else:
-        main_menu()
+        print("\033[91m INVALID SELECTION\033[0m")
+        time.sleep(1)
+        menu()
 
 def again4():
     clear_screen()
@@ -1218,7 +1222,9 @@ def again4():
     elif choice == "2":
             menu()
     else:
-        main_menu()
+        print("\033[91m INVALID SELECTION\033[0m")
+        time.sleep(1)
+        menu()
 
 def menu():
     change()  
@@ -1234,11 +1240,7 @@ def menu():
         time.sleep(.01) 
         header()
         print("       \033[91m1\033[0m) Maigret                 \033[91m2\033[0m) Slash                                  \033[91m3\033[0m) Sherlock                 \033[91m4\033[0m) AliaStorm")
-        print("                                                      \033[91m5\033[0m) \033[91mGo To \033[31mHELL\033[0m")
-        print(" ")
-        print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Maigret")
-        print("                                                                         \033[91m  ~~~~~~~~~~~~~")
-        print(" ")      
+        footer()
         choice = input("\033[0mSelect an option: ")      
         async def main(username):
             os.system(f'maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
@@ -1293,7 +1295,9 @@ def menu():
                 elif option == '2':
                     menu()
                 else:
-                    main_menu()
+                    print("\033[91m INVALID SELECTION\033[0m")
+                    time.sleep(1)
+                    menu()
         elif choice == '3':          
             os.system('pip3 install pipx')
             os.system('pipx install sherlock-project')
@@ -1309,7 +1313,7 @@ def menu():
                 elif option == '2':
                     menu()
                 else:
-                    main_menu()
+                    menu()
         elif choice == '4':
             clone_repo('https://github.com/AnonCatalyst/AliaStorm.git', 'AliaStorm')
             subprocess.run(["pip3", "install", "-r", "requirements.txt", "--break-system-packages"])
@@ -1326,11 +1330,13 @@ def menu():
                 elif option == '2':
                     menu()
                 else:
-                    main_menu()
-        elif choice == '5':
-            clear_screen()
-            ascii_banner()
-            what_now()
+                    print("\033[91m INVALID SELECTION\033[0m")
+                    time.sleep(1)
+                    menu()
+        elif choice == "BACK":
+            main_menu()
+        elif choice == "HELL":
+            main_menu()
         elif choice == "Maigret":
             print(" ")
             print("\033[96mMaigret")
@@ -1374,29 +1380,7 @@ def menu():
         else:
             print("\033[91m INVALID SELECTION\033[0m")
             time.sleep(1)
-            clear_screen()
-            ascii_banner()
             menu()        
-
-        
-        while True:
-            option = input("Select an option: \033[91m1\033[0m) Search Again, \033[91m2\033[0m) Main Menu, \033[91m3\033[97m) IF\033[0m you ran Maigret ").upper()
-            if option == '1':
-                clear_screen()
-                again1()
-            elif option == '3':
-                user_home = os.path.expanduser('~')
-                os.chdir(os.path.join(user_home, 'Desktop', 'maigret', 'reports'))
-                html_file1 = f'report_{username}_plain.html'
-                html_file2 = f'report_{username}_graph.html'
-                if os.path.exists(html_file1):
-                    webbrowser.open(os.path.join(os.getcwd(), html_file1))
-                if os.path.exists(html_file2):
-                    webbrowser.open(os.path.join(os.getcwd(), html_file2))
-                else:
-                    print(f"Error: File {html_file} not found")
-            else:
-                what_now()
 
 def landlubber():
     change()
@@ -1445,10 +1429,7 @@ def emails_menu():
     print(colored("EMAIL / PHONE 0SINT", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
     print("                \033[91m1\033[0m)\033[97m EMAIL                                                                     \033[0m \033[91m2\033[0m)\033[97m PHONE ")
-    print("                                                      \033[91m3\033[0m) \033[91mGo To \033[31mHELL\033[0m")
-    print(" ")
-    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m PHONE")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")
+    footer()
     choice = input("\033[0mSelect an option: ")
 
     if choice == '1':
@@ -1471,19 +1452,24 @@ def emails_menu():
     elif choice == "2":
         clear_screen()
         ascii_banner()
-        print("1) Land Line")
-        print("2) Cell Phone")
+        header()
+        print("\033[91m1\033[0m) Land Line                                                                \033[91m2\033[0m) Cell Phone")
+        footer()
         choice = input("Select an option: ")
         if choice == "1":
             landlubber()
-        if choice == "2":
+        elif choice == "2":
             cellphone()
+        elif choice == "BACK":
+            emails_menu()
+        elif choice == "HELL":
+            main_menu()
         else:
             what_now()
-    elif choice == "3":
-        clear_screen()
-        ascii_banner()
-        what_now()
+    elif choice == "BACK":
+        main_menu()
+    elif choice == "HELL":
+        main_menu
     elif choice == "EMAIL":
         print(" ")
         print("\033[96mHolehe")
@@ -1609,10 +1595,7 @@ def social():
     print(colored("SOCIAL MEDIA", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
     print("                      \033[91m1\033[0m) TikTokBots                                                                     \033[91m2\033[0m) InstaSham                   ")                                
-    print(" ")
-    print("                                \033[97m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m TikTokBots")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
-    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    footer()
     choice = input('Take Your Pick: ')
     if choice == "1":
         webbrowser.open("https://fireliker.com")
@@ -1640,8 +1623,10 @@ def social():
             time.sleep(.04)  
         time.sleep(3)
         social()
-    elif choice == "666":
+    elif choice == "BACK":
         jigsaw()
+    elif choice == "HELL":
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
@@ -1654,10 +1639,7 @@ def jigsaw():
     print(colored("PUPPET MASTER MENU", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
     print("                      \033[91m1\033[0m) Details                     \033[91m2\033[0m) Social Media                     \033[91m3\033[0m) DeepFakes          ") 
-    print(" ")
-    print("                                \033[97m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Details")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
-    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
         print(colored("CTRL + X TO EXIT PUPPET DETAILS", 'red', attrs=['reverse', 'blink', 'bold']))        
@@ -1706,12 +1688,13 @@ def jigsaw():
             time.sleep(.04)  
         time.sleep(3)
         jigsaw()
-    elif choice == "666":
+    elif choice == "BACK":
         unclassified_menu()
+    elif choice == "HELL":
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
         change()
         jigsaw()  
 
@@ -1722,11 +1705,8 @@ def unclassified_menu():
     print(colored("Unclassified-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("                      \033[91m1\033[0m) WebHound                      \033[91m2\033[0m) Ominis-Osint                      \033[91m3\033[0m) SockPuppet")  
-    print(" ")
-    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m WebHound")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
-    print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
+    print("                  \033[91m1\033[0m) WebHound                             \033[91m2\033[0m) Ominis-Osint                             \033[91m3\033[0m) SockPuppet")  
+    footer()
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
         clear_screen()
@@ -1756,10 +1736,13 @@ def unclassified_menu():
         what_now()
     elif choice == "3":
         jigsaw()
-    elif choice == "4":
+    elif choice == "HELL":
+        main_menu()
         clear_screen()
         ascii_banner()
         what_now()
+    elif choice == "BACK":
+        main_menu
     elif choice == "WebHound":
         print(" ")
         print("\033[96mWebHound")
@@ -1790,14 +1773,14 @@ def unclassified_menu():
             time.sleep(.04)  
         time.sleep(3)
         unclassified_menu()
-    elif choice == "666":
+    elif choice == "BACK":
+        unclassified_menu()
+    elif choice == "HELL":
         change()
         main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
-        ascii_banner()
         change()
         unclassified_menu()     
 
@@ -1867,10 +1850,7 @@ def networks_menu():
     print("                \033[91m3\033[0m) Lynis                                \033[91m6\033[0m) Simba                                 \033[91m9\033[0m) SubDomains")
     print(" ")
     print("                                                            \033[92mUFO\033[0m")
-    print("                                                      \033[91m10\033[0m) \033[91mGo To \033[31mHELL\033[0m")
-    print(" ")
-    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m CyberMap")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")
+    footer()
     choice = input("\033[0mSelect an option: ")
     if choice == '1':
         cyber()
@@ -2080,6 +2060,10 @@ def networks_menu():
         os.system("sudo chmod +x ufonet")
         os.system("python3 ./ufonet --gui")
         what_now()        
+    elif choice == "BACK":
+        main_menu()
+    elif choice == "HELL":
+        main_menu()
     elif choice == "CyberMap":
         print(" ")
         print("\033[96mCyberMap")
@@ -2194,12 +2178,8 @@ def frameworks_menu():
     print(colored("Frameworks-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("\033[95m1\033[0m) Maryam")
-    print("\033[95m2\033[0m) Mr.Holmes 'TYPE \033[92m2.1\033[0m FOR LINUX/MAC, TYPE \033[92m2.2\033[0m FOR WINDOWS")
-    print("\033[95m3\033[0m) Coeus")
-    print("\033[91m4)\033[40m Run\033[0m")
-    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Maryam")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")
+    print("                  \033[91m1\033[0m) Maryam                             \033[91m2\033[0m) Mr.Holmes                             \033[91m3\033[0m) Coeus")
+    footer()
     choice = input("\033[0mSelect an option: ")
 
     if choice == '1':
@@ -2209,7 +2189,7 @@ def frameworks_menu():
         os.system(run_command)
         show_command = "show modules"
         what_now()
-    elif choice == '2.1':
+    elif choice == '2':
         clone_command = "git clone https://github.com/Lucksi/Mr.Holmes"
         os.system(clone_command)
         update_command = "sudo apt-get update"
@@ -2229,17 +2209,6 @@ def frameworks_menu():
         os.system(requirements_command)
         run_script_command = "sudo python3 MrHolmes.py"
         os.system(run_script_command) 
-        what_now() 
-    elif choice == '2.2':
-        clone_command = "git clone https://github.com/Lucksi/Mr.Holmes"
-        os.system(clone_command)
-        os.chdir("Mr.Holmes")
-        os.system("git fetch")
-        os.system("git pull")
-        install_command = "Install.cmd"
-        os.system(install_command)
-        run_script_command = "python3 MrHolmes.py"
-        os.system(run_script_command)  
         what_now()   
     elif choice == "3":
         clear_screen()
@@ -2261,10 +2230,6 @@ def frameworks_menu():
         header()
         webbrowser.open("http://127.0.0.1:5000")        
         os.system("python3 webui.py")
-        what_now()
-    elif choice == "4":
-        clear_screen()
-        ascii_banner()
         what_now()
     elif choice == "Maryam":
         print(" ")
@@ -2296,6 +2261,10 @@ def frameworks_menu():
             time.sleep(.04)  
         time.sleep(3)
         frameworks_menu()    
+    elif choice == "BACK":
+        main_menu()
+    elif choice == "HELL":
+        main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
@@ -2309,24 +2278,22 @@ def cameras_menu():
     print(colored("Traffic-Cam Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("\033[91m1\033[0m) \033[91mU\033[97mS\033[97mA\033[0m")
+    print("\033[91m1\033[0m) \033[91mU\033[97mS\033[94mA\033[0m")
     print("\033[91m2\033[0m) UK")
-    print("\033[91m3)\033[40m Run\033[0m")
+    footer()
     choice = input("Select an option: ")
 
     if choice == "1":
         usa_menu()
     elif choice == "2":
         uk_menu()
-    elif choice == "3":
-        clear_screen()
-        ascii_banner()
-        what_now()
+    elif choice == "BACK":
+        main_menu()
+    elif choice == "HELL":
+        main_menu
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
-        ascii_banner()
         cameras_menu()     
 
 def cam_menu():
