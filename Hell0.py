@@ -841,10 +841,10 @@ def passw():
     print("                  \033[91m1\033[0m) Pwnd                           \033[91m2\033[0m) HashBreak                           \033[91m3\033[0m) SecLists                                       ") 
     print(" ")
     print(" ")
-    print("                                 \033[94m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m HashBreak")
+    print("                                 \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m HashBreak")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
     print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
-    choice = input("\033[94mSelect an option: ")
+    choice = input("\033[97mSelect an option: ")
     if choice == "1":
         pwnd()
     elif choice == "2":
@@ -911,10 +911,10 @@ def tfiles():
     print("                            \033[91m5\033[95m) Firearm Manuals                               \033[91m6\033[95m) US Military Manuals")                                                                        
     print(" ")
     print(" ")
-    print("                               \033[94m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Anarchist Cookbook")
+    print("                               \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Anarchist Cookbook")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
     print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
-    choice = input("\033[94mSelect an option: ")
+    choice = input("\033[97mSelect an option: ")
     if choice == "1":
         clear_screen()
         os.system("lynx $dump http://www.textfiles.com/anarchy/") 
@@ -1036,7 +1036,7 @@ def breach():
     print(" ")
     print("                                               \033[41m SELECT NON-OPTION FOR MAIN MENU\033[0m ")
     print(" ")
-    print("                                 \033[94m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m LeakSeek")
+    print("                                 \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m LeakSeek")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
     print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input("\033[0mSelect an option: ")
@@ -1087,7 +1087,7 @@ def forbidden():
     print(" ")
     print("                                               \033[41m SELECT NON-OPTION FOR MAIN MENU\033[0m ")
     print(" ")
-    choice = input("\033[94mSelect an option: ")
+    choice = input("\033[97mSelect an option: ")
     if choice == "1":
         passw()
     elif choice == "2":
@@ -1109,10 +1109,10 @@ def main_menu():
     print("       \033[91m3\033[0m) Networks                  \033[91m6\033[0m) Cameras               \033[91m9\033[0m) Tool Repo-Depo          \033[91m666\033[0m) \033[41mGAHH! IT BURNS!!!\033[0m")
 
     print(" ")
-    choice = input("\033[94mSelect an option: ")
+    choice = input("\033[97mSelect an option: ")
 
     if choice == "1":
-        menu1()
+        menu()
     elif choice == "2":
         emails_menu()
     elif choice == "3":
@@ -1160,22 +1160,66 @@ def main_menu():
         main_menu()         
 
 def again1():
-    print("Search Again?")
-    choice = input("Yes or No?: ")
-    
-    if choice == "Yes":
-        username = input("User To Search: ")
-        os.system(f'pipenv run maigret {username} --self-check --top-sites 1800 --no-recursion --retries 2 --timeout 35 --stats --graph --html')
-        again1()
-    elif choice == "No":
+    choice = input("New User to Search: ")
+    subprocess.run(['maigret', choice, '--top-sites', '1800', '--no-recursion', '--retries', '2', '--time-out', '40', '--stats', '--graph', '--html'])
+    print(" ")
+    print('1) New Search?')
+    print('2) Username Menu')
+    choice = input("Enter Selection: ")
+    if choice == "1":
+            clear_screen()
+            again1()
+    elif choice == "2":
+            menu() 
+    else:
         clear_screen()
-        ascii_banner()
-        what_now()
+        main_menu()
         
+def again2():
+    choice = input("New User to Search: ")
+    subprocess.run(['pipx', 'run', 'sherlock-project', choice, '--nsfw'])
+    print(" ")
+    print('1) New Search?')
+    print('2) Username Menu')
+    choice = input("Enter Selection: ")
+    if choice == "1":
+            clear_screen()
+            again2()
+    elif choice == "2":
+            menu()
+    else:
+        main_menu()
+def again3():
+    choice = input("Enter a User or Email to search: ")
+    subprocess.run(['python', 'slash.py', choice])
+    print(" ")
+    print('1) New Search?')
+    print('2) Username Menu')
+    choice = input("Enter Selection: ")
+    if choice == "1":
+            clear_screen()
+            again3()
+    elif choice == "2":
+            menu()
+    else:
+        main_menu()
 
-def menu1():
-    install_pipenv()
-    menu()
+def again4():
+    clear_screen()
+    username = input("Input User to Search: ")
+    subprocess.run(["python3", "aliastorm.py", username])
+    print(" ")
+    print('1) New Search?')
+    print('2) Username Menu')
+    choice = input("Enter Selection: ")
+    if choice == "1":
+            clear_screen()
+            again4()
+    elif choice == "2":
+            menu()
+    else:
+        main_menu()
+
 def menu():
     change()  
     clear_screen()    
@@ -1189,16 +1233,15 @@ def menu():
         print(colored("USERNAME-0SINT", 'red', attrs=['reverse', 'blink', 'bold']))
         time.sleep(.01) 
         header()
-        print("\033[91m1\033[0m) Maigret")
-        print("\033[91m2\033[0m) Slash")
-        print("\033[91m3\033[0m) Sherlock")
-        print("\033[91m4\033[0m) AliaStorm")
-        print("\033[91m5)\033[40m Run\033[0m")
-        print("                               \033[94m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Maigret")
+        print("       \033[91m1\033[0m) Maigret                 \033[91m2\033[0m) Slash                                  \033[91m3\033[0m) Sherlock                 \033[91m4\033[0m) AliaStorm")
+        print("                                                      \033[91m5\033[0m) \033[91mGo To \033[31mHELL\033[0m")
+        print(" ")
+        print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Maigret")
         print("                                                                         \033[91m  ~~~~~~~~~~~~~")
-        choice = input("\033[0mSelect an option: ")
+        print(" ")      
+        choice = input("\033[0mSelect an option: ")      
         async def main(username):
-            os.system(f'pipenv run maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
+            os.system(f'maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
         if choice == '1':
             os.system("pip3 install maigret")
             username = input("Enter a username to search: ")
@@ -1209,11 +1252,14 @@ def menu():
             loop = asyncio.get_event_loop()
             loop.run_until_complete(main(username))
             while True:
-                option = input("Select an option: \033[91m1\033[0m) Search Again, \033[91m2\033[0m) Main Menu, \033[91m3\033[97m) IF\033[0m you ran Maigret ").upper()
+                print("\033[91m1\033[0m) New Search")
+                print("\033[91m2\033[0m) View Reports")
+                print("\033[91m3\033[0m) Username Menu")
+                option = input("Action: ")
                 if option == '1':
                     clear_screen()
                     again1()
-                elif option == '3':
+                elif option == '2':
                     user_home = os.path.expanduser('~')
                     os.chdir(os.path.join(user_home, 'Desktop', 'reports'))
                     html_file1 = f'report_{username}_plain.html'
@@ -1226,26 +1272,61 @@ def menu():
                         what_now()
                     else:
                         print(f"Error: File {html_file} not found")
+                elif option == '3':
+                     change()
+                     menu()
             else:
-                what_now()          
-        if choice == '2':
+                what_now()  
+        elif choice == '2':
             clone_repo('https://github.com/theahmadov/slash.git', 'slash')
-            install_requirements()
-            user_or_email = input("Enter a User or Email to search: ")
-            search_username(user_or_email, 'slash.py')
+            os.system('pip install -r requirements.txt')
+            clear_screen()
+            choice = input("Enter a User or Email to search: ")
+            subprocess.run(['python', 'slash.py', choice])
+            while True:
+                print("\033[91m1\033[0m) New Search")
+                print("\033[91m2\033[0m) Username Menu")
+                option = input("Action: ")
+                if option == '1':
+                    clear_screen()
+                    again3()
+                elif option == '2':
+                    menu()
+                else:
+                    main_menu()
         elif choice == '3':          
-            clone_repo('https://github.com/sherlock-project/sherlock.git', 'sherlock')
-            install_requirements()
-            os.chdir('sherlock')
-            user_or_email = input("Enter a Username to search: ")          
-            search_username(user_or_email, 'sherlock.py --nsfw')
+            os.system('pip3 install pipx')
+            os.system('pipx install sherlock-project')
+            choice = input("Enter a Username to search: ")          
+            subprocess.run(['pipx', 'run', 'sherlock-project', '--nsfw', choice])
+            while True:
+                print("\033[91m1\033[0m) New Search")
+                print("\033[91m2\033[0m) Username Menu")
+                option = input("Action: ")
+                if option == '1':
+                    clear_screen()
+                    again2()
+                elif option == '2':
+                    menu()
+                else:
+                    main_menu()
         elif choice == '4':
             clone_repo('https://github.com/AnonCatalyst/AliaStorm.git', 'AliaStorm')
             subprocess.run(["pip3", "install", "-r", "requirements.txt", "--break-system-packages"])
             clear_screen()
             username = input("Input User to Search: ")
             subprocess.run(["python3", "aliastorm.py", username])
-            what_now()
+            while True:
+                print("\033[91m1\033[0m) New Search")
+                print("\033[91m2\033[0m) Username Menu")
+                option = input("Action: ")
+                if option == '1':
+                    clear_screen()
+                    again4()
+                elif option == '2':
+                    menu()
+                else:
+                    main_menu()
         elif choice == '5':
             clear_screen()
             ascii_banner()
@@ -1318,6 +1399,7 @@ def menu():
                 what_now()
 
 def landlubber():
+    change()
     os.system("git clone https://github.com/drooling/phosint")
     os.chdir("phosint")
     os.system("git fetch")
@@ -1357,17 +1439,15 @@ def cellphone():
         what_now()
 
 def emails_menu():
+    change()
     clear_screen()
     ascii_banner()    
     print(colored("EMAIL / PHONE 0SINT", 'red', attrs=['reverse', 'blink', 'bold']))
-    time.sleep(.01) 
     header()
-    print("Sub Menu:")
+    print("                \033[91m1\033[0m)\033[97m EMAIL                                                                     \033[0m \033[91m2\033[0m)\033[97m PHONE ")
+    print("                                                      \033[91m3\033[0m) \033[91mGo To \033[31mHELL\033[0m")
     print(" ")
-    print("\033[91m1\033[0m)\033[92m EMAIL \033[0m")
-    print("\033[91m2\033[0m)\033[92m PHONE \033[92m")
-    print("\033[91m3)\033[40m Run\033[0m") 
-    print("                                \033[94m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m EMAIL")
+    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m PHONE")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")
     choice = input("\033[0mSelect an option: ")
 
@@ -1530,7 +1610,7 @@ def social():
     header()
     print("                      \033[91m1\033[0m) TikTokBots                                                                     \033[91m2\033[0m) InstaSham                   ")                                
     print(" ")
-    print("                                \033[94m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m TikTokBots")
+    print("                                \033[97m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m TikTokBots")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
     print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input('Take Your Pick: ')
@@ -1575,10 +1655,10 @@ def jigsaw():
     header()
     print("                      \033[91m1\033[0m) Details                     \033[91m2\033[0m) Social Media                     \033[91m3\033[0m) DeepFakes          ") 
     print(" ")
-    print("                                \033[94m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Details")
+    print("                                \033[97m  FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Details")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
     print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
-    choice = input("\033[94mSelect an option: ")
+    choice = input("\033[97mSelect an option: ")
     if choice == "1":
         print(colored("CTRL + X TO EXIT PUPPET DETAILS", 'red', attrs=['reverse', 'blink', 'bold']))        
         os.system("git clone https://github.com/jaskaran2002/Sock-Puppet-Generator.git")
@@ -1644,7 +1724,7 @@ def unclassified_menu():
     header()
     print("                      \033[91m1\033[0m) WebHound                      \033[91m2\033[0m) Ominis-Osint                      \033[91m3\033[0m) SockPuppet")  
     print(" ")
-    print("                               \033[94m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m WebHound")
+    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m WebHound")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
     print("                                                        \033[41m666\033[0m To Go Back                                                                                              ")
     choice = input("\033[0mSelect an option: ")
@@ -1781,20 +1861,15 @@ def networks_menu():
     clear_screen()
     ascii_banner()
     print(colored("Networks-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
-    time.sleep(.01) 
     header()
-    print("\033[95m1\033[0m) CyberMap \033[95mINFO\033[0m")
-    print("\033[91m2\033[0m) Sql-map \033[91mATCK\033[0m")
-    print("\033[95m3\033[0m) Lynis \033[95mINFO\033[0m")
-    print("\033[95m4\033[0m) IP-Lookup \033[95mINFO\033[0m")    
-    print("\033[95m5\033[0m) PortScan \033[95mINFO\033[0m")
-    print("\033[95m6\033[0m) Simba \033[95mINFO\033[0m")
-    print("\033[95m7\033[0m) ProxyScrape \033[95mINFO\033[0m")    
-    print("\033[92m8\033[0m) WiFi\033[92m TWEAK\033[0m") 
-    print("\033[95m9\033[0m) Subdomains \033[95mINFO\033[0m") 
-    print("\033[91mUFO\033[0m) UFONET \033[91mATCK\033[0m")     
-    print("\033[91m10)\033[40m Run\033[0m")    
-    print("                               \033[94m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m CyberMap")
+    print("                \033[91m1\033[0m) CyberMap                             \033[91m4\033[0m) IP-Lookup                             \033[91m7\033[0m) ProxyScrape")
+    print("                \033[91m2\033[0m) Sql-map                              \033[91m5\033[0m) PortScan                              \033[91m8\033[0m) WiFi")
+    print("                \033[91m3\033[0m) Lynis                                \033[91m6\033[0m) Simba                                 \033[91m9\033[0m) SubDomains")
+    print(" ")
+    print("                                                            \033[92mUFO\033[0m")
+    print("                                                      \033[91m10\033[0m) \033[91mGo To \033[31mHELL\033[0m")
+    print(" ")
+    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m CyberMap")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")
     choice = input("\033[0mSelect an option: ")
     if choice == '1':
@@ -2123,7 +2198,7 @@ def frameworks_menu():
     print("\033[95m2\033[0m) Mr.Holmes 'TYPE \033[92m2.1\033[0m FOR LINUX/MAC, TYPE \033[92m2.2\033[0m FOR WINDOWS")
     print("\033[95m3\033[0m) Coeus")
     print("\033[91m4)\033[40m Run\033[0m")
-    print("                               \033[94m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Maryam")
+    print("                               \033[97m FOR PROGRAM DESCRIPTION; TYPE PROGRAM NAME \033[0mAS IT APPEARS\033[90m Example:\033[92m Maryam")
     print("                                                                         \033[91m  ~~~~~~~~~~~~~")
     choice = input("\033[0mSelect an option: ")
 
@@ -2234,7 +2309,7 @@ def cameras_menu():
     print(colored("Traffic-Cam Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("\033[91m1\033[0m) \033[91mU\033[97mS\033[94mA\033[0m")
+    print("\033[91m1\033[0m) \033[91mU\033[97mS\033[97mA\033[0m")
     print("\033[91m2\033[0m) UK")
     print("\033[91m3)\033[40m Run\033[0m")
     choice = input("Select an option: ")
