@@ -604,6 +604,19 @@ def send_command_to_xterms():
         process.communicate()
     
     print(f"Command '{command}' sent to all xterm windows.")
+
+def isend_command_to_xterms():
+    command = simpledialog.askstring("Enter Command", "Enter command to send to xterm windows (or type 'exit' to quit):")
+    global num_xterms
+    processes = []
+    for i in range(num_xterms):
+        process = subprocess.Popen(['xterm', '-e', 'python3', '-c', f"import Hell0; Hell0.kicks(); {command}"])
+        processes.append(process)
+
+    for process in processes:
+        process.communicate()
+    
+    print(f"Command '{command}' sent to all xterm windows.")
     
 def multi_menu():
     change()
@@ -831,6 +844,10 @@ def what_now():
         change()
         menu() 
 
+def mac():
+    print("\033[97mMAC ADDRESS\033[92m Find this in the eth0 section next to\033[94m Ether\033[95m")
+    os.system("ifconfig -a")
+
 def essid_name():
     print("\033[97mESSID NAME\033[95m")
     os.system("iwgetid -r")
@@ -843,10 +860,17 @@ def essid_channel():
     print("\033[97mESSID CHANNEL\033[95m")
     os.system("sudo iwlist wlan0 scanning essid ESSID | grep Channel | head -1 | awk -F: '{print $2}'")
     
+def gateway():
+    print("\033[97mGATEWAY IP\033[95m")
+    os.system("ip route | grep default")
+
+    
 def wlan():
+    mac()
     essid_name()
     access_point()
-    essid_channel()    
+    essid_channel() 
+    gateway()   
 
 def weelan():
     change()
@@ -935,6 +959,44 @@ def wi_die():
             send_command_to_xterms()
         else:
             weelan()
+
+    exit(0)
+
+def kick():  
+    print("\033[0mKickThemOut")
+    global num_xterms
+    num_xterms = 5
+    os.chdir(os.path.join(os.getenv("HOME"), "Desktop"))
+
+    positions = [
+        "center",
+        "topright",
+        "topleft",
+        "bottomleft",
+        "bottomright",
+    ]
+    for i in range(num_xterms):
+        ip_address = f"192.168.1.{i + 9}"
+        mac_address = f"00:11:22:33:44:5{i}"
+        
+        position = positions[i]
+        
+        if position == "center":
+            geometry = "80x24+0+0"
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.wlan()\'" &')
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')
+
+    root = tk.Tk()
+    root.withdraw()
+    command = simpledialog.askstring(" ", "KICK THEM OUT or GO TO HELL: ")
+    exit_command = "KICK THEM OUT"  
+    while True:
+        if command and command != exit_command:
+            what_now()
+        else:
+            kicks()
 
     exit(0)
 
@@ -2016,6 +2078,22 @@ def ipp():
     time.sleep(10)
     ipp()
 
+def kicks():
+    change()
+    os.system("git clone https://github.com/k4m4/kickthemout.git")
+    os.chdir("kickthemout")
+    os.system("sudo -H pip3 install -r requirements.txt")    
+    os.system("sudo python3 kickthemout.py")
+    what_now()
+
+def kicker():
+    change()
+    os.system("sudo apt-get update && sudo apt-get install nmap")
+    os.system("git clone https://github.com/k4m4/kickthemout.git")
+    os.chdir("kickthemout")
+    os.system("sudo -H pip3 install -r requirements.txt")
+    kicks()
+
 def kaboom():
     change()
     clear_screen()
@@ -2024,6 +2102,7 @@ def kaboom():
     header()
     print("              👹\033[91m1\033[0m) DRipper                            👹\033[91m2\033[0m) UFONET                              👹\033[91m3\033[0m) Karma")
     print("              👹\033[91m4\033[0m) WiDie                              👹\033[91m5\033[0m) Sql-Map                             👣\033[91m6\033[0m) LinkMask ")
+    print("              👹\033[91m7\033[0m) KickThemOut")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2149,6 +2228,25 @@ def kaboom():
             time.sleep(.04)  
         time.sleep(3)
         kaboom()     
+    elif choice == "7":
+        change()
+        os.system("sudo apt-get update && sudo apt-get install nmap")
+        os.system("git clone https://github.com/k4m4/kickthemout.git")
+        os.chdir("kickthemout")
+        os.system("sudo -H pip3 install -r requirements.txt")
+        kick()
+        os.system("sudo python3 kickthemout.py")
+        what_now()
+    elif choice == "KickThemOut":
+        print(" ")
+        print("\033[96mThat's My WiFi Bitch")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mStops single, multiple, or all device internet connectivity on the current network. Lists by ip and mac address":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()         
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
