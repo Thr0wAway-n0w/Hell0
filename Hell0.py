@@ -26,6 +26,8 @@ def yeep():
     os.system('pip3 install xterm')   
 import os
 os.system("pip3 install reportlab")
+os.system("git fetch")
+os.system("git pull")
 import reportlab
 import subprocess
 import re
