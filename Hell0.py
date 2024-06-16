@@ -1,6 +1,5 @@
 def yeep():  
     os.system('python3 -m pip install pyqt5 --upgrade')
-    os.system('pip3 install colorama')
     os.system('pip3 install pillow')
     os.system('pip3 install ascii_magic')
     os.system('pip3 install pyautogui')
@@ -20,18 +19,27 @@ def yeep():
     os.system('sudo apt install lynx')
     os.system('sudo apt install gnome-terminal')
     os.system('sudo apt install gnome-terminal-data')
+    os.system('pip3 install requests')
+    os.system('pip3 install pexpect')
+    os.system('pip3 install pipx') 
+    os.system('pip3 install aiohttp')
+    os.system('pip3 install xterm')   
 import os
 os.system("pip3 install reportlab")
 import reportlab
 import subprocess
 import re
+os.system('pip3 install termcolor')
 import termcolor
+os.system('pip3 install colorama')
 import colorama
 from termcolor import colored
+os.system('pip3 install ascii_magic')
 import ascii_magic
 import time
 os.system("pip3 install asyncio")
-import asyncio   
+import asyncio
+os.system('pip3 install tk')   
 
 def header():
     print("\033[92m☠\033[91m----------------------------------------------------\033[0mWelcome To \033[31mHELL\033[0m.\033[92m0\033[0m\033[91m-----------------------------------------------------------------\033[92m☠\033[0m")
