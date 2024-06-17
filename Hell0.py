@@ -193,7 +193,7 @@ def footer():
     print("                                                   \033[90mGo\033[93m BACK \033[97mor \033[90mGo To \033[31mHELL\033[0m")
     print(" ")
     print("                                 \033[97m FOR OPTION DESCRIPTION; TYPE OPTION NAME \033[0mAS IT APPEARS\033[0m")
-    print("                                                                         \033[91m  ~~~~~~~~~~~~~")    
+    print("                                                                         \033[91m  ~~~~~~~~~~~~~\033[92m")    
     print(" ")
 
 def install_pipenv():
@@ -258,7 +258,7 @@ def ascii_kaboom():
     try:
         my_art = AsciiArt.from_url('https://www.shutterstock.com/image-vector/danger-symbol-skull-image-vector-260nw-1958629585.jpg')      
     except OSError as e:
-        print(f'Could not load the image, server said: {e.code} {e.msg}')
+        print(f'Could not load the image')
     my_art.to_terminal()
     
 
@@ -687,6 +687,17 @@ def jam():
     time.sleep(1)
     pyautogui.typewrite('8\n')
     
+def split():
+    pyautogui.hotkey('ctrl', 'shift', 'd')
+    time.sleep(1)
+    pyautogui.typewrite('python3 Hell0.py\n')
+    pyautogui.hotkey('ctrl', 'shift', 'd')
+    time.sleep(1)
+    pyautogui.typewrite('python3 Hell0.py\n')
+    pyautogui.hotkey('ctrl', 'shift', 'd')
+    time.sleep(1)
+    pyautogui.typewrite('python3 Hell0.py\n')
+
 def multi_mode():
     pyautogui.hotkey('ctrl', 'shift', 'd')
     time.sleep(.01)
@@ -1059,14 +1070,72 @@ def deadman():
     run_terminal_commands()
     run_http_server()
 
+def steg():
+    change()
+    os.system("sudo apt install stegseek")
+    clear_screen()
+    ascii_banner()
+    print(colored("Crack Stegofile", 'red', attrs=['reverse', 'blink', 'bold']))
+    header()
+    print("             \033[91m1\033[0m) Seed                                                                      \033[91m2\033[0m) Crack          ") 
+    footer()
+    choice = input("Select Option: ")
+    if choice == "1":
+        print("StegFile Name")
+        stfl = input("Name: ")
+        print("Name of Output File of Extracted Data")
+        opf = input("Output Name: ")
+        subprocess.run(["stegseek", "--seed", stfl, opf])
+        time.sleep(5)
+        steg()
+    elif choice == "2":
+        print("StegFile Name")
+        stfl = input("Name: ")
+        print("Wordlist To Use")
+        wrd = input("Wordlist: ")
+        print("Name of Output File of Extracted Data")
+        opf = input("Output Name: ")
+        subprocess.run(["stegseek", "--crack", stfl, wrd, opf])
+        time.sleep(5)
+        steg()
+    elif choice == "Seed":
+        print(" ")
+        print("\033[96mStegseek Seed Option")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mDetect and extract any unencrypted (meta) data from a steghide image":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        steg()  
+    elif choice == "Crack":
+        print(" ")
+        print("\033[96mStegseek Cracker Option")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mThis mode will simply try all passwords in the provided wordlist against the provided stegofile":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        steg()        
+    elif choice == "BACK":
+        passw()
+    elif choice == "HELL":
+        main_menu()
+    else:
+        print("\033[91m INVALID SELECTION\033[0m")
+        time.sleep(1)
+        clear_screen()
+        ascii_banner()
+        steg() 
 
 def passw():
     clear_screen()
     ascii_banner()            
     print(colored("PASSWORDS", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("             \033[91m1\033[0m) Pwnd                        \033[91m2\033[0m) HashBreak                      \033[91m3\033[0m) SecLists                           \033[91m4\033[0m) Cupp                            ") 
-    print("             \033[90m   ~~~~                           ~~~~~~~~~                         ~~~~~~~~    \033[0m ")
+    print("             \033[91m1\033[0m) Pwnd                        \033[91m2\033[0m) HashBreak                      \033[91m3\033[0m) SecLists                      \033[91m4\033[0m) Cupp                            ") 
+    print("             \033[91m5\033[0m) StegSeek \033[0m ")
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
@@ -1091,6 +1160,20 @@ def passw():
         os.system("git clone https://github.com/TechnicalHeadquarter/cupp.git")
         os.chdir("cupp")
         os.system("python3 cupp.py -i")
+    elif choice == "5":
+        change()
+        steg()
+    elif choice == "StegSeek":
+        print(" ")
+        print("\033[96mSteg Cracker")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mStegseek is a lightning fast steghide cracker that can be used to extract hidden data from files.":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        passw() 
+                 
     elif choice == "Pwnd":
         print(" ")
         print("\033[96mPass Pwnd Checker")
@@ -1326,6 +1409,36 @@ def forbidden():
         breach()
     elif choice == "3":
         tfiles()
+    elif choice == "Passwords":
+        print(" ")
+        print("\033[96mPassword Menu")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mSteganography Cracker, Hash Cracker, Password Lists, User Specific Password Generators, +":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        forbidden()
+    elif choice == "DataBreach":
+        print(" ")
+        print("\033[96mLeaked Data Menu")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mPassPwnd Checker, Breached Credential Bots, LeakSeek, +":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        forbidden()
+    elif choice == "The Text Files":
+        print(" ")
+        print("\033[96mForbidden Knowledge of The Ancient Ones")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mBlackCircle, DoomsDay, Anarchists CookBook, Omnipotent, US Military, FireArms":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        forbidden()
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
@@ -1340,7 +1453,7 @@ def main_menu():
     header()
     print("       \033[91m1\033[0m) Usernames                 \033[91m4\033[0m) Frameworks            \033[91m7\033[0m) GEO-0sint               \033[91m10\033[0m) Passwords/Data Leaks/Forbidden Knowledge") 
     print("       \033[91m2\033[0m) Emails/Phone #'s          \033[91m5\033[0m) Unclassified          \033[91m8\033[0m) DeadMan Switch          \033[91m11\033[0m) MULTI-MODE\033[0m")
-    print("       \033[91m3\033[0m) Networks                  \033[91m6\033[0m) Cameras               \033[91m9\033[0m) Tool Repo-Depo        👹\033[91m12\033[0m)\033[93m \033[41mDante's Inferno\033[0m")
+    print("       \033[91m3\033[0m) Networks                  \033[91m6\033[0m) Cameras               \033[91m9\033[0m) Tool Repo-Depo          👹\033[91m12\033[0m)\033[93m \033[41mDante's Inferno\033[0m")
     print("                                                      \033[91m666\033[0m) \033[41mRun Like HELL!\033[0m ")
     choice = input("\033[97mSelect an option: ")
 
@@ -1387,6 +1500,9 @@ def main_menu():
         what_now()
         clear_screen()
         ascii_banner()
+        main_menu()
+    elif choice == "Split":
+        split()
         main_menu()
     else:
         print("\033[91m INVALID SELECTION\033[0m")
