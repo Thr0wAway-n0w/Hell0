@@ -21,14 +21,13 @@ def yeep():
     os.system('sudo apt install gnome-terminal-data')
     os.system('pip3 install requests')
     os.system('pip3 install pexpect')
-    os.system('pip3 install pipx') 
+    os.system('sudo apt install pipx') 
     os.system('pip3 install aiohttp')
     os.system('pip3 install xterm')   
 import os
 os.system("pip3 install reportlab")
 os.system("git fetch")
 os.system("git pull")
-import reportlab
 import subprocess
 import re
 os.system('pip3 install termcolor')
@@ -42,6 +41,7 @@ import time
 os.system("pip3 install asyncio")
 import asyncio
 os.system('pip3 install tk')   
+import reportlab
 
 def header():
     print("\033[92m☠\033[91m----------------------------------------------------\033[0mWelcome To \033[31mHELL\033[0m.\033[92m0\033[0m\033[91m-----------------------------------------------------------------\033[92m☠\033[0m")
