@@ -511,7 +511,7 @@ def geo_menu():
     print(colored("Geo-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01)    
     header()
-    print("                      \033[92m1\033[0m) ZipCodes")
+    print("                      \033[93m1\033[0m) ZipCodes")
     footer()
     option = input("> ")
     if option == "1":
@@ -642,7 +642,7 @@ def multi_menu():
     print(" ")
     print("  👹\033[92m3\033[0m)\033[91m ×͜× \033[97mDDoS Playground\033[91m ×͜× \033[95mOR\033[92m 3.0\033[0m GO \033[41mGORILLA MONSOON MODE\033[0m")   
     print(" ")
-    print("    \033[91m4)\033[40m Run\033[0m")
+    print("    \033[93m4)\033[40m Run\033[0m")
     choice = input(">  ")
     
     if choice == "1":
@@ -848,8 +848,8 @@ def what_now():
     time.sleep(.01)     
     print
     print(" ")
-    print("\033[91m1)\033[0m Go Back to \033[41mHell\033[0m")
-    print("\033[91m2) \033[31mGAHHH! IT BURNS!!!\033[0m")
+    print("\033[93m1\033[0m)\033[0m Go Back to \033[41mHell\033[0m")
+    print("\033[93m2\033[0m) \033[31mGAHHH! IT BURNS!!!\033[0m")
     choice = input("YOU CHOOSE: ")
 
     if choice == "1":
@@ -912,12 +912,12 @@ def weelan():
     ascii_banner()
     print(colored("PICK YOUR POISON", 'red', attrs=['reverse', 'blink', 'bold'])) 
     header()
-    print("\033[91m1\033[0m) Handshake\033[95m")
-    print("\033[91m2\033[0m) PKMID\033[95m")
-    print("\033[91m3\033[0m) AAuth\033[95m")
-    print("\033[91m4\033[0m) DAuth\033[95m")
-    print("\033[91m5\033[0m) BFlood\033[95m")
-    print("\033[91m6\033[0m) ETwin\033[95m")
+    print("\033[93m1\033[0m) Handshake\033[95m")
+    print("\033[93m2\033[0m) PKMID\033[95m")
+    print("\033[93m3\033[0m) AAuth\033[95m")
+    print("\033[93m4\033[0m) DAuth\033[95m")
+    print("\033[93m5\033[0m) BFlood\033[95m")
+    print("\033[93m6\033[0m) ETwin\033[95m")
     print(" ")    
     print(colored("Remember, All Required Information Can Be Found In Top Window", 'yellow', attrs=['reverse', 'blink']))    
     time.sleep(3)
@@ -1077,7 +1077,7 @@ def steg():
     ascii_banner()
     print(colored("Crack Stegofile", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("             \033[91m1\033[0m) Seed                                                                      \033[91m2\033[0m) Crack          ") 
+    print("             \033[93m1\033[0m) Seed                                                                      \033[93m2\033[0m) Crack          ") 
     footer()
     choice = input("Select Option: ")
     if choice == "1":
@@ -1134,8 +1134,8 @@ def passw():
     ascii_banner()            
     print(colored("PASSWORDS", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("             \033[91m1\033[0m) Pwnd                        \033[91m2\033[0m) HashBreak                      \033[91m3\033[0m) SecLists                      \033[91m4\033[0m) Cupp                            ") 
-    print("             \033[91m5\033[0m) StegSeek \033[0m ")
+    print("             \033[93m1\033[0m) Pwnd                        \033[93m2\033[0m) HashBreak                      \033[93m3\033[0m) SecLists                      \033[93m4\033[0m) Cupp                            ") 
+    print("             \033[93m5\033[0m) StegSeek \033[0m ")
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
@@ -1230,9 +1230,9 @@ def tfiles():
     ascii_banner()            
     print(colored("FORBIDDEN KNOWLEDGE", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("             \033[91m1\033[0m) Anarchist Cookbook             \033[91m2\033[0m) Black Circle             \033[91m3\033[0m) DoomsDay             \033[91m4\033[0m) Omnipotent Inc.                                   ") 
+    print("             \033[93m1\033[0m) Anarchist Cookbook             \033[93m2\033[0m) Black Circle             \033[93m3\033[0m) DoomsDay             \033[93m4\033[0m) Omnipotent Inc.                                   ") 
     print(" ")
-    print("                            \033[91m5\033[95m) Firearm Manuals                               \033[91m6\033[95m) US Military Manuals")                                                                        
+    print("                            \033[93m5\033[95m) Firearm Manuals                               \033[93m6\033[95m) US Military Manuals")                                                                        
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
@@ -1354,7 +1354,7 @@ def breach():
     ascii_banner()            
     print(colored("DATA BREACH DATA", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("                      \033[91m1\033[0m) Bots                                                               \033[91m2\033[0m) LeakSeek          ") 
+    print("                      \033[93m1\033[0m) Bots                                                               \033[93m2\033[0m) LeakSeek          ") 
     footer()
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
@@ -1400,7 +1400,7 @@ def forbidden():
     ascii_banner()            
     print(colored("PASSWORDS/DATA LEAKS/FORBIDDEN KNOWLEDGE", 'red', attrs=['reverse', 'bold']))     
     header()
-    print("                      \033[91m1\033[0m) Passwords                      \033[91m2\033[0m) DataBreach                     \033[91m3\033[0m) The Text Files          ") 
+    print("                      \033[93m1\033[0m) Passwords                      \033[93m2\033[0m) DataBreach                     \033[93m3\033[0m) The Text Files          ") 
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
@@ -1451,9 +1451,9 @@ def main_menu():
     clear_screen()
     ascii_banner()            
     header()
-    print("       \033[91m1\033[0m) Usernames                 \033[91m4\033[0m) Frameworks            \033[91m7\033[0m) GEO-0sint               \033[91m10\033[0m) Passwords/Data Leaks/Forbidden Knowledge") 
-    print("       \033[91m2\033[0m) Emails/Phone #'s          \033[91m5\033[0m) Unclassified          \033[91m8\033[0m) DeadMan Switch          \033[91m11\033[0m) MULTI-MODE\033[0m")
-    print("       \033[91m3\033[0m) Networks                  \033[91m6\033[0m) Cameras               \033[91m9\033[0m) Tool Repo-Depo          👹\033[91m12\033[0m)\033[93m \033[41mDante's Inferno\033[0m")
+    print("       \033[93m1\033[0m) Usernames                 \033[93m4\033[0m) Frameworks            \033[93m7\033[0m) GEO-0sint               \033[93m10\033[0m) Passwords/Data Leaks/Forbidden Knowledge") 
+    print("       \033[93m2\033[0m) Emails/Phone #'s          \033[93m5\033[0m) Unclassified          \033[93m8\033[0m) DeadMan Switch          \033[93m11\033[0m) MULTI-MODE\033[0m")
+    print("       \033[93m3\033[0m) Networks                  \033[93m6\033[0m) Cameras               \033[93m9\033[0m) Tool Repo-Depo          👹\033[93m12\033[0m)\033[93m \033[41mDante's Inferno\033[0m")
     print("                                                      \033[91m666\033[0m) \033[41mRun Like HELL!\033[0m ")
     choice = input("\033[97mSelect an option: ")
 
@@ -1583,6 +1583,25 @@ def again4():
         change()
         menu()
 
+def again5():
+    clear_screen()
+    print("ENTER USERNAME")
+    user = input("Username: ")
+    subprocess.run(["go", "run", ".", "detect", "-n", user])
+    while True:
+        print("\033[93m1\033[0m) New Search")
+        print("\033[93m2\033[0m) Username Menu")
+        option = input("Action: ")
+        if option == '1':
+            clear_screen()
+            again5()
+        elif option == '2':
+            menu()
+        else:
+            print("\033[91m INVALID SELECTION\033[0m")
+            time.sleep(1)
+            menu()
+
 def menu():
     change()  
     clear_screen()    
@@ -1596,7 +1615,8 @@ def menu():
         print(colored("USERNAME-0SINT", 'red', attrs=['reverse', 'blink', 'bold']))
         time.sleep(.01) 
         header()
-        print("       \033[91m1\033[0m) Maigret                 \033[91m2\033[0m) Slash                                  \033[91m3\033[0m) Sherlock                 \033[91m4\033[0m) AliaStorm")
+        print("       \033[93m1\033[0m) Maigret \033[91mCURRENTLY UNAVAILABLE             \033[93m2\033[0m) Slash                   \033[93m3\033[0m) Sherlock                 \033[93m4\033[0m) AliaStorm")
+        print("       \033[93m5\033[0m) DetectDee                                 \033[93m6\033[0m) Social Analyzer \033[92+")
         footer()
         choice = input("\033[0mSelect an option: ")      
         if choice == '1':
@@ -1611,9 +1631,9 @@ def menu():
             loop = asyncio.get_event_loop()
             loop.run_until_complete(main(username))
             while True:
-                print("\033[91m1\033[0m) New Search")
-                print("\033[91m2\033[0m) View Reports")
-                print("\033[91m3\033[0m) Username Menu")
+                print("\033[93m1\033[0m) New Search")
+                print("\033[93m2\033[0m) View Reports")
+                print("\033[93m3\033[0m) Username Menu")
                 option = input("Action: ")
                 if option == '1':
                     clear_screen()
@@ -1643,8 +1663,8 @@ def menu():
             choice = input("Enter a User or Email to search: ")
             subprocess.run(['python', 'slash.py', choice])
             while True:
-                print("\033[91m1\033[0m) New Search")
-                print("\033[91m2\033[0m) Username Menu")
+                print("\033[93m1\033[0m) New Search")
+                print("\033[93m2\033[0m) Username Menu")
                 option = input("Action: ")
                 if option == '1':
                     clear_screen()
@@ -1661,8 +1681,8 @@ def menu():
             choice = input("Enter a Username to search: ")          
             subprocess.run(['pipx', 'run', 'sherlock-project', '--nsfw', choice])
             while True:
-                print("\033[91m1\033[0m) New Search")
-                print("\033[91m2\033[0m) Username Menu")
+                print("\033[93m1\033[0m) New Search")
+                print("\033[93m2\033[0m) Username Menu")
                 option = input("Action: ")
                 if option == '1':
                     clear_screen()
@@ -1678,8 +1698,8 @@ def menu():
             username = input("Input User to Search: ")
             subprocess.run(["python3", "aliastorm.py", username])
             while True:
-                print("\033[91m1\033[0m) New Search")
-                print("\033[91m2\033[0m) Username Menu")
+                print("\033[93m1\033[0m) New Search")
+                print("\033[93m2\033[0m) Username Menu")
                 option = input("Action: ")
                 if option == '1':
                     clear_screen()
@@ -1690,6 +1710,44 @@ def menu():
                     print("\033[91m INVALID SELECTION\033[0m")
                     time.sleep(1)
                     menu()
+        elif choice == "5":
+            change()
+            os.system("git clone https://github.com/piaolin/DetectDee.git")
+            os.chdir("DetectDee")
+            os.system("go mod tidy")
+            clear_screen()
+            print("ENTER USERNAME")
+            user = input("Username: ")
+            subprocess.run(["go", "run", ".", "detect", "-n", user])
+            while True:
+                print("\033[93m1\033[0m) New Search")
+                print("\033[93m2\033[0m) Username Menu")
+                option = input("Action: ")
+                if option == '1':
+                    clear_screen()
+                    again5()
+                elif option == '2':
+                    menu()
+                else:
+                    print("\033[91m INVALID SELECTION\033[0m")
+                    time.sleep(1)
+                    menu()
+        elif choice == "6":
+            change()
+            os.system("sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common")
+            os.system("sudo add-apt-repository ppa:mozillateam/ppa -y")
+            os.system("sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm")
+            os.system("git clone https://github.com/qeeqbox/social-analyzer.git")
+            os.chdir("social-analyzer")
+            os.system("npm update")
+            os.system("npm install")
+            os.system("npm install loadash")
+            clear_screen()
+            print(colored("REFRESH WEB BROWSER PAGE TO START", 'red', attrs=['reverse', 'blink', 'bold']))            
+            time.sleep(2)
+            webbrowser.open("http://localhost:9005/app.html")            
+            os.system("npm start")
+            what_now()
         elif choice == "BACK":
             main_menu()
         elif choice == "HELL":
@@ -1734,6 +1792,26 @@ def menu():
                 time.sleep(.04)  
             time.sleep(3)
             menu()                   
+        elif choice == "DetectDee":
+            print(" ")
+            print("\033[96mDetectDee")
+            print(" ")
+            print("", end="", flush=True) 
+            for char in " \033[92mUsername search across 600 websites":
+                print(char, end="", flush=True) 
+                time.sleep(.04)  
+            time.sleep(3)
+            menu()
+        elif choice == "Social Analyzer":
+            print(" ")
+            print("\033[96mWeb UI")
+            print(" ")
+            print("", end="", flush=True) 
+            for char in " \033[92mOne of my personal Favorites. Utilized by some Law Enforement Agencies":
+                print(char, end="", flush=True) 
+                time.sleep(.04)  
+            time.sleep(3)
+            menu()        
         else:
             print("\033[91m INVALID SELECTION\033[0m")
             time.sleep(1)
@@ -1785,7 +1863,7 @@ def emails_menu():
     ascii_banner()    
     print(colored("EMAIL / PHONE 0SINT", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("                \033[91m1\033[0m)\033[97m EMAIL                                                                     \033[0m \033[91m2\033[0m)\033[97m PHONE ")
+    print("                \033[93m1\033[0m)\033[97m EMAIL                                                                     \033[0m \033[93m2\033[0m)\033[97m PHONE ")
     footer()
     choice = input("\033[0mSelect an option: ")
 
@@ -1810,7 +1888,7 @@ def emails_menu():
         clear_screen()
         ascii_banner()
         header()
-        print("\033[91m1\033[0m) Land Line                                                                \033[91m2\033[0m) Cell Phone")
+        print("\033[93m1\033[0m) Land Line                                                                \033[93m2\033[0m) Cell Phone")
         footer()
         choice = input("Select an option: ")
         if choice == "1":
@@ -1909,8 +1987,8 @@ def lynis_sys():
     clear_screen()
     ascii_banner()
     print("Selection:")
-    print("\033[91m1\033[0m) System Audit")
-    print("\033[91m2\033[0m) GO-BACK")
+    print("\033[93m1\033[0m) System Audit")
+    print("\033[93m2\033[0m) GO-BACK")
     choice = input("Enter your choice: ")
 
     if choice == '1':
@@ -1951,7 +2029,7 @@ def social():
     JIGSAW()
     print(colored("SOCIAL MEDIA", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("                      \033[91m1\033[0m) TikTokBots                                                                     \033[91m2\033[0m) InstaSham                   ")                                
+    print("                      \033[93m1\033[0m) TikTokBots                                                                     \033[93m2\033[0m) InstaSham                   ")                                
     footer()
     choice = input('Take Your Pick: ')
     if choice == "1":
@@ -1995,7 +2073,7 @@ def jigsaw():
     JIGSAW()
     print(colored("PUPPET MASTER MENU", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("                      \033[91m1\033[0m) Details                     \033[91m2\033[0m) Social Media                     \033[91m3\033[0m) DeepFakes          ") 
+    print("                      \033[93m1\033[0m) Details                     \033[93m2\033[0m) Social Media                     \033[93m3\033[0m) DeepFakes          ") 
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
@@ -2062,7 +2140,7 @@ def unclassified_menu():
     print(colored("Unclassified-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("                  \033[91m1\033[0m) WebHound                             \033[91m2\033[0m) Ominis-Osint                             \033[91m3\033[0m) SockPuppet")  
+    print("                  \033[93m1\033[0m) WebHound                             \033[93m2\033[0m) Ominis-Osint                             \033[93m3\033[0m) SockPuppet")  
     footer()
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
@@ -2226,9 +2304,9 @@ def kaboom():
     ascii_kaboom()
     print(colored("OFFENSIVE TOOLS", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("              👹\033[91m1\033[0m) DRipper                            👹\033[91m2\033[0m) UFONET                              👹\033[91m3\033[0m) Karma")
-    print("              👹\033[91m4\033[0m) WiDie                              👹\033[91m5\033[0m) Sql-Map                             👣\033[91m6\033[0m) LinkMask ")
-    print("              👹\033[91m7\033[0m) KickThemOut")
+    print("              👹\033[93m1\033[0m) DRipper                            👹\033[93m2\033[0m) UFONET                              👹\033[93m3\033[0m) Karma")
+    print("              👹\033[93m4\033[0m) WiDie                              👹\033[93m5\033[0m) Sql-Map                             👣\033[93m6\033[0m) LinkMask ")
+    print("              👹\033[93m7\033[0m) KickThemOut")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2389,9 +2467,9 @@ def networks_menu():
     ascii_banner()
     print(colored("Networks-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("                \033[91m1\033[0m) CyberMap                             \033[91m4\033[0m) IP-Lookup                             \033[91m7\033[0m) ProxyScrape")
-    print("                \033[91m2\033[0m) Sys Info                             \033[91m5\033[0m) PortScan                              \033[91m8\033[0m) WiFi")
-    print("                \033[91m3\033[0m) Lynis                                \033[91m6\033[0m) Simba                                 \033[91m9\033[0m) SubDomains")
+    print("                \033[93m1\033[0m) CyberMap                             \033[93m4\033[0m) IP-Lookup                             \033[93m7\033[0m) ProxyScrape")
+    print("                \033[93m2\033[0m) Sys Info                             \033[93m5\033[0m) PortScan                              \033[93m8\033[0m) WiFi")
+    print("                \033[93m3\033[0m) Lynis                                \033[93m6\033[0m) Simba                                 \033[93m9\033[0m) SubDomains")
     print(" ")
     footer()
     choice = input("\033[0mSelect an option: ")
@@ -2684,7 +2762,7 @@ def frameworks_menu():
     print(colored("Frameworks-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("                  \033[91m1\033[0m) Maryam                             \033[91m2\033[0m) Mr.Holmes                             \033[91m3\033[0m) Coeus")
+    print("                  \033[93m1\033[0m) Maryam                             \033[93m2\033[0m) Mr.Holmes                             \033[93m3\033[0m) Coeus")
     footer()
     choice = input("\033[0mSelect an option: ")
 
@@ -2784,8 +2862,8 @@ def cameras_menu():
     print(colored("Traffic-Cam Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("\033[91m1\033[0m) \033[91mU\033[97mS\033[94mA\033[0m")
-    print("\033[91m2\033[0m) UK")
+    print("\033[93m1\033[0m) \033[91mU\033[97mS\033[94mA\033[0m")
+    print("\033[93m2\033[0m) UK")
     footer()
     choice = input("Select an option: ")
 
@@ -2887,8 +2965,8 @@ def uk_menu():
     print(colored("UK Sub-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01)    
     header()
-    print("\033[91m1\033[0m) London")
-    print("\033[91m2)\033[40m Run\033[0m")
+    print("\033[93m1\033[0m) London")
+    print("\033[93m2)\033[40m Run\033[0m")
     choice = input("Select an option: ")
 
     if choice == "1":
