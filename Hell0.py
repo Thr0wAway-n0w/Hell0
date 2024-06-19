@@ -28,6 +28,7 @@ import os
 os.system("pip3 install reportlab")
 os.system("git fetch")
 os.system("git pull")
+os.system("sudo apt install npm")
 import subprocess
 import re
 os.system('pip3 install termcolor')
