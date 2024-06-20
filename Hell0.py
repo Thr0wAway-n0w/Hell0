@@ -257,7 +257,7 @@ def JIGSAW():
     
 def ascii_kaboom():
     try:
-        my_art = AsciiArt.from_url('https://www.shutterstock.com/image-vector/danger-symbol-skull-image-vector-260nw-1958629585.jpg')      
+        my_art = AsciiArt.from_url('https://render.fineartamerica.com/images/rendered/search/print/6/8/break/images/artworkimages/medium/1/royal-skull-nicklas-gustafsson.jpg')      
     except OSError as e:
         print(f'Could not load the image')
     my_art.to_terminal()
@@ -1452,8 +1452,8 @@ def main_menu():
     clear_screen()
     ascii_banner()            
     header()
-    print("       \033[93m1\033[0m) Usernames                 \033[93m4\033[0m) Frameworks            \033[93m7\033[0m) GEO-0sint               \033[93m10\033[0m) Passwords/Data Leaks/Forbidden Knowledge") 
-    print("       \033[93m2\033[0m) Emails/Phone #'s          \033[93m5\033[0m) Unclassified          \033[93m8\033[0m) DeadMan Switch          \033[93m11\033[0m) MULTI-MODE\033[0m")
+    print("       \033[93m1\033[0m) Usernames                 \033[93m4\033[0m) Frameworks            \033[93m7\033[0m) GEO-0sint               \033[93m10\033[0m) Passwor\033[90md\033[0ms/Data Leaks/F\033[90mo\033[0mrbidde\033[90mn\033[0m Knowled\033[90mg\033[0me") 
+    print("       \033[93m2\033[0m) Emai\033[90ml\033[0ms/Phon\033[90me\033[0m #'s          \033[93m5\033[0m) Unclassified          \033[93m8\033[0m) DeadMan Switch          \033[93m11\033[0m) MULTI-MODE\033[0m")
     print("       \033[93m3\033[0m) Networks                  \033[93m6\033[0m) Cameras               \033[93m9\033[0m) Tool Repo-Depo          👹\033[93m12\033[0m)\033[93m \033[41mDante's Inferno\033[0m")
     print("                                                      \033[91m666\033[0m) \033[41mRun Like HELL!\033[0m ")
     choice = input("\033[97mSelect an option: ")
@@ -1602,7 +1602,26 @@ def again5():
             print("\033[91m INVALID SELECTION\033[0m")
             time.sleep(1)
             menu()
-
+            
+def again7():
+    clear_screen()
+    print("ENTER USERNAME")
+    user = input("Username: ")
+    subprocess.run(["python3", "sagemode.py", "-U", user])
+    while True:
+        print("\033[93m1\033[0m) New Search")
+        print("\033[93m2\033[0m) Username Menu")
+        option = input("Action: ")
+        if option == '1':
+            clear_screen()
+            again7()
+        elif option == '2':
+            menu()
+        else:
+            print("\033[91m INVALID SELECTION\033[0m")
+            time.sleep(1)
+            menu()
+            
 def menu():
     change()  
     clear_screen()    
@@ -1616,8 +1635,8 @@ def menu():
         print(colored("USERNAME-0SINT", 'red', attrs=['reverse', 'blink', 'bold']))
         time.sleep(.01) 
         header()
-        print("       \033[93m1\033[0m) Maigret \033[91mCURRENTLY UNAVAILABLE             \033[93m2\033[0m) Slash                   \033[93m3\033[0m) Sherlock                 \033[93m4\033[0m) AliaStorm")
-        print("       \033[93m5\033[0m) DetectDee                                 \033[93m6\033[0m) Social Analyzer \033[92+")
+        print("       \033[93m1\033[0m) Maigret \033[91mCURRENTLY UNAVAILABLE          \033[93m2\033[0m) Slash                      \033[93m3\033[0m) Sherlock                 \033[93m4\033[0m) AliaStorm")
+        print("       \033[93m5\033[0m) DetectDee                              \033[93m6\033[0m) Social Analyzer \033[92+           \033[93m7\033[0m) SageMode")
         footer()
         choice = input("\033[0mSelect an option: ")      
         if choice == '1':
@@ -1749,6 +1768,28 @@ def menu():
             webbrowser.open("http://localhost:9005/app.html")            
             os.system("npm start")
             what_now()
+        elif choice == "7":
+            change()
+            os.system("git clone https://github.com/senran101604/sagemode")
+            os.chdir("sagemode")
+            os.system("python3 -m pip install -r requirements.txt")
+            clear_screen()
+            print("ENTER USERNAME")
+            user = input("Username: ")
+            subprocess.run(["python3", "sagemode.py", "-U", user])
+            while True:
+                print("\033[93m1\033[0m) New Search")
+                print("\033[93m2\033[0m) Username Menu")
+                option = input("Action: ")
+                if option == '1':
+                    clear_screen()
+                    again7()
+                elif option == '2':
+                    menu()
+                else:
+                    print("\033[91m INVALID SELECTION\033[0m")
+                    time.sleep(1)
+                    menu()        
         elif choice == "BACK":
             main_menu()
         elif choice == "HELL":
@@ -1809,6 +1850,16 @@ def menu():
             print(" ")
             print("", end="", flush=True) 
             for char in " \033[92mOne of my personal Favorites. Utilized by some Law Enforement Agencies":
+                print(char, end="", flush=True) 
+                time.sleep(.04)  
+            time.sleep(3)
+            menu()        
+        elif choice == "SageMode":
+            print(" ")
+            print("\033[96mSage Mode")
+            print(" ")
+            print("", end="", flush=True) 
+            for char in " \033[92mFast and Accurate, but list is significantly less. A Quality over Quantity Scanner":
                 print(char, end="", flush=True) 
                 time.sleep(.04)  
             time.sleep(3)
@@ -2305,9 +2356,9 @@ def kaboom():
     ascii_kaboom()
     print(colored("OFFENSIVE TOOLS", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("              👹\033[93m1\033[0m) DRipper                            👹\033[93m2\033[0m) UFONET                              👹\033[93m3\033[0m) Karma")
-    print("              👹\033[93m4\033[0m) WiDie                              👹\033[93m5\033[0m) Sql-Map                             👣\033[93m6\033[0m) LinkMask ")
-    print("              👹\033[93m7\033[0m) KickThemOut")
+    print("                  👹\033[93m1\033[0m) DRipper                        👹\033[93m2\033[0m) UFONET \033[91mCURRENTLY UNAVAILABLE        👹\033[93m3\033[0m) Karma")
+    print("                  👹\033[93m4\033[0m) WiDie                          👹\033[93m5\033[0m) Sql-Map                             👣\033[93m6\033[0m) LinkMask ")
+    print("                  👹\033[93m7\033[0m) KickThemOut")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
