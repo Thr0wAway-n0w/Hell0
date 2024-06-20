@@ -1131,12 +1131,13 @@ def steg():
         steg() 
 
 def passw():
+    change()
     clear_screen()
     ascii_banner()            
     print(colored("PASSWORDS", 'red', attrs=['reverse', 'bold']))     
     header()
     print("             \033[93m1\033[0m) Pwnd                        \033[93m2\033[0m) HashBreak                      \033[93m3\033[0m) SecLists                      \033[93m4\033[0m) Cupp                            ") 
-    print("             \033[93m5\033[0m) StegSeek \033[0m ")
+    print("             \033[93m5\033[0m) StegSeek                    \033[93m6\033[0m) de Bruijn")
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
@@ -1161,9 +1162,39 @@ def passw():
         os.system("git clone https://github.com/TechnicalHeadquarter/cupp.git")
         os.chdir("cupp")
         os.system("python3 cupp.py -i")
+        what_now()
     elif choice == "5":
         change()
         steg()
+    elif choice == "6":
+        change()
+        clear_screen()
+        ascii_banner()
+        header()
+        print("\033[93m1\033[0m) List Sequence one Digit at a time                                                                  \033[93m2\033[0m) List de Bruijn in Groups of 5")
+        footer()
+        choice = input("Selection: ")
+        if choice == "1":
+            os.system("git clone https://github.com/Thr0wAway-n0w/deBruijn1.git")
+            os.chdir("deBruijn1")
+            os.system("python3 car.py")
+            what_now()
+        elif choice == "2":
+            os.system("git clone https://github.com/Thr0wAway-n0w/deBruijn2.git")
+            os.chdir("deBruijn2")
+            os.system("python3 cars.py")
+            what_now()   
+        elif choice == "BACK":
+            clear_screen()
+            passw()
+        elif choice == "HELL":
+            main_menu()
+        else:
+            print("\033[91m INVALID SELECTION\033[0m")
+            time.sleep(1)
+            clear_screen()
+            ascii_banner()
+            passw()    
     elif choice == "StegSeek":
         print(" ")
         print("\033[96mSteg Cracker")
@@ -1202,7 +1233,7 @@ def passw():
         print("", end="", flush=True) 
         for char in " \033[92mRepo for Password Lists, Payloads and various other Goodies":
             print(char, end="", flush=True) 
-            time.sleep(.04)  
+            time.sleep(.04)      
         time.sleep(3)
         passw()      
     elif choice == "Cupp":
@@ -1214,7 +1245,17 @@ def passw():
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
-        passw()     
+        passw()
+    elif choice == "de Bruijn":
+        print(" ")
+        print("\033[96m de Bruijn Sequence")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[92mThis is the shortest sequence of numbers needed to press to Unlock Any Vehicle with a KeyPad. Most of the time I've seen it work in less than a minute. Quickest Possible-5 Seconds; Longest-17 minutes":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        passw()   
     elif choice == "BACK":
         forbidden()
     elif choice == "HELL":
@@ -1449,6 +1490,7 @@ def forbidden():
         time.sleep(1)
         forbidden() 
 def main_menu():
+    change()
     clear_screen()
     ascii_banner()            
     header()
@@ -2350,6 +2392,26 @@ def kicker():
     os.system("sudo -H pip3 install -r requirements.txt")
     kicks()
 
+def cat1():
+    clear_screen()
+    print("Enter Exploit Query \033[94mexample: \033[92mGmail\033[94m, \033[92mCookies\033[94m, \033[92mtelerik\033[94m etc.")
+    print(" ")
+    expl = input("Query: ")
+    subprocess.run(["python3", "sicat.py", "-k", expl, "--exploitdb", "--msfmodule", "--exploitalert", "--packetstorm"])
+    while True:
+        print("\033[93m1\033[0m) New Search")
+        print("\033[93m2\033[0m) Dante's Inferno")
+        option = input("Action: ")
+        if option == '1':
+            clear_screen()
+            cat1()
+        elif option == '2':
+            kaboom()
+        else:
+            print("\033[91m INVALID SELECTION\033[0m")
+            time.sleep(1)
+            kaboom()  
+
 def kaboom():
     change()
     clear_screen()
@@ -2358,7 +2420,7 @@ def kaboom():
     header()
     print("                  👹\033[93m1\033[0m) DRipper                        👹\033[93m2\033[0m) UFONET \033[91mCURRENTLY UNAVAILABLE        👹\033[93m3\033[0m) Karma")
     print("                  👹\033[93m4\033[0m) WiDie                          👹\033[93m5\033[0m) Sql-Map                             👣\033[93m6\033[0m) LinkMask ")
-    print("                  👹\033[93m7\033[0m) KickThemOut")
+    print("                  👹\033[93m7\033[0m) KickThemOut                    \033[93m8\033[0m) Sicat")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2503,6 +2565,23 @@ def kaboom():
             time.sleep(.04)  
         time.sleep(3)
         kaboom()         
+    elif choice == "8":
+        change()
+        clear_screen()
+        os.system("git clone https://github.com/justakazh/sicat.git")
+        os.chdir("sicat")
+        os.system("python3 -m pip install -r requirements.txt")
+        cat1()
+    elif choice == "Sicat":
+        print(" ")
+        print("\033[96mExploit/Vulnerability Finder")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mSiCat by justakazh is an exploit search tool designed to identify and gather information about exploits":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()             
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
@@ -2814,11 +2893,12 @@ def frameworks_menu():
     print(colored("Frameworks-Menu", 'red', attrs=['reverse', 'blink', 'bold']))
     time.sleep(.01) 
     header()
-    print("                  \033[93m1\033[0m) Maryam                             \033[93m2\033[0m) Mr.Holmes                             \033[93m3\033[0m) Coeus")
+    print("                  \033[93m1\033[0m) Maryam                             \033[93m2\033[0m) Mr.Holmes                             \033[93m3\033[0m) Odinova Tiger")
     footer()
     choice = input("\033[0mSelect an option: ")
 
     if choice == '1':
+        change()
         install_command = "pip install git+https://github.com/saeeddhqan/maryam.git"
         os.system(install_command)
         run_command = "maryam -s"
@@ -2826,6 +2906,7 @@ def frameworks_menu():
         show_command = "show modules"
         what_now()
     elif choice == '2':
+        change()
         clone_command = "git clone https://github.com/Lucksi/Mr.Holmes"
         os.system(clone_command)
         update_command = "sudo apt-get update"
@@ -2847,12 +2928,13 @@ def frameworks_menu():
         os.system(run_script_command) 
         what_now()   
     elif choice == "3":
+        change()
         clear_screen()
         ascii_banner
         print(colored("CLONING REPO...", 'red', attrs=['reverse', 'blink', 'bold']))
         header()
-        subprocess.run(["git", "clone", "https://github.com/AnonCatalyst/Coeus-Framework.git"])
-        os.chdir("Coeus-Framework")
+        subprocess.run(["git", "clone", "https://github.com/AnonCatalyst/Odinova.git"])
+        os.chdir("Odinova")
         os.system("git fetch")
         os.system("git pull")
         clear_screen()
@@ -2860,12 +2942,11 @@ def frameworks_menu():
         print(colored("INSTALLING DEPENDENCIES...", 'red', attrs=['reverse', 'blink', 'bold']))
         header()
         os.system("python3 -m pip install -r requirements.txt")
-        clear_screen()
-        ascii_banner()
-        print(colored("Refresh Browser If Required...", 'red', attrs=['reverse', 'blink', 'bold']))       
-        header()
-        webbrowser.open("http://127.0.0.1:5000")        
-        os.system("python3 webui.py")
+        os.system("sudo chmod +x install_tools.sh")
+        os.system("sudo bash ./install_tools.sh")
+        os.system("python3 -m pip install getrails")
+        os.system("python3 -m pip install pydork")
+        os.system("python3 odinova.py")
         what_now()
     elif choice == "Maryam":
         print(" ")
@@ -2887,12 +2968,12 @@ def frameworks_menu():
             time.sleep(.04)  
         time.sleep(3)
         frameworks_menu() 
-    elif choice == "Coeus":
+    elif choice == "Odinova Tiger":
         print(" ")
-        print("\033[96mCoeus")
+        print("\033[96mTiger Beta")
         print(" ")
         print("", end="", flush=True) 
-        for char in " \033[92mJust a Web Interface/Repository of Online Resources":
+        for char in " \033[92mRevamp of previous Odinova Gui. Many additional features being implemented. Fine Work by AnonCatalyst":
             print(char, end="", flush=True) 
             time.sleep(.04)  
         time.sleep(3)
