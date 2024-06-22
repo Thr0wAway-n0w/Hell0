@@ -2364,6 +2364,24 @@ def cloak():
         clear_screen()
         cloak()
 
+def hguard():
+    os.system("python3 main.py")
+    print(" ")
+    print("1) New Search")
+    print("2) Go Back")
+    print("3) Main Menu")
+    choice = input("Select Option: ")
+    if choice == "1":
+       hguard()
+    elif choice == "2":
+        kaboom()
+    elif choice == "3":
+        main_menu()
+    else:
+        print("INVALID SELECTION")
+        clear_screen()
+        kaboom()
+
 def kaboom():
     change()
     clear_screen()
@@ -2372,8 +2390,8 @@ def kaboom():
     header()
     print("                  ♛ \033[93m1\033[0m) DRipper                        ♛ \033[93m2\033[0m) UFONET                   ♛ \033[93m3\033[0m) Karma")
     print("                  ♛ \033[93m4\033[0m) WiDie                          ♛ \033[93m5\033[0m) Sql-Map                  ♛ \033[93m6\033[0m) LinkMask ")
-    print("                  ♛ \033[93m7\033[0m) KickThemOut                    🪬\033[92m8\033[0m) Sicat                   ♛ \033[92m9\033[0m) CloakQuest3r")
-    print("                  ♛ \033[93m10\033[0m) MafiaHacks")
+    print("                  ♛ \033[93m7\033[0m) KickThemOut                    🪬\033[92m8\033[0m) Sicat                    🪬\033[92m9\033[0m) CloakQuest3r")
+    print("                  ♛ \033[93m10\033[0m) MafiaHacks                    🪬\033[93m11\033[0m) Hackguard")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2568,6 +2586,22 @@ def kaboom():
             time.sleep(.04)  
         time.sleep(3)
         kaboom()
+    elif choice == "11":
+        change()
+        os.system("git clone https://github.com/machine1337/hackguard.git")
+        os.chdir("hackguard")
+        os.system("python3 -m pip install -r requirements.txt")
+        hguard()
+    elif choice == "Hackguard":
+        print(" ")
+        print("\033[96mWeb Vulnerability Scanner")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mIndepth Scans, customized payloads option, very fast and effective. Really nice work by Machine1337":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()    
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
