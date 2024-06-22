@@ -1690,8 +1690,8 @@ def menu():
             time.sleep(2)
             async def main(username):
                 os.system(f'pipx run maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
-            loop = asyncio.get_event_loop()
-            loop.run_until_complete(main(username))
+                loop = asyncio.get_event_loop()
+                loop.run_until_complete(main(username))
             while True:
                 print("\033[93m1\033[0m) New Search")
                 print("\033[93m2\033[0m) View Reports")
@@ -1722,78 +1722,23 @@ def menu():
             clone_repo('https://github.com/theahmadov/slash.git', 'slash')
             os.system('pip install -r requirements.txt')
             clear_screen()
-            choice = input("Enter a User or Email to search: ")
-            subprocess.run(['python', 'slash.py', choice])
-            while True:
-                print("\033[93m1\033[0m) New Search")
-                print("\033[93m2\033[0m) Username Menu")
-                option = input("Action: ")
-                if option == '1':
-                    clear_screen()
-                    again3()
-                elif option == '2':
-                    menu()
-                else:
-                    print("\033[91m INVALID SELECTION\033[0m")
-                    time.sleep(1)
-                    menu()
+            again3()
         elif choice == '3':          
             os.system('pip3 install pipx')
             os.system('pipx install sherlock-project')
-            choice = input("Enter a Username to search: ")          
-            subprocess.run(['pipx', 'run', 'sherlock-project', '--nsfw', choice])
-            while True:
-                print("\033[93m1\033[0m) New Search")
-                print("\033[93m2\033[0m) Username Menu")
-                option = input("Action: ")
-                if option == '1':
-                    clear_screen()
-                    again2()
-                elif option == '2':
-                    menu()
-                else:
-                    menu()
+            again2()
         elif choice == '4':
             clone_repo('https://github.com/AnonCatalyst/AliaStorm.git', 'AliaStorm')
             subprocess.run(["pip3", "install", "-r", "requirements.txt", "--break-system-packages"])
             clear_screen()
-            username = input("Input User to Search: ")
-            subprocess.run(["python3", "aliastorm.py", username])
-            while True:
-                print("\033[93m1\033[0m) New Search")
-                print("\033[93m2\033[0m) Username Menu")
-                option = input("Action: ")
-                if option == '1':
-                    clear_screen()
-                    again4()
-                elif option == '2':
-                    menu()
-                else:
-                    print("\033[91m INVALID SELECTION\033[0m")
-                    time.sleep(1)
-                    menu()
+            again4()
         elif choice == "5":
             change()
             os.system("git clone https://github.com/piaolin/DetectDee.git")
             os.chdir("DetectDee")
             os.system("go mod tidy")
             clear_screen()
-            print("ENTER USERNAME")
-            user = input("Username: ")
-            subprocess.run(["go", "run", ".", "detect", "-n", user])
-            while True:
-                print("\033[93m1\033[0m) New Search")
-                print("\033[93m2\033[0m) Username Menu")
-                option = input("Action: ")
-                if option == '1':
-                    clear_screen()
-                    again5()
-                elif option == '2':
-                    menu()
-                else:
-                    print("\033[91m INVALID SELECTION\033[0m")
-                    time.sleep(1)
-                    menu()
+            again5()
         elif choice == "6":
             change()
             os.system("sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common")
@@ -1816,22 +1761,7 @@ def menu():
             os.chdir("sagemode")
             os.system("python3 -m pip install -r requirements.txt")
             clear_screen()
-            print("ENTER USERNAME")
-            user = input("Username: ")
-            subprocess.run(["python3", "sagemode.py", "-U", user])
-            while True:
-                print("\033[93m1\033[0m) New Search")
-                print("\033[93m2\033[0m) Username Menu")
-                option = input("Action: ")
-                if option == '1':
-                    clear_screen()
-                    again7()
-                elif option == '2':
-                    menu()
-                else:
-                    print("\033[91m INVALID SELECTION\033[0m")
-                    time.sleep(1)
-                    menu()        
+            again7()       
         elif choice == "BACK":
             main_menu()
         elif choice == "HELL":
@@ -1918,10 +1848,7 @@ def landlubber():
     os.system("git fetch")
     os.system("git pull")
     os.system("pip install -r requirements.txt")
-    os.system("git pull")
-    os.system("git fetch")
     clear_screen()
-
     print("Please Input Number \033[92m EXAMPLE 1112223333")
     choice = input("enter: ")
 
@@ -1931,25 +1858,30 @@ def landlubber():
         print(f"Error: {e}")
         what_now()
 
+def cell():
+    os.system("python3 num.py")
+    print(" ")
+    print("1) New Search")
+    print("2) Back")
+    print("3) Main Menu")
+    choice = input("Select: ")
+    if choice == "1":
+        cell()
+    elif choice == "2":
+        emails_menu()
+    elif choice == "3":
+        main_menu()
+    else:
+        print("INVALID SELECTION")
+        time.sleep(1)
+        clear_screen()
+        cell()
 
 def cellphone():
     clear_screen()
-    init()
-    api_url = "https://api.numlookupapi.com/v1/validate/"
-    api_key = "num_live_KitBuwvasNy0xZ6nLt8wXJPK930NDTfS0GSLaVIr"
-    print("\033[92mEXAMPLE NUMBER +19998887777\033[0m")
-    phone_number = input("Enter a cellphone number: ")
-    url = f"{api_url}{phone_number}?apikey={api_key}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        data = json.loads(response.text)
-        print(f"{json.dumps(data, indent=4)}")
-        for key, value in data.items():
-            print(f"{Fore.MAGENTA}{key} : {Fore.GREEN}{value}{Style.RESET_ALL}")
-        what_now()
-    else:
-        print(f"Error: {response.status_code}")
-        what_now()
+    os.system("git clone https://github.com/Thr0wAway-n0w/num.git")
+    os.chdir("num")
+    cell()
 
 def emails_menu():
     change()
@@ -1982,19 +1914,27 @@ def emails_menu():
         clear_screen()
         ascii_banner()
         header()
-        print("\033[93m1\033[0m) Land Line                                                                \033[93m2\033[0m) Cell Phone")
+        print("\033[93m1\033[0m) Land Line               \033[93m2\033[0m) Cell Phone                  \033[93m3\033[0m) NumChecker")
         footer()
         choice = input("Select an option: ")
         if choice == "1":
             landlubber()
         elif choice == "2":
             cellphone()
+        elif choice == "3":
+            clear_screen()
+            os.system("git clone https://github.com/machine1337/numverify.git")
+            os.chdir("numverify")
+            os.system("python3 num.py")
+            what_now()
         elif choice == "BACK":
             emails_menu()
         elif choice == "HELL":
             main_menu()
         else:
-            what_now()
+            print("\033[91m INVALID SELECTION\033[0m")
+            time.sleep(1)
+            emails_menu() 
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
@@ -2022,8 +1962,6 @@ def emails_menu():
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
-        ascii_banner()
         emails_menu()   
 
 def gitlab():
@@ -2080,6 +2018,7 @@ def lynis_sys():
     os.system("git pull")
     clear_screen()
     ascii_banner()
+    header()
     print("Selection:")
     print("\033[93m1\033[0m) System Audit")
     print("\033[93m2\033[0m) GO-BACK")
@@ -2094,8 +2033,6 @@ def lynis_sys():
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        clear_screen()
-        ascii_banner()
         change()     
         networks_menu()
         
@@ -2107,6 +2044,7 @@ def ip_lookup():
     subprocess.call(['python3', '-m', 'pip', 'install', 'flask'])
     subprocess.call(['python3', '-m', 'pip', 'install', 'ipapi'])
     os.system('python3 app.py')
+    what_now()
 
 def chop_chop():
     clear_screen()
@@ -2179,9 +2117,6 @@ def jigsaw():
         os.system("python3 main.py")
         time.sleep(3)
         os.system("nano output.json")
-        clear_screen()
-        ascii_banner()
-        change()
         jigsaw()
     elif choice == "2":
         social()
@@ -2266,12 +2201,10 @@ def unclassified_menu():
     elif choice == "3":
         jigsaw()
     elif choice == "HELL":
+        change()
         main_menu()
-        clear_screen()
-        ascii_banner()
-        what_now()
     elif choice == "BACK":
-        main_menu
+        main_menu()
     elif choice == "WebHound":
         print(" ")
         print("\033[96mWebHound")
@@ -2367,7 +2300,8 @@ def cyber():
     chmod_command = "sudo chmod +x cybermap/cybermap.sh"
     os.system(chmod_command) 
     bash_command = "bash cybermap/cybermap.sh"
-    os.system(bash_command) 
+    os.system(bash_command)
+    what_now()
 
 def ipp():
     print("example: www.TARGETSITE.com")
@@ -2403,7 +2337,6 @@ def cat1():
         print("\033[93m2\033[0m) Dante's Inferno")
         option = input("Action: ")
         if option == '1':
-            clear_screen()
             cat1()
         elif option == '2':
             kaboom()
@@ -2412,15 +2345,35 @@ def cat1():
             time.sleep(1)
             kaboom()  
 
+def cloak():
+    clear_screen()
+    print("Enter CloudFlare Protected Url")
+    ur = input("Url: ")
+    clear_screen
+    subprocess.run(["python3", "cloakquest3r.py", ur])
+    print("1) New Search")
+    print("2) Dante's Inferno")
+    choice = input("Selection: ")
+    if choice == "1":
+        cloak()
+    elif choice == "2":
+        kaboom()
+    else:
+        print("INVALID SELECTION")
+        time.sleep(1)
+        clear_screen()
+        cloak()
+
 def kaboom():
     change()
     clear_screen()
     ascii_kaboom()
     print(colored("OFFENSIVE TOOLS", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("                  👹\033[93m1\033[0m) DRipper                        👹\033[93m2\033[0m) UFONET \033[91mCURRENTLY UNAVAILABLE        👹\033[93m3\033[0m) Karma")
-    print("                  👹\033[93m4\033[0m) WiDie                          👹\033[93m5\033[0m) Sql-Map                             👣\033[93m6\033[0m) LinkMask ")
-    print("                  👹\033[93m7\033[0m) KickThemOut                    \033[93m8\033[0m) Sicat")
+    print("                  ♛ \033[93m1\033[0m) DRipper                        ♛ \033[93m2\033[0m) UFONET                   ♛ \033[93m3\033[0m) Karma")
+    print("                  ♛ \033[93m4\033[0m) WiDie                          ♛ \033[93m5\033[0m) Sql-Map                  ♛ \033[93m6\033[0m) LinkMask ")
+    print("                  ♛ \033[93m7\033[0m) KickThemOut                    🪬\033[92m8\033[0m) Sicat                   ♛ \033[92m9\033[0m) CloakQuest3r")
+    print("                  ♛ \033[93m10\033[0m) MafiaHacks")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2450,8 +2403,8 @@ def kaboom():
         change()
         clear_screen()
         ascii_kaboom()
-        os.system("git clone https://github.com/epsylon/ufonet.git")
-        os.chdir("ufonet")
+        os.system("git clone https://github.com/Thr0wAway-n0w/ufonetUpdated.git")
+        os.chdir("ufonetUpdated")
         os.system("git fetch")
         os.system("git pull")
         os.system("sudo apt install python3-pycurl")
@@ -2582,6 +2535,39 @@ def kaboom():
             time.sleep(.04)  
         time.sleep(3)
         kaboom()             
+    elif choice == "9":
+        change()
+        clear_screen()
+        os.system("git clone https://github.com/spyboy-productions/CloakQuest3r.git")
+        os.chdir("CloakQuest3r")
+        os.system("pip3 install -r requirements.txt")
+        cloak()    
+    elif choice == "CloakQuest3r":
+        print(" ")
+        print("\033[96mCloudFlare Unmask")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mReveal the hidden IP address of any website that is hiding behind cloudflare":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()
+    elif choice == "10":
+        os.system("git clone https://github.com/machine1337/mafiahacks.git")
+        os.chdir("mafiahacks")
+        os.system("sudo chmod +x mafia.sh")
+        os.system("sudo bash ./mafia.sh")
+        what_now()
+    elif choice == "MafiaHacks":
+        print(" ")
+        print("\033[96mPayload Generator")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mCross platform automated payload creation":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
