@@ -1856,7 +1856,7 @@ def landlubber():
         what_now()
 
 def cell():
-    os.system("python3 num.py")
+    os.system("python3 num1.py")
     print(" ")
     print("1) New Search")
     print("2) Back")
@@ -1911,19 +1911,13 @@ def emails_menu():
         clear_screen()
         ascii_banner()
         header()
-        print("\033[93m1\033[0m) Land Line               \033[93m2\033[0m) Cell Phone                  \033[93m3\033[0m) NumChecker")
+        print("                 \033[93m1\033[0m) Land Line                                                                    \033[93m2\033[0m) NumChecker")
         footer()
         choice = input("Select an option: ")
         if choice == "1":
             landlubber()
         elif choice == "2":
             cellphone()
-        elif choice == "3":
-            clear_screen()
-            os.system("git clone https://github.com/machine1337/numverify.git")
-            os.chdir("numverify")
-            os.system("python3 num.py")
-            what_now()
         elif choice == "BACK":
             emails_menu()
         elif choice == "HELL":
