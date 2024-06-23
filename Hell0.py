@@ -1150,9 +1150,6 @@ def passw():
         os.system("sudo bash ./install.sh")
         os.system("sudo chmod +x ./hashbreak.sh")
         os.system("sudo bash ./hashbreak.sh")
-        clear_screen()
-        ascii_banner()
-        header()
         what_now()
     elif choice == "3":
         os.system("sudo apt install seclists")
@@ -2391,7 +2388,7 @@ def kaboom():
     print("                  ♛ \033[93m1\033[0m) DRipper                        ♛ \033[93m2\033[0m) UFONET                   ♛ \033[93m3\033[0m) Karma")
     print("                  ♛ \033[93m4\033[0m) WiDie                          ♛ \033[93m5\033[0m) Sql-Map                  ♛ \033[93m6\033[0m) LinkMask ")
     print("                  ♛ \033[93m7\033[0m) KickThemOut                    🪬\033[92m8\033[0m) Sicat                    🪬\033[92m9\033[0m) CloakQuest3r")
-    print("                  ♛ \033[93m10\033[0m) MafiaHacks                    🪬\033[93m11\033[0m) Hackguard")
+    print("                  ♛ \033[93m10\033[0m) MafiaHacks                    🪬\033[93m11\033[0m) Hackguard               🪬\033[93m12\033[0m) Recox")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2602,6 +2599,12 @@ def kaboom():
             time.sleep(.04)  
         time.sleep(3)
         kaboom()    
+    elif choice == "12":
+        os.system("git clone https://github.com/samhaxr/recox.git")
+        os.chdir("recox")
+        os.system("sudo chmod +x recox.sh")
+        os.system("./recox.sh")
+        what_now()
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
