@@ -2600,8 +2600,8 @@ def kaboom():
         time.sleep(3)
         kaboom()    
     elif choice == "12":
-        os.system("git clone https://github.com/samhaxr/recox.git")
-        os.chdir("recox")
+        os.system("git clone https://github.com/Thr0wAway-n0w/recoxU.git")
+        os.chdir("recoxU")
         os.system("sudo chmod +x recox.sh")
         os.system("./recox.sh")
         what_now()
