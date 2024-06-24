@@ -1434,6 +1434,7 @@ def breach():
         time.sleep(1)
         breach() 
         
+
 def forbidden():
     clear_screen()
     ascii_banner()            
@@ -2373,16 +2374,25 @@ def hguard():
         clear_screen()
         kaboom()
 
+def rainbow_gradient_text(text):
+    for i, char in enumerate(text):
+        r = int((i / len(text)) * 255)
+        g = int((1 - (i / len(text))) * 255)
+        color = f"\033[38;2;{r};{g};0m"
+        print(f"{color}{char}\033[0m", end="")
+    print()
+
 def kaboom():
     change()
     clear_screen()
     ascii_kaboom()
     print(colored("OFFENSIVE TOOLS", 'red', attrs=['reverse', 'blink', 'bold']))
     header()
-    print("                  ♛ \033[93m1\033[0m) DRipper                        ♛ \033[93m2\033[0m) UFONET                   ♛ \033[93m3\033[0m) Karma")
-    print("                  ♛ \033[93m4\033[0m) WiDie                          ♛ \033[93m5\033[0m) Sql-Map                  ♛ \033[93m6\033[0m) LinkMask ")
-    print("                  ♛ \033[93m7\033[0m) KickThemOut                    🪬\033[92m8\033[0m) Sicat                    🪬\033[92m9\033[0m) CloakQuest3r")
-    print("                  ♛ \033[93m10\033[0m) MafiaHacks                    🪬\033[93m11\033[0m) Hackguard               🪬\033[93m12\033[0m) Recox")
+    print("                  ♛ \033[91m1\033[0m) DRipper                        ♛ \033[91m2\033[0m) UFONET                   ♛ \033[91m3\033[0m) Karma")
+    print("                  ♛ \033[91m4\033[0m) WiDie                          ♛ \033[91m5\033[0m) Sql-Map                  ♛ \033[91m6\033[0m) LinkMask ")
+    print("                  ♛ \033[91m7\033[0m) KickThemOut                    🪬\033[92m8\033[0m) Sicat                    🪬\033[92m9\033[0m) CloakQuest3r")
+    print("                  ♛ \033[91m10\033[0m) MafiaHacks                    🪬\033[92m11\033[0m) Hackguard               🪬\033[92m12\033[0m) Recox")
+    rainbow_gradient_text("                  ♛ 13) Chameleon 🪬                ")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2599,6 +2609,20 @@ def kaboom():
         os.system("sudo chmod +x recox.sh")
         os.system("./recox.sh")
         what_now()
+    elif choice == "13":
+        change()
+        os.system("git clone https://github.com/qeeqbox/chameleon.git")
+        os.chdir("chameleon")
+        os.system("sudo chmod +x ./run.sh")
+        clear_screen()
+        print(colored("WHEN THE SCRIPT TELLS YOU EVERYTHING LOOKS GOOD, REFRESH THIS BROSWER WINDOW.", 'red', attrs=['reverse', 'blink', 'bold']))        
+        print(colored("Username: changeme457f6460cb287     Password: changemed23b8cc6a20e0   (don't change these)", 'yellow', attrs=['reverse', 'bold'])) 
+        time.sleep(5)
+        print("Make sure you install your dependencies before running any tests or the Dev")
+        time.sleep(1)
+        webbrowser.open("http://localhost:3000/d/9tnNjdiMz/chameleon")
+        os.system("sudo ./run.sh auto_configure")
+        what_now()  
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
