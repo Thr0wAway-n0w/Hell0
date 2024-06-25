@@ -2382,6 +2382,17 @@ def rainbow_gradient_text(text):
         print(f"{color}{char}\033[0m", end="")
     print()
 
+def get_rainbow_gradient(length):
+    rainbow_colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#7F00FF", "#7F007F"]
+    gradient = []
+    for i in range(length):
+        r, g, b = hex_to_rgb(rainbow_colors[i % len(rainbow_colors)])
+        gradient.append(f"\033[38;2;{r};{g};{b}m")
+    return "".join(gradient)
+
+def hex_to_rgb(hex_color):
+    return int(hex_color.lstrip("#"), 16)
+
 def kaboom():
     change()
     clear_screen()
@@ -2392,7 +2403,7 @@ def kaboom():
     print("                  ♛ \033[91m4\033[0m) WiDie                          ♛ \033[91m5\033[0m) Sql-Map                  ♛ \033[91m6\033[0m) LinkMask ")
     print("                  ♛ \033[91m7\033[0m) KickThemOut                    🪬\033[92m8\033[0m) Sicat                    🪬\033[92m9\033[0m) CloakQuest3r")
     print("                  ♛ \033[91m10\033[0m) MafiaHacks                    🪬\033[92m11\033[0m) Hackguard               🪬\033[92m12\033[0m) Recox")
-    rainbow_gradient_text("                  ♛ 13) Chameleon 🪬                ")
+    rainbow_gradient_text("                  ♛ 13) Chameleon 🪬                  ♛ 14) DroneSploit            ♛  15) FatRat   ")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2609,6 +2620,16 @@ def kaboom():
         os.system("sudo chmod +x recox.sh")
         os.system("./recox.sh")
         what_now()
+    elif choice == "Recox":
+        print(" ")
+        print("\033[96mDetect vulnerabilities that are not typically in the OWASP top ten vulnerabilities list")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mAutomates scans that are typically manually done in pen-testing, Recursive and thorough":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()    
     elif choice == "13":
         change()
         os.system("git clone https://github.com/qeeqbox/chameleon.git")
@@ -2623,6 +2644,28 @@ def kaboom():
         webbrowser.open("http://localhost:3000/d/9tnNjdiMz/chameleon")
         os.system("sudo ./run.sh auto_configure")
         what_now()  
+    elif choice == "Chameleon":
+        print(" ")
+        print("\033[96mCustomizable Honeypots")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mmonitoring network traffic, bots activities and username/password credentials.  \033[94mDNS \033[92m|\033[94m HTTP \033[92m|\033[94m\033[94m Proxy \033[92m|\033[94m HTTP \033[92m|\033[94m HTTPS \033[92m|\033[94m SSH \033[92m|\033[94m POP3 \033[92m|\033[94m IMAP \033[92m|\033[94m STMP \033[92m|\033[94m RDP \033[92m|\033[94m VNC \033[92m|\033[94m SMB \033[92m|\033[94m SOCKS5 \033[92m|\033[94m Redis \033[92m|\033[94m TELNET \033[92m|\033[94m Postgres \033[92m|\033[94m MySQL":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()     
+    elif choice == "14":
+        change()
+        os.system("pip3 install dronesploit")
+        os.system("dronesploit")
+        what_now()
+    elif choice == "15":
+        change()
+        os.system("git clone https://github.com/Screetsec/TheFatRat.git")
+        os.chdir("TheFatRat")
+        os.system("sudo chmod +x setup.sh && sudo ./setup.sh")
+        os.system("sudo fatrat")
+        what_now()
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
