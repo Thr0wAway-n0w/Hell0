@@ -1605,7 +1605,7 @@ def dark_search():
     clear_screen()
     dark_ascii()
     print("NUMEBER OF ONIONS")
-    RESS = input("How Many Onions Should To Dig For: ")
+    RESS = input("How Many Onions To Dig For: ")
     clear_screen()
     ascii_dark()
     print("QUANTITY ACCEPTED")
