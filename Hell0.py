@@ -1235,6 +1235,35 @@ def steg():
         ascii_banner()
         steg() 
 
+def asslist():
+    clear_screen()
+    subprocess.run(["pass-station", "list"])
+    print("1) Continue With Specific Search")
+    print("2) Exit")
+    select = input("Option: ")
+    if select == "1":
+        station()
+    elif select == "2":
+        what_now()
+    else:
+        print("INVALID SELECTION")
+        time.sleep(2)
+        passw()
+    
+
+def station():
+    clear_screen()
+    print("Default Password Search \033[91m ex. \033[92mapache\033[0m")
+    psw = input("Search: ")
+    clear_screen()
+    subprocess.run(["pass-station", "search", psw])
+    print("New Search? yes/no")
+    choice = input("Selection: ")
+    if choice == "yes":
+        station()
+    else:
+        what_now()      
+
 def passw():
     change()
     clear_screen()
@@ -1242,7 +1271,7 @@ def passw():
     print(colored("PASSWORDS", 'red', attrs=['reverse', 'bold']))     
     header()
     print("             \033[91m1\033[0m)\033[90m Pwnd                        \033[91m2\033[0m)\033[90m HashBreak                      \033[91m3\033[0m)\033[90m SecLists                      \033[91m4\033[0m)\033[90m Cupp                            ") 
-    print("             \033[91m5\033[0m)\033[90m StegSeek                    \033[91m6\033[0m)\033[90m de Bruijn")
+    print("             \033[91m5\033[0m)\033[90m StegSeek                    \033[91m6\033[0m)\033[90m de Bruijn                      \033[91m7\033[0m)\033[90m Pass-Station                                   ")
     footer()
     choice = input("\033[97mSelect an option: ")
     if choice == "1":
@@ -1297,6 +1326,21 @@ def passw():
             clear_screen()
             ascii_banner()
             passw()    
+    elif choice == "7":
+        subprocess.run(["sudo", "gem", "install", "pass-station"])
+        clear_screen()
+        print("1) List all default creds")
+        print("2) Proceed with specific Search")
+        choice = input("Selection: ")
+        if choice == "1":
+            asslist()
+        elif choice == "2":
+            station()
+        else:
+            print("INVALID SELECTION")
+            time.sleep(2)
+            clear_screen()
+            passw()
     elif choice == "StegSeek":
         print(" ")
         print("\033[96mSteg Cracker")
@@ -1637,7 +1681,7 @@ def main_menu():
     print("       \033[91m2\033[0m)\033[90m Emails/Phone #'s          \033[91m5\033[0m)\033[90m Unclassified          \033[91m8\033[0m)\033[90m DeadMan Switch          \033[91m11\033[0m)\033[90m MULTI-MODE\033[0m")
     print("       \033[91m3\033[0m)\033[90m Networks                  \033[91m6\033[0m)\033[90m Cameras               \033[91m9\033[0m)\033[90m Tool Repo-Depo          \033[91m12\033[0m)\033[90m\033[93m \033[41mDante's Inferno\033[0m")
     print(" ")
-    print("                                \033[91m13\033[0m)\033[90m DarkWeb             \033[91m14\033[0m)\033[90m Encode-Decode                \033[91m15\033[0m) \033[41mEXIT\033[0m ")
+    print("                                \033[91m13\033[0m)\033[90m DeepWeb             \033[91m14\033[0m)\033[90m Encode-Decode                \033[91m15\033[0m) \033[41mEXIT\033[0m ")
     choice = input("\033[97mSelect an option: ")
 
     if choice == "1":
@@ -2477,6 +2521,7 @@ def cat1():
     print(" ")
     expl = input("Query: ")
     subprocess.run(["python3", "sicat.py", "-k", expl, "--exploitdb", "--msfmodule", "--exploitalert", "--packetstorm"])
+    subprocess.run(["getsploit", expl])
     while True:
         print("\033[91m1\033[0m)\033[90m New Search")
         print("\033[91m2\033[0m)\033[90m Dante's Inferno")
@@ -2546,6 +2591,25 @@ def get_rainbow_gradient(length):
 def hex_to_rgb(hex_color):
     return int(hex_color.lstrip("#"), 16)
 
+def vscan():
+    clear_screen()
+    print("URL TO SCAN")
+    print("Format: \033[92mhttps://example.com/*")
+    urll = input("Url: ")
+    subprocess.run(["python3", "TechViper.py", "-u", urll, "--threads", "12", "--timeout", "15", "--allow-redirect"])
+    print(" ")
+    print("1) New Search")
+    print("2) Dante's Inferno")
+    print("3) Go To Hell")
+    choice = input("Selection: ")
+    if choice == "1":
+        vscan()
+    elif choice == "2":
+        kaboom()
+    elif choice == "3":
+        main_menu()
+    
+
 def kaboom():
     change()
     clear_screen()
@@ -2556,7 +2620,8 @@ def kaboom():
     print("                  ♛ \033[91m4\033[0m)\033[90m WiDie                          ♛ \033[91m5\033[0m)\033[90m Sql-Map                  ♛ \033[91m6\033[0m)\033[90m LinkMask ")
     print("                  ♛ \033[91m7\033[0m)\033[90m KickThemOut                    🪬\033[91m8\033[0m)\033[90m Sicat                    🪬\033[91m9\033[0m)\033[90m CloakQuest3r")
     print("                  ♛ \033[91m10\033[0m)\033[90m MafiaHacks                    🪬\033[91m11\033[0m)\033[90m Hackguard               🪬\033[91m12\033[0m)\033[90m Recox")
-    rainbow_gradient_text("                  ♛ 13) Chameleon 🪬                  ♛ 14) DroneSploit            ♛  15) FatRat   ")
+    print("                  ♛ \033[91m13\033[0m)\033[90mChameleon 🪬                   ♛ \033[91m14\033[0m)\033[90m DroneSploit             ♛ \033[91m15\033[0m)\033[90m FatRat   ")
+    print("                 🪬 \033[91m16\033[0m)\033[90m Tech Viper                    🪬\033[91m17\033[0m)\033[90m DAMN ")
     footer()
     choice = input("\033[0mSelect an option: ")    
     if choice == "1":
@@ -2707,6 +2772,9 @@ def kaboom():
         os.system("git clone https://github.com/justakazh/sicat.git")
         os.chdir("sicat")
         os.system("python3 -m pip install -r requirements.txt")
+        os.system("sudo apt install getsploit")
+        sploit = "YKCX4J0B2ZBD8ZRF1WVOAIISZQKYAKVM1VT8UZ6QLNBZMIS5ALJYXW9NEA2E5K7X"
+        subprocess.run(["getsploit", sploit])
         cat1()
     elif choice == "Sicat":
         print(" ")
@@ -2812,6 +2880,16 @@ def kaboom():
         os.system("pip3 install dronesploit")
         os.system("dronesploit")
         what_now()
+    elif choice == "DroneSploit":
+        print(" ")
+        print("\033[96m Eye's in the Sky")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mTake control of those pesky bastards nosing around in your business.":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()     
     elif choice == "15":
         change()
         os.system("git clone https://github.com/Screetsec/TheFatRat.git")
@@ -2819,6 +2897,63 @@ def kaboom():
         os.system("sudo chmod +x setup.sh && sudo ./setup.sh")
         os.system("sudo fatrat")
         what_now()
+    elif choice == "FatRat":
+        print(" ")
+        print("\033[96mCross platform; System exploit tool kit")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mAutomates the attack methods pretty well.":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom() 
+    elif choice == "16":
+        change()
+        os.system("git clone https://github.com/Malwareman007/TechViper.git")
+        os.chdir("TechViper")
+        os.system("python3 -m pip install -r requirements.txt")
+        vscan()    
+    elif choice == "Tech Viper":
+        print(" ")
+        print("\033[96mDetect Exploitations and Malicious code injection in Urls")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mMake sure you format your like https://example.org":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()     
+    elif choice == "17":
+        os.system("sudo apt install rkhunter")
+        os.system("sudo rkhunter -c")
+        print(" ")
+        print("1) View Report")
+        print("2) Dante's Inferno")
+        print("3) Go to HELL")
+        choice = input("Selection: ")
+        if choice == "1":
+            change()
+            os.chdir("/var/log")
+            subprocess.run(["sudo", "nano", "rkhunter.log"])
+            what_now()
+        elif choice == "2":
+            kaboom()
+        elif choice == "3":
+            main_menu()
+        else:
+            print("INVALID SELECTION. GO TO HELL!")
+            time.sleep(2)
+            kaboom()
+    elif choice == "DAMN":
+        print(" ")
+        print("\033[96mThe Damnation Station")
+        print(" ")
+        print("", end="", flush=True) 
+        for char in " \033[91mTake a look to see if there's an Angel on Your Systems shoulder, or a Devil":
+            print(char, end="", flush=True) 
+            time.sleep(.04)  
+        time.sleep(3)
+        kaboom()     
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
