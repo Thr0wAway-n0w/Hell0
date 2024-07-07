@@ -23,8 +23,14 @@ def yeep():
     os.system('pip3 install pexpect')
     os.system('sudo apt install pipx') 
     os.system('pip3 install aiohttp')
-    os.system('pip3 install xterm')   
+    os.system('pip3 install xterm')
+    os.system('pip3 install phonenumbers')
+    os.system('sudo apt install python-is-python3')
+    os.system('pip3 install pystyle')
+    os.system('sudo apt install python3-tabulate')
+       
 import os
+os.system('sudo apt install python3-tk')
 os.system("pip3 install reportlab")
 os.system("git fetch")
 os.system("git pull")
