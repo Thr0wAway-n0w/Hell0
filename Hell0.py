@@ -1641,42 +1641,19 @@ def forbidden():
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
-        forbidden() 
+        forbidden()
 
-def dark_search():
+def deep_dark():
+    change()
     clear_screen()
-    dark_ascii()
-    print("ENTER SEARCH IN QUOTATION MARKS")
-    DEEP = input("Searching in the Dark For: ")
-    clear_screen()
-    ascii_dark()
-    print("SEARCH TERMS ACCEPTED")
-    time.sleep(1)
-    clear_screen()
-    dark_ascii()
-    print("NUMEBER OF ONIONS")
-    RESS = input("How Many Onions To Dig For: ")
-    clear_screen()
-    ascii_dark()
-    print("QUANTITY ACCEPTED")
-    time.sleep(1)
-    clear_screen()
-    dark_ascii()
-    print(colored("Launching UNDERWORLD QUEST: DarkWeb Search", 'red', attrs=['reverse', 'blink', 'bold']))        
-    time.sleep(2)
-    subprocess.run(["python3", "UnderworldQuest.py", "-q", DEEP, "-a", RESS, "-p"])
-    print(" ")
-    print("1) New Search")
-    print("2) Main Menu")
-    choice = input("Select Option: ")
-    if choice == "1":
-        dark_search()
-    elif choice == "2":
-        main_menu()
-    else:
-        print("INVALID SELECTION! GUESS YOU'RE SEARCHING AGAIN, FAT-FINGERS")
-        time.sleep(1.5)
-        dark_search()
+    ascii_banner()
+    print(colored("CLONING INTO DARKWEB TOOLS", 'red', attrs=['reverse', 'blink', 'bold']))
+    header()
+    os.system("git clone https://github.com/Thr0wAway-n0w/Deep.git")
+    os.chdir("Deep")
+    os.system("python3 Dark.py")
+    what_now()
+
 
 def main_menu():
     change()
@@ -1723,14 +1700,7 @@ def main_menu():
         kaboom()
     elif choice == "13":
         change()
-        clear_screen()
-        ascii_banner()
-        print(colored("Cloning UNDERWORLD QUEST: DarkWeb Search", 'red', attrs=['reverse', 'blink', 'bold']))
-        footer()
-        os.system("git clone https://github.com/Malwareman007/UnderworldQuest.git")
-        os.chdir("UnderworldQuest")
-        os.system("python3 -m pip install -r requirements.txt")
-        dark_search()
+        deep_dark()
     elif choice == "15":
         clear_screen()
         ascii_banner()
