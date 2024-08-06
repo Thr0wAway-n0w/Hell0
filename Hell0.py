@@ -1726,7 +1726,7 @@ def main_menu():
 
 def again1():
     choice = input("New User to Search: ")
-    subprocess.run(['maigret', choice, '--top-sites', '1800', '--no-recursion', '--retries', '2', '--time-out', '40', '--stats', '--graph', '--html'])
+    subprocess.run(['maigret', choice, '--top-sites', '1800', '--no-recursion', '--retries', '2', '--stats', '--graph', '--html'])
     print(" ")
     print('1) New Search?')
     print('2) Username Menu')
@@ -1848,8 +1848,8 @@ def menu():
         print(colored("USERNAME-0SINT", 'red', attrs=['reverse', 'blink', 'bold']))
         time.sleep(.01) 
         header()
-        print("       \033[91m1\033[0m)\033[90m Maigret \033[91mCURRENTLY UNAVAILABLE          \033[91m2\033[0m)\033[90m Slash                      \033[91m3\033[0m)\033[90m Sherlock                 \033[91m4\033[0m)\033[90m AliaStorm")
-        print("       \033[91m5\033[0m)\033[90m DetectDee                              \033[91m6\033[0m)\033[90m Social Analyzer \033[92+           \033[91m7\033[0m)\033[90m SageMode")
+        print("       \033[91m1\033[0m)\033[90m Maigret                               \033[91m2\033[0m)\033[90m Slash                      \033[91m3\033[0m)\033[90m Sherlock                 \033[91m4\033[0m)\033[90m AliaStorm")
+        print("       \033[91m5\033[0m)\033[90m DetectDee                              \033[91m6\033[0m)\033[90m Social Analyzer \033[92+                                                     \033[91m7\033[0m)\033[90m SageMode")
         footer()
         choice = input("\033[0mSelect an option: ")      
         if choice == '1':
@@ -1862,7 +1862,7 @@ def menu():
             print(colored("She THICC...", 'red', attrs=['reverse', 'blink', 'bold']))
             time.sleep(2)
             async def main(username):
-                subprocess.run("maigret", {username}, "--self-check", "--top-sites 1800", "--no-recursion", "--retries 1", "--timeout 35", "--stats", "--graph", "--html")
+                subprocess.run(["maigret", {username}, "--self-check", "--top-sites 1800", "--no-recursion", "--retries 1", "--stats", "--graph", "--html"])
                 loop = asyncio.get_event_loop()
                 loop.run_until_complete(main(username))
             while True:
