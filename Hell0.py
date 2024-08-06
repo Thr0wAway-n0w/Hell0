@@ -35,19 +35,51 @@ os.system("pip3 install reportlab")
 os.system("git fetch")
 os.system("git pull")
 os.system("sudo apt install npm")
+yeep()
+os.system('pip3 install termcolor')
+os.system('pip3 install colorama')
+os.system('pip3 install ascii_magic')
+os.system("pip3 install asyncio")
+os.system('pip3 install tk')  
+import sys
+import json
+import requests
+import ascii_magic
+import PIL
+import geopy.distance
+from colorama import Fore
+from colorama import Back
+from colorama import Style
+from colorama import init
+from PIL import ImageEnhance
+from ascii_magic import AsciiArt
+from geopy.distance import geodesic
+from tkinter import *
+from tkinter import simpledialog
+import tkinter as tk
+import base64
+import curses, random
+import webbrowser
+import pyautogui
+import trio
+import xdotool
+import pexpect
+import httpx
+import threading
+import shutil
+import urllib.parse
+import socket
+import hashlib
+import atexit
+import aiohttp
 import subprocess
 import re
-os.system('pip3 install termcolor')
 import termcolor
-os.system('pip3 install colorama')
 import colorama
 from termcolor import colored
-os.system('pip3 install ascii_magic')
 import ascii_magic
 import time
-os.system("pip3 install asyncio")
-import asyncio
-os.system('pip3 install tk')   
+import asyncio 
 import reportlab
 
 def header():
@@ -95,38 +127,6 @@ elif option == "2":
     time.sleep(1)
     os.system("pip3 install pipenv")
     exit()
-
-import sys
-import json
-import requests
-import ascii_magic
-import PIL
-import geopy.distance
-from colorama import Fore
-from colorama import Back
-from colorama import Style
-from colorama import init
-from PIL import ImageEnhance
-from ascii_magic import AsciiArt
-from geopy.distance import geodesic
-from tkinter import *
-from tkinter import simpledialog
-import tkinter as tk
-import base64
-import curses, random
-import webbrowser
-import pyautogui
-import trio
-import xdotool
-import pexpect
-import httpx
-import threading
-import shutil
-import urllib.parse
-import socket
-import hashlib
-import atexit
-import aiohttp
 
 num_xterms = 0
 
