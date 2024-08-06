@@ -1853,14 +1853,16 @@ def menu():
         footer()
         choice = input("\033[0mSelect an option: ")      
         if choice == '1':
-            os.system("pip3 install maigret")
+            os.system("git clone https://github.com/soxoj/maigret")
+            os.chdir("maigret")
+            os.system("pip3 install .")
             username = input("Enter a username to search: ")
             html_file1 = f'report_{username}_plain.html'
             html_file2 = f'report_{username}_graph.html'
             print(colored("She THICC...", 'red', attrs=['reverse', 'blink', 'bold']))
             time.sleep(2)
             async def main(username):
-                os.system(f'pipx run maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
+                os.system(f'maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
                 loop = asyncio.get_event_loop()
                 loop.run_until_complete(main(username))
             while True:
