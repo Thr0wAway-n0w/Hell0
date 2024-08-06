@@ -1862,7 +1862,7 @@ def menu():
             print(colored("She THICC...", 'red', attrs=['reverse', 'blink', 'bold']))
             time.sleep(2)
             async def main(username):
-                os.system(f'maigret {username} --self-check --top-sites 1800 --no-recursion --retries 1 --timeout 35 --stats --graph --html')
+                subprocess.run("maigret", {username}, "--self-check", "--top-sites 1800", "--no-recursion", "--retries 1", "--timeout 35", "--stats", "--graph", "--html")
                 loop = asyncio.get_event_loop()
                 loop.run_until_complete(main(username))
             while True:
