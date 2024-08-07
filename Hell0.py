@@ -1725,17 +1725,28 @@ def main_menu():
         main_menu()         
 
 def again1():
-    choice = input("New User to Search: ")
-    subprocess.run(['maigret', choice, '--top-sites', '1800', '--no-recursion', '--retries', '2', '--stats', '--graph', '--html'])
+    subprocess.run(['maigret', username, '--top-sites', '1800', '--no-recursion', '--retries', '2', '--stats', '--graph', '--html'])
     print(" ")
-    print('1) New Search?')
-    print('2) Username Menu')
-    choice = input("Enter Selection: ")
-    if choice == "1":
+    print("\033[91m1\033[0m)\033[90m New Search")
+    print("\033[91m2\033[0m)\033[90m View Reports")
+    print("\033[91m3\033[0m)\033[90m Username Menu")
+    option = input("Action: ")
+    if option == '1':
             clear_screen()
             again1()
-    elif choice == "2":
-            menu() 
+    elif option == '2':
+            user_home = os.path.expanduser('~')
+            os.chdir(os.path.join(user_home, 'Desktop', 'reports'))
+            html_file1 = f'report_{username}_plain.html'
+            html_file2 = f'report_{username}_graph.html'
+            if os.path.exists(html_file1):
+                webbrowser.open(os.path.join(os.getcwd(), html_file1))
+            if os.path.exists(html_file2):
+                webbrowser.open(os.path.join(os.getcwd(), html_file2))
+                clear_screen()
+                what_now()
+            else:
+                print(f"Error: File {html_file} not found")
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
@@ -1861,36 +1872,7 @@ def menu():
             html_file2 = f'report_{username}_graph.html'
             print(colored("She THICC...", 'red', attrs=['reverse', 'blink', 'bold']))
             time.sleep(2)
-            async def main(username):
-                subprocess.run(["maigret", {username}, "--self-check", "--top-sites 1800", "--no-recursion", "--retries 1", "--stats", "--graph", "--html"])
-                loop = asyncio.get_event_loop()
-                loop.run_until_complete(main(username))
-            while True:
-                print("\033[91m1\033[0m)\033[90m New Search")
-                print("\033[91m2\033[0m)\033[90m View Reports")
-                print("\033[91m3\033[0m)\033[90m Username Menu")
-                option = input("Action: ")
-                if option == '1':
-                    clear_screen()
-                    again1()
-                elif option == '2':
-                    user_home = os.path.expanduser('~')
-                    os.chdir(os.path.join(user_home, 'Desktop', 'reports'))
-                    html_file1 = f'report_{username}_plain.html'
-                    html_file2 = f'report_{username}_graph.html'
-                    if os.path.exists(html_file1):
-                        webbrowser.open(os.path.join(os.getcwd(), html_file1))
-                    if os.path.exists(html_file2):
-                        webbrowser.open(os.path.join(os.getcwd(), html_file2))
-                        clear_screen()
-                        what_now()
-                    else:
-                        print(f"Error: File {html_file} not found")
-                elif option == '3':
-                     change()
-                     menu()
-            else:
-                what_now()  
+            again1()
         elif choice == '2':
             clone_repo('https://github.com/theahmadov/slash.git', 'slash')
             os.system('pip install -r requirements.txt')
