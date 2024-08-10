@@ -1871,8 +1871,33 @@ def menu():
             html_file1 = f'report_{username}_plain.html'
             html_file2 = f'report_{username}_graph.html'
             print(colored("She THICC...", 'red', attrs=['reverse', 'blink', 'bold']))
-            time.sleep(2)
-            again1()
+            subprocess.run(['maigret', username, '--top-sites', '1800', '--no-recursion', '--retries', '2', '--stats', '--graph', '--html'])
+            print(" ")
+            print("\033[91m1\033[0m)\033[90m New Search")
+            print("\033[91m2\033[0m)\033[90m View Reports")
+            print("\033[91m3\033[0m)\033[90m Username Menu")
+            option = input("Action: ")
+            if option == '1':
+                clear_screen()
+                again1()
+            elif option == '2':
+                user_home = os.path.expanduser('~')
+                os.chdir(os.path.join(user_home, 'Desktop', 'reports'))
+                html_file1 = f'report_{username}_plain.html'
+                html_file2 = f'report_{username}_graph.html'
+                if os.path.exists(html_file1):
+                    webbrowser.open(os.path.join(os.getcwd(), html_file1))
+                if os.path.exists(html_file2):
+                    webbrowser.open(os.path.join(os.getcwd(), html_file2))
+                    clear_screen()
+                    what_now()
+                else:
+                    print(f"Error: File {html_file} not found")
+            else:
+                print("\033[91m INVALID SELECTION\033[0m")
+                time.sleep(1)
+                change()
+                main_menu()
         elif choice == '2':
             clone_repo('https://github.com/theahmadov/slash.git', 'slash')
             os.system('pip install -r requirements.txt')
