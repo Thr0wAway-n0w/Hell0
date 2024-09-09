@@ -1,6 +1,7 @@
 A Multitool.
 The Idea was to automate the use of github repos with the press of a button.
 - Osint Tools
+- Darkweb Scraping
 - Password Tools
 - Attack Tools
 - Exploit and recon tools
