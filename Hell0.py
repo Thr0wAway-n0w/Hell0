@@ -2061,7 +2061,7 @@ def main_menu():
     )
     print(" ")
     print(
-        "       \033[91m13\033[0m)\033[90m DeepWeb                  \033[91m14\033[0m)\033[90m Encode-Decode        \033[91m15\033[0m)\033[90m Mapscii                \033[91m16\033[0m) \033[41mEXIT\033[0m "
+        "                                \033[91m13\033[0m)\033[90m DeepWeb             \033[91m14\033[0m)\033[90m Encode-Decode                \033[91m15\033[0m) \033[41mEXIT\033[0m "
     )
     choice = input("\033[97mSelect an option: ")
 
@@ -2100,17 +2100,6 @@ def main_menu():
         change()
         deep_dark()
     elif choice == "15":
-        print(" ")
-        print("\033[96mInstructions")
-        print(" ")
-        print("", end="", flush=True)
-        for char in " \033[91mA=ZOOM IN, Z=ZOOM OUT, ARROW KEYS TO MOVE, CTRL+Z TO GO BACK":
-            print(char, end="", flush=True)
-            time.sleep(0.04)
-        time.sleep(3)
-        os.system("telnet mapscii.me")
-        what_now()
-    elif choice == "16":
         clear_screen()
         ascii_banner()
         gahhh()
