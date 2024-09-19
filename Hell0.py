@@ -1438,11 +1438,32 @@ def repo():
         )
     )
     time.sleep(4)
-    os.system("git clone https://github.com/Thr0wAway-n0w/Borrowed2.git")
-    os.chdir("Borrowed2")
-    os.system("python3 ch3r0.py")
-    what_now()
+    print("1. Repo 1")
+    print(" ")
+    print("2. Repo 2")
+    print(" ")
+    choice = input("Select Repo: ")
 
+    if choice == "1":
+        change()
+        os.system("git clone https://github.com/Thr0wAway-n0w/Borrowed2.git")
+        os.chdir("Borrowed2")
+        os.system("python3 ch3r0.py")
+        what_now()
+
+    elif choice == "2":
+        change()
+        os.system("sudo apt install python2")
+        os.system("sudo apt install 2to3") 
+        os.system("git clone https://github.com/mishakorzik/AllHackingTools.git")
+        os.chdir("AllHackingTools")
+        os.system("sudo chmod +x Install.sh")
+        os.system("bash ./Install.sh")
+        os.system("python2 MainMenu.py")
+        what_now()
+
+    else:
+        what_now()
 
 def run_terminal_commands():
     protected_file = input("File to Protect: ")
@@ -2061,7 +2082,7 @@ def main_menu():
     )
     print(" ")
     print(
-        "                                \033[91m13\033[0m)\033[90m DeepWeb             \033[91m14\033[0m)\033[90m Encode-Decode                \033[91m15\033[0m) \033[41mEXIT\033[0m "
+        "       \033[91m13\033[0m)\033[90m DeepWeb                  \033[91m14\033[0m)\033[90m Encode-Decode        \033[91m15\033[0m)\033[90m Mapscii                \033[91m16\033[0m) \033[41mEXIT\033[0m "
     )
     choice = input("\033[97mSelect an option: ")
 
@@ -2100,6 +2121,17 @@ def main_menu():
         change()
         deep_dark()
     elif choice == "15":
+        print(" ")
+        print("\033[96mInstructions")
+        print(" ")
+        print("", end="", flush=True)
+        for char in " \033[91mA=ZOOM IN, Z=ZOOM OUT, ARROW KEYS TO MOVE, CTRL+Z TO GO BACK":
+            print(char, end="", flush=True)
+            time.sleep(0.04)
+        time.sleep(3)
+        os.system("telnet mapscii.me")
+        what_now()
+    elif choice == "16":
         clear_screen()
         ascii_banner()
         gahhh()
@@ -2326,6 +2358,7 @@ def menu():
             again5()
         elif choice == "6":
             change()
+            import cheerio
             os.system(
                 "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common"
             )
@@ -3581,6 +3614,10 @@ def networks_menu():
         "                \033[91m3\033[0m)\033[90m Lynis                                \033[91m6\033[0m)\033[90m Simba                                 \033[91m9\033[0m)\033[90m SubDomains"
     )
     print(" ")
+    print(
+        "                \033[91mDNS\033[0m)\033[90m DnsTwist"
+    )
+    print(" ")
     footer()
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
@@ -3840,12 +3877,31 @@ def networks_menu():
         what_now()
     elif choice == "9":
         subdomains()
+    elif choice == "DNS":
+        os.system("sudo apt install dnstwist")
+        clear_screen()
+        domain = input("Enter Domain URL: ")
+        subprocess.run(["dnstwist" , "--registered" , domain])
+        what_now()
     elif choice == "10":
         kaboom()
     elif choice == "BACK":
         main_menu()
     elif choice == "HELL":
         main_menu()
+    elif choice == "DnsTwist":
+        print(" ")
+        print("\033[96mDNS fuzzing")
+        print(" ")
+        print("", end="", flush=True)
+        for (
+            char
+        ) in " \033[95mgenerates a comprehensive list of permutations from the users url address. Usful for discovering fishing, or otherwise malicious imposter sites":
+            print(char, end="", flush=True)
+            time.sleep(0.04)
+        time.sleep(3)
+        networks_menu()
+
     elif choice == "CyberMap":
         print(" ")
         print("\033[96mCyberMap")
