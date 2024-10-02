@@ -1442,6 +1442,8 @@ def repo():
     print(" ")
     print("2. Repo 2")
     print(" ")
+    print("3. FSociety")
+    print(" ")
     choice = input("Select Repo: ")
 
     if choice == "1":
@@ -1460,6 +1462,18 @@ def repo():
         os.system("sudo chmod +x Install.sh")
         os.system("bash ./Install.sh")
         os.system("python2 MainMenu.py")
+        what_now()
+
+    if choice == "3":
+        change()
+        os.system("git clone https://github.com/fsociety-team/fsociety.git")
+        os.chdir("fsociety")
+        os.system("pip install fsociety")
+        os.system("pip install --upgrade fsociety")
+        os.system("pip install -e '.[dev]'")
+        os.system("python3 -m pip install -r requirements-dev.txt")
+        os.system("python3 setup.py install")
+        os.system("fsociety")
         what_now()
 
     else:
