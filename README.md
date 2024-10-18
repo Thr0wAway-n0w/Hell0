@@ -9,3 +9,12 @@ The Idea was to automate the use of github repos with the press of a button.
 - Sock Puppet Tools
 - + a lot more.
   + All in all contains over 200 useful repo's and programs I made. 
+
+
+
+Requirements:
+python3
+pipenv
+
+"pipenv shell"
+"pipenv run python3 Hell0.py"
