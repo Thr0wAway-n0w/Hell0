@@ -1,88 +1,63 @@
 def yeep():
-    os.system("python3 -m pip install pyqt5 --upgrade")
-    os.system("pip3 install pillow")
-    os.system("pip3 install ascii_magic")
-    os.system("pip3 install pyautogui")
+    os.system("pipenv run python3 -m pip install pyqt5 --upgrade")
+    os.system("pipenv install pillow")
+    os.system("pipenv install ascii_magic")
+    os.system("pipenv install pyautogui")
     os.system("sudo apt install libncurses5-dev")
     os.system("sudo apt install ncurses-hexedit")
-    os.system("pip3 install httpx")
-    os.system("pip3 install trio")
-    os.system("pip3 install geopy")
-    os.system("pip3 install xdotool")
+    os.system("pipenv install httpx")
+    os.system("pipenv install trio")
+    os.system("pipenv install geopy")
+    os.system("pipenv install xdotool")
     os.system("sudo apt install xdotool")
-    os.system("pip install --upgrade pytz")
+    os.system("pipenv install --upgrade pytz")
     os.system("sudo apt install python3-docker")
     os.system("sudo apt install bb")
-    os.system("pip3 install dnspython")
+    os.system("pipenv install dnspython")
     os.system("sudo apt install proxychains")
-    os.system("pip3 install reportlab")
+    os.system("pipenv install reportlab")
     os.system("sudo apt install lynx")
     os.system("sudo apt install gnome-terminal")
     os.system("sudo apt install gnome-terminal-data")
-    os.system("pip3 install requests")
-    os.system("pip3 install pexpect")
+    os.system("pipenv install requests")
+    os.system("pipenv install pexpect")
     os.system("sudo apt install pipx")
-    os.system("pip3 install aiohttp")
-    os.system("pip3 install xterm")
-    os.system("pip3 install phonenumbers")
+    os.system("pipenv install aiohttp")
+    os.system("pipenv install xterm")
+    os.system("pipenv install phonenumbers")
     os.system("sudo apt install python-is-python3")
-    os.system("pip3 install pystyle")
+    os.system("pipenv install pystyle")
     os.system("sudo apt install python3-tabulate")
 
 
 import os
 
 os.system("sudo apt install python3-tk")
-os.system("pip3 install reportlab")
+os.system("pipenv install reportlab")
 os.system("git fetch")
 os.system("git pull")
 os.system("sudo apt install npm")
 yeep()
-os.system("pip3 install termcolor")
-os.system("pip3 install colorama")
-os.system("pip3 install ascii_magic")
-os.system("pip3 install asyncio")
-os.system("pip3 install tk")
-import sys
-import json
+os.system("pipenv install termcolor")
+os.system("pipenv install colorama")
+os.system("pipenv install ascii_magic")
+os.system("pipenv install asyncio")
+os.system("pipenv install tk")
 import requests
-import ascii_magic
-import PIL
-import geopy.distance
 from colorama import Fore
-from colorama import Back
 from colorama import Style
-from colorama import init
-from PIL import ImageEnhance
 from ascii_magic import AsciiArt
-from geopy.distance import geodesic
-from tkinter import *
 from tkinter import simpledialog
 import tkinter as tk
-import base64
 import curses, random
 import webbrowser
 import pyautogui
-import trio
-import xdotool
-import pexpect
-import httpx
-import threading
 import shutil
-import urllib.parse
-import socket
-import hashlib
 import atexit
 import aiohttp
 import subprocess
-import re
-import termcolor
-import colorama
 from termcolor import colored
-import ascii_magic
 import time
-import asyncio
-import reportlab
 
 
 def header():
@@ -157,7 +132,7 @@ elif option == "2":
         )
     )
     time.sleep(1)
-    os.system("pip3 install pipenv")
+    os.system("pipenv install pipenv")
     exit()
 
 num_xterms = 0
@@ -252,7 +227,7 @@ def footer():
 
 
 def install_pipenv():
-    os.system("pip3 install pipenv")
+    os.system("pipenv install pipenv")
 
 
 def clone_repo(url, folder_name):
@@ -274,13 +249,13 @@ def install_requirements():
         colored("INSTALLING DEPENDENCIES...", "red", attrs=["reverse", "blink", "bold"])
     )
     time.sleep(2)
-    os.system("python3 -m pip install -r requirements.txt")
+    os.system("pipenv run python3 -m pip install -r requirements.txt")
     clear_screen()
 
 
 def search_username(username, script_name):
     print(colored("User 0sint", "red", attrs=["reverse", "blink", "bold"]))
-    os.system("python3 ./" + script_name + " " + username)
+    os.system("pipenv run python3 ./" + script_name + " " + username)
 
 
 def search_email(email, script_name):
@@ -753,7 +728,7 @@ def pwnd():
     os.chdir("pwnd")
     os.system("git fetch")
     os.system("git pull")
-    os.system("python3 pwnd.py")
+    os.system("pipenv run python3 pwnd.py")
     main_menu()
 
 
@@ -894,10 +869,10 @@ def ddos_install():
     os.chdir("KARMA-DDoS")
     os.system("git fetch")
     os.system("git pull")
-    os.system("python3 -m pip install -r requirements.txt")
+    os.system(" pipenv run python3 -m pip install -r requirements.txt")
     os.system("sudo chmod +x ./setup.py")
-    os.system("sudo python3 ./setup.py install")
-    os.system("python3 main.py")
+    os.system("sudo pipenv run python3 ./setup.py install")
+    os.system("pipenv run python3 main.py")
 
 
 def send_command_to_xterms():
@@ -934,7 +909,7 @@ def isend_command_to_xterms():
     processes = []
     for i in range(num_xterms):
         process = subprocess.Popen(
-            ["xterm", "-e", "python3", "-c", f"import Hell0; Hell0.kicks(); {command}"]
+            ["xterm", "-e", "pipenv", "run", "python3", "-c", f"import Hell0; Hell0.kicks(); {command}"]
         )
         processes.append(process)
 
@@ -1020,19 +995,19 @@ def jam():
 def split():
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(1)
-    pyautogui.typewrite("python3 Hell0.py\n")
+    pyautogui.typewrite("pipenv run python3 Hell0.py\n")
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(1)
-    pyautogui.typewrite("python3 Hell0.py\n")
+    pyautogui.typewrite("pipenv run python3 Hell0.py\n")
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(1)
-    pyautogui.typewrite("python3 Hell0.py\n")
+    pyautogui.typewrite("pipenv run python3 Hell0.py\n")
 
 
 def multi_mode():
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(0.01)
-    pyautogui.typewrite("python3 Hell0.py +1\n")
+    pyautogui.typewrite("pipenv run python3 Hell0.py +1\n")
 
 
 def multi_multi():
@@ -1063,7 +1038,7 @@ def multi_multi():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1072,7 +1047,7 @@ def multi_multi():
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1081,7 +1056,7 @@ def multi_multi():
         elif position == "topleft":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1090,7 +1065,7 @@ def multi_multi():
         elif position == "bottomleft":
             geometry = "80x24+0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1099,7 +1074,7 @@ def multi_multi():
         elif position == "bottomright":
             geometry = "80x24-0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1150,7 +1125,7 @@ def ddos_play():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.ddos_install()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.ddos_install()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1158,7 +1133,7 @@ def ddos_play():
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.sql_attack()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.sql_attack()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1166,7 +1141,7 @@ def ddos_play():
         elif position == "topleft":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.simba_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.simba_menu()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1174,7 +1149,7 @@ def ddos_play():
         elif position == "bottomleft":
             geometry = "80x24+0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.prox()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.prox()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1182,7 +1157,7 @@ def ddos_play():
         elif position == "bottomright":
             geometry = "80x24-0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.cyber()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.cyber()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1269,7 +1244,7 @@ def weelan():
     change()
     os.system("git clone https://github.com/Gurpreet06/Wifi-Crack.git")
     os.chdir("Wifi-Crack")
-    os.system("pip3 install -r requirements.txt")
+    os.system("pipenv install -r requirements.txt")
     clear_screen()
     ascii_banner()
     print(colored("CONFIGURE ATTACK VECTOR", "red", attrs=["reverse", "blink", "bold"]))
@@ -1303,17 +1278,17 @@ def weelan():
     time.sleep(3)
     choice = input("Pick Your Poison: ")
     if choice == "1":
-        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "Handshake")
+        subprocess.run("sudo", "pipenv", "run", "python3", "wifiCrack.py", "-i", nii, "-m", "Handshake")
     elif choice == "1":
-        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "PKMID")
+        subprocess.run("sudo", "pipenv", "run", "python3", "wifiCrack.py", "-i", nii, "-m", "PKMID")
     elif choice == "1":
-        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "AAuth")
+        subprocess.run("sudo", "pipenv", "run", "python3", "wifiCrack.py", "-i", nii, "-m", "AAuth")
     elif choice == "1":
-        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "DAuth")
+        subprocess.run("sudo", "pipenv", "run", "python3", "wifiCrack.py", "-i", nii, "-m", "DAuth")
     elif choice == "1":
-        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "BFlood")
+        subprocess.run("sudo", "pipenv", "run", "python3", "wifiCrack.py", "-i", nii, "-m", "BFlood")
     elif choice == "1":
-        subprocess.run("sudo", "python3", "wifiCrack.py", "-i", nii, "-m", "ETwin")
+        subprocess.run("sudo", "pipenv", "run", "python3", "wifiCrack.py", "-i", nii, "-m", "ETwin")
     else:
         change()
         print("ERROR...")
@@ -1342,7 +1317,7 @@ def wi_die():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.wlan()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.wlan()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1350,7 +1325,7 @@ def wi_die():
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.ipp()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.ipp()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1391,7 +1366,7 @@ def kick():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"python3 -c 'import Hell0; Hell0.wlan()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.wlan()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1450,7 +1425,7 @@ def repo():
         change()
         os.system("git clone https://github.com/Thr0wAway-n0w/Borrowed2.git")
         os.chdir("Borrowed2")
-        os.system("python3 ch3r0.py")
+        os.system("pipenv run python3 ch3r0.py")
         what_now()
 
     elif choice == "2":
@@ -1461,18 +1436,18 @@ def repo():
         os.chdir("AllHackingTools")
         os.system("sudo chmod +x Install.sh")
         os.system("bash ./Install.sh")
-        os.system("python2 MainMenu.py")
+        os.system("pipenv run python2 MainMenu.py")
         what_now()
 
     if choice == "3":
         change()
         os.system("git clone https://github.com/fsociety-team/fsociety.git")
         os.chdir("fsociety")
-        os.system("pip install fsociety")
-        os.system("pip install --upgrade fsociety")
-        os.system("pip install -e '.[dev]'")
-        os.system("python3 -m pip install -r requirements-dev.txt")
-        os.system("python3 setup.py install")
+        os.system("pipenv install fsociety")
+        os.system("pipenv install --upgrade fsociety")
+        os.system("pipenv install -e '.[dev]'")
+        os.system("pipenv run python3 -m pip install -r requirements-dev.txt")
+        os.system("pipenv run python3 setup.py install")
         os.system("fsociety")
         what_now()
 
@@ -1489,21 +1464,21 @@ def run_terminal_commands():
     subprocess.run(
         [
             "gnome-terminal",
-            "python3 dead.py",
+            "pipenv run python3 dead.py",
             protected_file,
             "http://0.0.0.0:8080/",
             tripwire_file,
         ]
     )
     time.sleep(2)
-    pyautogui.typewrite("python3 dead.py ")
+    pyautogui.typewrite("pipenv run python3 dead.py ")
     pyautogui.typewrite(protected_file)
     pyautogui.typewrite(" http://0.0.0.0:8080/")
     pyautogui.typewrite(tripwire_file)
 
 
 def run_http_server():
-    subprocess.run(["python3", "-m", "http.server", "8080"])
+    subprocess.run(["pipenv run python3", "-m", "http.server", "8080"])
 
 
 def deadman():
@@ -1668,7 +1643,7 @@ def passw():
     elif choice == "4":
         os.system("git clone https://github.com/TechnicalHeadquarter/cupp.git")
         os.chdir("cupp")
-        os.system("python3 cupp.py -i")
+        os.system("pipenv run python3 cupp.py -i")
         what_now()
     elif choice == "5":
         change()
@@ -1686,12 +1661,12 @@ def passw():
         if choice == "1":
             os.system("git clone https://github.com/Thr0wAway-n0w/deBruijn1.git")
             os.chdir("deBruijn1")
-            os.system("python3 car.py")
+            os.system("pipenv run python3 car.py")
             what_now()
         elif choice == "2":
             os.system("git clone https://github.com/Thr0wAway-n0w/deBruijn2.git")
             os.chdir("deBruijn2")
-            os.system("python3 cars.py")
+            os.system("pipenv run python3 cars.py")
             what_now()
         elif choice == "BACK":
             clear_screen()
@@ -2076,7 +2051,7 @@ def deep_dark():
     header()
     os.system("git clone https://github.com/Thr0wAway-n0w/Deep.git")
     os.chdir("Deep")
-    os.system("python3 Dark.py")
+    os.system("pipenv run python3 Dark.py")
     what_now()
 
 
@@ -2155,7 +2130,7 @@ def main_menu():
             "git clone https://github.com/Malwareman007/Msg-encoder-and-decoder.git"
         )
         os.chdir("Msg-encoder-and-decoder")
-        os.system("python3 Encoder-Decoder.py")
+        os.system("pipenv run python3 Encoder-Decoder.py")
         what_now()
         clear_screen()
         ascii_banner()
@@ -2235,7 +2210,7 @@ def again2():
 
 def again3():
     choice = input("Enter a User or Email to search: ")
-    subprocess.run(["python", "slash.py", choice])
+    subprocess.run(["pipenv", "run", "python", "slash.py", choice])
     print(" ")
     print("1) New Search?")
     print("2) Username Menu")
@@ -2256,7 +2231,7 @@ def again3():
 def again4():
     clear_screen()
     username = input("Input User to Search: ")
-    subprocess.run(["python3", "aliastorm.py", username])
+    subprocess.run(["pipenv", "run", "python3", "aliastorm.py", username])
     print(" ")
     print("1) New Search?")
     print("2) Username Menu")
@@ -2298,7 +2273,7 @@ def again7():
     clear_screen()
     print("ENTER USERNAME")
     user = input("Username: ")
-    subprocess.run(["python3", "sagemode.py", "-U", user])
+    subprocess.run(["pipenv", "run", "python3", "sagemode.py", "-U", user])
     while True:
         print("\033[91m1\033[0m)\033[90m New Search")
         print("\033[91m2\033[0m)\033[90m Username Menu")
@@ -2340,7 +2315,7 @@ def menu():
         if choice == "1":
             os.system("git clone https://github.com/soxoj/maigret")
             os.chdir("maigret")
-            os.system("pip3 install .")
+            os.system("pipenv install .")
             username = input("Enter a username to search: ")
             html_file1 = f"report_{username}_plain.html"
             html_file2 = f"report_{username}_graph.html"
@@ -2349,17 +2324,17 @@ def menu():
             again1()
         elif choice == "2":
             clone_repo("https://github.com/theahmadov/slash.git", "slash")
-            os.system("pip install -r requirements.txt")
+            os.system("pipenv install -r requirements.txt")
             clear_screen()
             again3()
         elif choice == "3":
-            os.system("pip3 install pipx")
+            os.system("pipenv install pipx")
             os.system("pipx install sherlock-project")
             again2()
         elif choice == "4":
             clone_repo("https://github.com/AnonCatalyst/AliaStorm.git", "AliaStorm")
             subprocess.run(
-                ["pip3", "install", "-r", "requirements.txt", "--break-system-packages"]
+                ["pipenv", "install", "-r", "requirements.txt", "--break-system-packages"]
             )
             clear_screen()
             again4()
@@ -2372,6 +2347,7 @@ def menu():
             again5()
         elif choice == "6":
             change()
+            os.system("pipenv install cheerio")
             import cheerio
             os.system(
                 "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common"
@@ -2401,7 +2377,7 @@ def menu():
             change()
             os.system("git clone https://github.com/senran101604/sagemode")
             os.chdir("sagemode")
-            os.system("python3 -m pip install -r requirements.txt")
+            os.system("pipenv run python3 -m pip install -r requirements.txt")
             clear_screen()
             again7()
         elif choice == "BACK":
@@ -2502,20 +2478,20 @@ def landlubber():
     os.chdir("phosint")
     os.system("git fetch")
     os.system("git pull")
-    os.system("pip install -r requirements.txt")
+    os.system("pipenv install -r requirements.txt")
     clear_screen()
     print("Please Input Number \033[92m EXAMPLE 1112223333")
     choice = input("enter: ")
 
     try:
-        subprocess.run(["python3", "phosint.py", choice])
+        subprocess.run(["pipenv", "run", "python3", "phosint.py", choice])
     except Exception as e:
         print(f"Error: {e}")
         what_now()
 
 
 def cell():
-    os.system("python3 num1.py")
+    os.system("pipenv run python3 num1.py")
     print(" ")
     print("1) New Search")
     print("2) Back")
@@ -2644,7 +2620,7 @@ def gitlab():
     os.chdir("LeakSeek")
     os.system("git fetch")
     os.system("git pull")
-    os.system("python3 LeakSeek.py")
+    os.system("pipenv run python3 LeakSeek.py")
     what_now()
 
 
@@ -2663,7 +2639,7 @@ def wifi_boost():
     os.chdir("Wifi-Indoor-Location")
     os.system("git fetch")
     os.system("git pull")
-    subprocess.run(["python3", "net.py"])
+    subprocess.run(["pipenv", "run", "python3", "net.py"])
     networks_menu()
 
 
@@ -2719,7 +2695,7 @@ def ip_lookup():
     os.chdir("IP-Lookup-Tool")
     subprocess.call(["python3", "-m", "pip", "install", "flask"])
     subprocess.call(["python3", "-m", "pip", "install", "ipapi"])
-    os.system("python3 app.py")
+    os.system("pipenv run python3 app.py")
     what_now()
 
 
@@ -2816,7 +2792,7 @@ def jigsaw():
         os.chdir("Sock-Puppet-Generator")
         os.system("git fetch")
         os.system("git pull")
-        os.system("python3 main.py")
+        os.system("pipenv run python3 main.py")
         time.sleep(3)
         os.system("nano output.json")
         jigsaw()
@@ -2896,8 +2872,8 @@ def unclassified_menu():
             )
         )
         header()
-        subprocess.run(["python3", "install.py"])
-        subprocess.run(["python3", "webhound.py"])
+        subprocess.run(["pipenv", "run", "python3", "install.py"])
+        subprocess.run(["pipenv", "run", "python3", "webhound.py"])
         what_now()
     elif choice == "2":
         clear_screen()
@@ -2912,10 +2888,10 @@ def unclassified_menu():
             )
         )
         header()
-        os.system("python3 -m pip install -r requirements.txt")
+        os.system("pipenv run python3 -m pip install -r requirements.txt")
         os.system(f"sudo chmod +x ./install.sh")
         os.system("sudo bash ./install.sh")
-        os.system("python3 ominis.py")
+        os.system("pipenv run python3 ominis.py")
         what_now()
     elif choice == "3":
         jigsaw()
@@ -3024,8 +3000,8 @@ def prox():
         colored("INSTALLING DEPENDENCIES...", "red", attrs=["reverse", "blink", "bold"])
     )
     header()
-    os.system("python3 install.py")
-    subprocess.run(["python3", "lumina.py"])
+    os.system("pipenv run python3 install.py")
+    subprocess.run(["pipenv", "run", "python3", "lumina.py"])
     what_now()
 
 
@@ -3053,7 +3029,7 @@ def kicks():
     change()
     os.system("git clone https://github.com/k4m4/kickthemout.git")
     os.chdir("kickthemout")
-    os.system("sudo -H pip3 install -r requirements.txt")
+    os.system("sudo -H pipenv install -r requirements.txt")
     os.system("sudo python3 kickthemout.py")
     what_now()
 
@@ -3063,7 +3039,7 @@ def kicker():
     os.system("sudo apt-get update && sudo apt-get install nmap")
     os.system("git clone https://github.com/k4m4/kickthemout.git")
     os.chdir("kickthemout")
-    os.system("sudo -H pip3 install -r requirements.txt")
+    os.system("sudo -H pipenv install -r requirements.txt")
     kicks()
 
 
@@ -3106,7 +3082,7 @@ def cloak():
     print("Enter CloudFlare Protected Url")
     ur = input("Url: ")
     clear_screen
-    subprocess.run(["python3", "cloakquest3r.py", ur])
+    subprocess.run(["pipenv", "run", "python3", "cloakquest3r.py", ur])
     print("1) New Search")
     print("2) Dante's Inferno")
     choice = input("Selection: ")
@@ -3122,7 +3098,7 @@ def cloak():
 
 
 def hguard():
-    os.system("python3 main.py")
+    os.system("pipenv run python3 main.py")
     print(" ")
     print("1) New Search")
     print("2) Go Back")
@@ -3240,7 +3216,7 @@ def kaboom():
             "\033[90mSELECT\033[94m135 \033[90mor \033[94m443 \033[90mFOR TURBO MODE\033[0m"
         )
         trb = input("turbo number: ")
-        subprocess.run(["python3", "DRipper.py", "-s", ipa, "-p", prt, "-t", trb])
+        subprocess.run(["pipenv", "run", "python3", "DRipper.py", "-s", ipa, "-p", prt, "-t", trb])
         what_now()
     elif choice == "DRipper":
         print(" ")
@@ -3269,15 +3245,15 @@ def kaboom():
         os.system("sudo apt install python3-whois")
         os.system("sudo apt install python3-requests")
         os.system("sudo apt install python3-scapy")
-        os.system("pip3 install GeoIP")
-        os.system("pip3 install python-geoip")
-        os.system("pip3 install pygeoip")
-        os.system("pip3 install requests")
-        os.system("pip3 install pycurl")
-        os.system("pip3 install whois")
-        os.system("pip3 install scapy-python3")
+        os.system("pipenv install GeoIP")
+        os.system("pipenv install python-geoip")
+        os.system("pipenv install pygeoip")
+        os.system("pipenv install requests")
+        os.system("pipenv install pycurl")
+        os.system("pipenv install whois")
+        os.system("pipenv install scapy-python3")
         os.system("sudo chmod +x ufonet")
-        os.system("python3 ./ufonet --gui")
+        os.system("pipenv run python3 ./ufonet --gui")
         what_now()
     elif choice == "UFONET":
         print(" ")
@@ -3297,11 +3273,11 @@ def kaboom():
         os.chdir("KARMA-DDoS")
         os.system("git fetch")
         os.system("git pull")
-        os.system("python3 -m pip install -r requirements.txt")
+        os.system("pipenv run python3 -m pip install -r requirements.txt")
         os.system("sudo chmod +x ./setup.py")
         os.system("sudo python3 ./setup.py install")
         clear_screen()
-        os.system("python3 main.py")
+        os.system("pipenv run python3 main.py")
         kaboom()
     elif choice == "Karma":
         print(" ")
@@ -3367,7 +3343,7 @@ def kaboom():
         os.system("sudo apt-get update && sudo apt-get install nmap")
         os.system("git clone https://github.com/k4m4/kickthemout.git")
         os.chdir("kickthemout")
-        os.system("sudo -H pip3 install -r requirements.txt")
+        os.system("sudo -H pipenv install -r requirements.txt")
         kick()
         os.system("sudo python3 kickthemout.py")
         what_now()
@@ -3388,7 +3364,7 @@ def kaboom():
         clear_screen()
         os.system("git clone https://github.com/justakazh/sicat.git")
         os.chdir("sicat")
-        os.system("python3 -m pip install -r requirements.txt")
+        os.system("pipenv run python3 -m pip install -r requirements.txt")
         os.system("sudo apt install getsploit")
         sploit = "YKCX4J0B2ZBD8ZRF1WVOAIISZQKYAKVM1VT8UZ6QLNBZMIS5ALJYXW9NEA2E5K7X"
         subprocess.run(["getsploit", sploit])
@@ -3410,7 +3386,7 @@ def kaboom():
         clear_screen()
         os.system("git clone https://github.com/spyboy-productions/CloakQuest3r.git")
         os.chdir("CloakQuest3r")
-        os.system("pip3 install -r requirements.txt")
+        os.system("pipenv install -r requirements.txt")
         cloak()
     elif choice == "CloakQuest3r":
         print(" ")
@@ -3444,7 +3420,7 @@ def kaboom():
         change()
         os.system("git clone https://github.com/machine1337/hackguard.git")
         os.chdir("hackguard")
-        os.system("python3 -m pip install -r requirements.txt")
+        os.system("pipenv run python3 -m pip install -r requirements.txt")
         hguard()
     elif choice == "Hackguard":
         print(" ")
@@ -3520,7 +3496,7 @@ def kaboom():
         kaboom()
     elif choice == "14":
         change()
-        os.system("pip3 install dronesploit")
+        os.system("pipenv install dronesploit")
         os.system("dronesploit")
         what_now()
     elif choice == "DroneSploit":
@@ -3556,7 +3532,7 @@ def kaboom():
         change()
         os.system("git clone https://github.com/Malwareman007/TechViper.git")
         os.chdir("TechViper")
-        os.system("python3 -m pip install -r requirements.txt")
+        os.system("pipenv run python3 -m pipenv install -r requirements.txt")
         vscan()
     elif choice == "Tech Viper":
         print(" ")
@@ -3678,8 +3654,8 @@ def networks_menu():
             )
         )
         header()
-        os.system("python3 -m pip install -r requirements.txt")
-        subprocess.run(["python3", "ports.py"])
+        os.system("pipenv run python3 -m pip install -r requirements.txt")
+        subprocess.run(["pipenv", "run", "python3", "ports.py"])
         what_now()
     elif choice == "6":
         simba_menu()
@@ -4038,7 +4014,7 @@ def frameworks_menu():
 
     if choice == "1":
         change()
-        install_command = "pip install git+https://github.com/saeeddhqan/maryam.git"
+        install_command = "pipenv install git+https://github.com/saeeddhqan/maryam.git"
         os.system(install_command)
         run_command = "maryam -s"
         os.system(run_command)
@@ -4046,25 +4022,15 @@ def frameworks_menu():
         what_now()
     elif choice == "2":
         change()
-        clone_command = "git clone https://github.com/Lucksi/Mr.Holmes"
-        os.system(clone_command)
-        update_command = "sudo apt-get update"
-        os.system(update_command)
+        os.system("git clone https://github.com/Lucksi/Mr.Holmes")
+        os.system("sudo apt-get update")
         os.chdir("Mr.Holmes")
         os.system("git fetch")
         os.system("git pull")
-        venv_command = "python3 -m venv .lib_venv"
-        os.system(venv_command)
-        chmod_command = "sudo chmod +x install.sh"
-        os.system(chmod_command)
-        install_command = "sudo bash install.sh"
-        os.system(install_command)
-        activate_command = "source .lib_venv/bin/activate"
-        os.system(activate_command)
-        requirements_command = "pip3 install -r requirements.txt"
-        os.system(requirements_command)
-        run_script_command = "sudo python3 MrHolmes.py"
-        os.system(run_script_command)
+        os.system("sudo chmod +x install.sh")
+        os.system("sudo bash ./install.sh")
+        os.system("pipenv install -r requirements.txt")
+        os.system("sudo python3 MrHolmes.py")
         what_now()
     elif choice == "3":
         change()
@@ -4084,12 +4050,12 @@ def frameworks_menu():
             )
         )
         header()
-        os.system("python3 -m pip install -r requirements.txt")
+        os.system("pipenv run python3 -m pipenv install -r requirements.txt")
         os.system("sudo chmod +x install_tools.sh")
         os.system("sudo bash ./install_tools.sh")
-        os.system("python3 -m pip install getrails")
-        os.system("python3 -m pip install pydork")
-        os.system("python3 odinova.py")
+        os.system("pipenv run python3 -m pip install getrails")
+        os.system("pipenv run python3 -m pip install pydork")
+        os.system("pipenv run python3 odinova.py")
         what_now()
     elif choice == "Maryam":
         print(" ")
