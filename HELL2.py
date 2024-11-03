@@ -1,5 +1,7 @@
 import sys
 import os
+os.system("sudo apt install pipenv")
+os.system("pipenv install pip")
 os.system("sudo apt-get install python3-scapy")
 os.system("pipenv run python3 -m pip install pyqt5 --upgrade")
 os.system("pipenv run pip3 install pillow")
@@ -93,8 +95,7 @@ def peey():
             attrs=["reverse", "blink", "bold"],
         )
     )
-    print("1) Upgrade Linux")
-    print("2) First Time Using?")
+    print("1) First Time Using?")
     print("3) I've Used This Before")
     option = input("> ")
 
