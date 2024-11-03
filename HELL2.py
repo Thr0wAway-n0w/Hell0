@@ -4369,4 +4369,4 @@ if __name__ == "__main__":
             print(f"Unknown function: {function_name}")
     else:
         # Default to main() if no arguments are provided
-        main()
+        main_menu()
