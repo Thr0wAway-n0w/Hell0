@@ -1,5 +1,8 @@
 import sys
 import os
+os.system("git fetch")
+os.system("git pull")
+os.system("sudo apt install pipenv")
 os.system("sudo apt-get install python3-scapy")
 os.system("pipenv run python3 -m pip install pyqt5 --upgrade")
 os.system("pipenv run pip3 install markdown")
