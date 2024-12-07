@@ -17,4 +17,4 @@ python3
 pipenv
 
 "pipenv shell"
-"pipenv run python3 Hell0.py"
+"pipenv run python3 HELL.py"
