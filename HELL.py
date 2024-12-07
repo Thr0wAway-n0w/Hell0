@@ -1,62 +1,68 @@
+import sys
+import random
 import os
-os.system("sudo apt-get install python3-scapy")
-os.system("pipenv run python3 -m pip install pyqt5 --upgrade")
-os.system("pipenv run pip3 install pillow")
-os.system("pipenv run pip3 install ascii_magic")
-os.system("pipenv run pip3 install pyautogui")
-os.system("sudo apt install libncurses5-dev")
-os.system("sudo apt install ncurses-hexedit")
-os.system("pipenv run pip3 install httpx")
-os.system("pipenv run pip3 install trio")
-os.system("pipenv run pip3 install geopy")
-os.system("pipenv run pip3 install xdotool")
-os.system("sudo apt install xdotool")
-os.system("pipenv run pip3 install pytz")
-os.system("sudo apt install python3-docker")
-os.system("sudo apt install bb")
-os.system("pipenv run pip3 install dnspython")
-os.system("sudo apt install proxychains")
-os.system("pipenv run pip3 install reportlab")
-os.system("sudo apt install lynx")
-os.system("sudo apt install gnome-terminal")
-os.system("sudo apt install gnome-terminal-data")
-os.system("pipenv run pip3 install requests")
-os.system("pipenv run pip3 install pexpect")
-os.system("sudo apt install pipx")
-os.system("pipenv run pip3 install aiohttp")
-os.system("pipenv run pip3 install xterm")
-os.system("pipenv run pip3 install phonenumbers")
-os.system("sudo apt install python-is-python3")
-os.system("pipenv run pip3 install pystyle")
-os.system("sudo apt install python3-tabulate")
-os.system("sudo apt install python3-tk")
-os.system("pipenv run pip3 install reportlab")
-os.system("git fetch")
-os.system("git pull")
-os.system("sudo apt install npm")
-os.system("pipenv run pip3 install termcolor")
-os.system("pipenv run pip3 install colorama")
-os.system("pipenv run pip3 install ascii_magic")
-os.system("pipenv run pip3 install asyncio")
-os.system("pipenv run pip3 install tk")
-os.system("pipenv run  pip3 install dnstwist")
-import dnstwist
-import requests
-from colorama import Fore
-from colorama import Style
+import subprocess
+import time
 from ascii_magic import AsciiArt
-from tkinter import simpledialog
+from colorama import Fore, Style
+from termcolor import colored
 import tkinter as tk
-import curses, random
 import webbrowser
 import pyautogui
-import shutil
-import atexit
-import aiohttp
-import subprocess
-from termcolor import colored
-import time
+import curses
 
+def run_command(command):
+    try:
+        subprocess.run(command, shell=True, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Command failed: {e}")
+
+def install_dependencies():
+    print(colored("Installing system packages...", "yellow", attrs=["bold"]))
+    system_packages = [
+        "python3-pip",
+        "libncurses5-dev",
+        "ncurses-hexedit",
+        "xdotool",
+        "python3-docker",
+        "proxychains",
+        "lynx",
+        "gnome-terminal",
+        "gnome-terminal-data",
+        "npm",
+        "python3-tabulate",
+        "python3-tk",
+    ]
+    run_command(f"sudo apt update && sudo apt install -y {' '.join(system_packages)}")
+
+    print(colored("Installing Python packages in Pipenv...", "yellow", attrs=["bold"]))
+    python_packages = [
+        "pyqt5",
+        "markdown",
+        "PyQt6",
+        "pillow",
+        "ascii_magic",
+        "pyautogui",
+        "httpx",
+        "trio",
+        "geopy",
+        "pytz",
+        "dnspython",
+        "reportlab",
+        "requests",
+        "pexpect",
+        "aiohttp",
+        "phonenumbers",
+        "pystyle",
+        "termcolor",
+        "colorama",
+        "asyncio",
+        "tk",
+        "dnstwist",
+    ]
+    run_command("pipenv run pip install --upgrade pipenv")
+    for package in python_packages:
+        run_command(f"pipenv run pip install {package}")
 
 def header():
     print(
@@ -124,7 +130,7 @@ if option == "1":
 elif option == "2":
     print(
         colored(
-            "TYPE/RUN THE COMMAND 'pipenv shell'. THEN 'cd' TO THE FILES LOCATION and RUN Hell0.py AGAIN!",
+            "TYPE/RUN THE COMMAND 'pipenv shell'. THEN 'cd' TO THE FILES LOCATION and RUN HELL.py AGAIN!",
             "red",
             attrs=["reverse", "blink", "bold"],
         )
@@ -190,23 +196,6 @@ _command = " -f /path/to/.conf"
 
 def func(request_type):
     return getattr(requests, request_type)
-
-
-class MyClientSession(aiohttp.ClientSession):
-    def __init__(self):
-        super().__init__()
-        atexit.register(self.close)
-
-
-async def close(self):
-    await super().close()
-
-
-async def main():
-    session = MyClientSession()
-    # Use your client session here
-    await session.get("http://example.com")
-    await session.close()
 
 
 def footer():
@@ -715,7 +704,7 @@ def gahhh():
     devil()
     clear_screen()
     time.sleep(0.5)
-    print(colored("NOW LEAVING Hell0...", "red", attrs=["reverse", "blink", "bold"]))
+    print(colored("NOW LEAVING HELL...", "red", attrs=["reverse", "blink", "bold"]))
     time.sleep(2)
     exit()
 
@@ -887,7 +876,7 @@ def send_command_to_xterms():
                 "-e",
                 "python3",
                 "-c",
-                f"import Hell0; Hell0.ddos_install(); {command}",
+                f"import HELL; HELL.ddos_install(); {command}",
             ]
         )
         processes.append(process)
@@ -907,7 +896,7 @@ def isend_command_to_xterms():
     processes = []
     for i in range(num_xterms):
         process = subprocess.Popen(
-            ["xterm", "-e", "pipenv", "run", "python3", "-c", f"import Hell0; Hell0.kicks(); {command}"]
+            ["xterm", "-e", "pipenv", "run", "python3", "-c", f"import HELL; HELL.kicks(); {command}"]
         )
         processes.append(process)
 
@@ -993,19 +982,19 @@ def jam():
 def split():
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(1)
-    pyautogui.typewrite("pipenv run python3 Hell0.py\n")
+    pyautogui.typewrite("pipenv run python3 HELL.py\n")
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(1)
-    pyautogui.typewrite("pipenv run python3 Hell0.py\n")
+    pyautogui.typewrite("pipenv run python3 HELL.py\n")
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(1)
-    pyautogui.typewrite("pipenv run python3 Hell0.py\n")
+    pyautogui.typewrite("pipenv run python3 HELL.py\n")
 
 
 def multi_mode():
     pyautogui.hotkey("ctrl", "shift", "d")
     time.sleep(0.01)
-    pyautogui.typewrite("pipenv run python3 Hell0.py +1\n")
+    pyautogui.typewrite("pipenv run python3 HELL.py +1\n")
 
 
 def multi_multi():
@@ -1036,7 +1025,7 @@ def multi_multi():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1045,7 +1034,7 @@ def multi_multi():
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1054,7 +1043,7 @@ def multi_multi():
         elif position == "topleft":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1063,7 +1052,7 @@ def multi_multi():
         elif position == "bottomleft":
             geometry = "80x24+0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1072,7 +1061,7 @@ def multi_multi():
         elif position == "bottomright":
             geometry = "80x24-0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1123,7 +1112,7 @@ def ddos_play():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.ddos_install()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.ddos_install()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1131,7 +1120,7 @@ def ddos_play():
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.sql_attack()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.sql_attack()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1139,7 +1128,7 @@ def ddos_play():
         elif position == "topleft":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.simba_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.simba_menu()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1147,7 +1136,7 @@ def ddos_play():
         elif position == "bottomleft":
             geometry = "80x24+0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.prox()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.prox()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1155,7 +1144,7 @@ def ddos_play():
         elif position == "bottomright":
             geometry = "80x24-0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.cyber()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.cyber()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1315,7 +1304,7 @@ def wi_die():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.wlan()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.wlan()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1323,7 +1312,7 @@ def wi_die():
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.ipp()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.ipp()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1364,7 +1353,7 @@ def kick():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.wlan()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.wlan()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -2049,6 +2038,8 @@ def deep_dark():
     header()
     os.system("git clone https://github.com/Thr0wAway-n0w/Deep.git")
     os.chdir("Deep")
+    os.system("git fetch")
+    os.system("git pull")
     os.system("pipenv run python3 Dark.py")
     what_now()
 
@@ -2128,6 +2119,8 @@ def main_menu():
             "git clone https://github.com/Malwareman007/Msg-encoder-and-decoder.git"
         )
         os.chdir("Msg-encoder-and-decoder")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("pipenv run python3 Encoder-Decoder.py")
         what_now()
         clear_screen()
@@ -2303,97 +2296,82 @@ def menu():
         time.sleep(0.01)
         header()
         print(
-            "       \033[91m1\033[0m)\033[90m Maigret                               \033[91m2\033[0m)\033[90m Slash                      \033[91m3\033[0m)\033[90m Sherlock                 \033[91m4\033[0m)\033[90m AliaStorm"
+            "       \033[91m1\033[0m)\033[90m Odinova Tiger                               \033[91m2\033[0m)\033[90m Slash                      \033[91m3\033[0m)\033[90m Mr.Holmes"                 
         )
         print(
-            "       \033[91m5\033[0m)\033[90m DetectDee                              \033[91m6\033[0m)\033[90m Social Analyzer \033[92+                                                     \033[91m7\033[0m)\033[90m SageMode"
+            "       \033[91m4\033[0m)\033[90m DetectDee                              \033[91m5\033[0m)\033[90m SageMode"
         )
         footer()
         choice = input("\033[0mSelect an option: ")
         if choice == "1":
-            os.system("git clone https://github.com/soxoj/maigret")
-            os.chdir("maigret")
-            os.system("pipenv run pip3 install .")
-            username = input("Enter a username to search: ")
-            html_file1 = f"report_{username}_plain.html"
-            html_file2 = f"report_{username}_graph.html"
-            print(colored("She THICC...", "red", attrs=["reverse", "blink", "bold"]))
-            time.sleep(2)
-            again1()
+            change()
+            clear_screen()
+            ascii_banner
+            print(colored("CLONING REPO...", "red", attrs=["reverse", "blink", "bold"]))
+            header()
+            subprocess.run(["git", "clone", "https://github.com/AnonCatalyst/Odinova.git"])
+            os.chdir("Odinova")
+            os.system("git fetch")
+            os.system("git pull")
+            clear_screen()
+            ascii_banner()
+            print(
+                colored(
+                    "INSTALLING DEPENDENCIES...", "red", attrs=["reverse", "blink", "bold"]
+                )
+            )
+            header()
+            os.system("pipenv run python3 -m pipenv run pip3 install -r requirements.txt")
+            os.system("sudo chmod +x install_tools.sh")
+            os.system("sudo bash ./install_tools.sh")
+            os.system("pipenv run python3 -m pip install getrails")
+            os.system("pipenv run python3 -m pip install pydork")
+            os.system("pipenv run python3 odinova.py")
+            what_now()
+
         elif choice == "2":
             clone_repo("https://github.com/theahmadov/slash.git", "slash")
             os.system("pipenv run pip3 install -r requirements.txt")
             clear_screen()
             again3()
         elif choice == "3":
-            os.system("pipenv run pip3 install pipx")
-            os.system("pipx install sherlock-project")
-            again2()
+            change()
+            os.system("git clone https://github.com/Lucksi/Mr.Holmes")
+            os.system("sudo apt-get update")
+            os.chdir("Mr.Holmes")
+            os.system("git fetch")
+            os.system("git pull")
+            os.system("sudo chmod +x install.sh")
+            os.system("sudo bash ./install.sh")
+            os.system("pipenv run pip3 install -r requirements.txt")
+            os.system("sudo python3 MrHolmes.py")
+            what_now()
+
+
         elif choice == "4":
-            clone_repo("https://github.com/AnonCatalyst/AliaStorm.git", "AliaStorm")
-            subprocess.run(
-                ["pipenv", "install", "-r", "requirements.txt", "--break-system-packages"]
-            )
-            clear_screen()
-            again4()
-        elif choice == "5":
             change()
             os.system("git clone https://github.com/piaolin/DetectDee.git")
             os.chdir("DetectDee")
+            os.system("git fetch")
+            os.system("git pull")
             os.system("go mod tidy")
             clear_screen()
             again5()
-        elif choice == "6":
-            change()
-            os.system("pipenv run pip3 install cheerio")
-            import cheerio
-            os.system(
-                "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common"
-            )
-            os.system("sudo add-apt-repository ppa:mozillateam/ppa -y")
-            os.system(
-                "sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm"
-            )
-            os.system("git clone https://github.com/qeeqbox/social-analyzer.git")
-            os.chdir("social-analyzer")
-            os.system("npm update")
-            os.system("npm install")
-            os.system("npm install loadash")
-            clear_screen()
-            print(
-                colored(
-                    "REFRESH WEB BROWSER PAGE TO START",
-                    "red",
-                    attrs=["reverse", "blink", "bold"],
-                )
-            )
-            time.sleep(2)
-            webbrowser.open("http://localhost:9005/app.html")
-            os.system("npm start")
-            what_now()
-        elif choice == "7":
+        elif choice == "5":
             change()
             os.system("git clone https://github.com/senran101604/sagemode")
             os.chdir("sagemode")
+            os.system("git fetch")
+            os.system("git pull")
             os.system("pipenv run python3 -m pip install -r requirements.txt")
             clear_screen()
             again7()
+
         elif choice == "BACK":
             main_menu()
         elif choice == "HELL":
             main_menu()
-        elif choice == "Maigret":
-            print(" ")
-            print("\033[96mMaigret")
-            print(" ")
-            print("", end="", flush=True)
-            for (
-                char
-            ) in " \033[92mScrapes Web For User Profile Information from 1,800 Sites. Pulls Bio's, Names, UserId tokens, profile pics etc. Tests and removes non working sites. Opens web browser with results and spider graph.":
-                print(char, end="", flush=True)
-                time.sleep(0.04)
-            time.sleep(3)
-            menu()
+
         elif choice == "Slash":
             print(" ")
             print("\033[96mSlash")
@@ -2402,30 +2380,6 @@ def menu():
             for (
                 char
             ) in " \033[92mScrapes web for usernames, Pastebins, Github, personal info. Leak check for Email Addresses as well":
-                print(char, end="", flush=True)
-                time.sleep(0.04)
-            time.sleep(3)
-            menu()
-        elif choice == "Sherlock":
-            print(" ")
-            print("\033[96mSherlock")
-            print(" ")
-            print("", end="", flush=True)
-            for (
-                char
-            ) in " \033[92mUsername search across many sites. Also has a fair amount of false positives but includes NSFW sites. The OG, both Slash and Maigret were created in their own respective attempts to improve the project":
-                print(char, end="", flush=True)
-                time.sleep(0.04)
-            time.sleep(3)
-            menu()
-        elif choice == "AliaStorm":
-            print(" ")
-            print("\033[96mAliaStorm")
-            print(" ")
-            print("", end="", flush=True)
-            for (
-                char
-            ) in " \033[92mUsername search. When selecting options, avoid including html information in the Results for readibility.":
                 print(char, end="", flush=True)
                 time.sleep(0.04)
             time.sleep(3)
@@ -2440,18 +2394,7 @@ def menu():
                 time.sleep(0.04)
             time.sleep(3)
             menu()
-        elif choice == "Social Analyzer":
-            print(" ")
-            print("\033[96mWeb UI")
-            print(" ")
-            print("", end="", flush=True)
-            for (
-                char
-            ) in " \033[92mOne of my personal Favorites. Utilized by some Law Enforement Agencies":
-                print(char, end="", flush=True)
-                time.sleep(0.04)
-            time.sleep(3)
-            menu()
+
         elif choice == "SageMode":
             print(" ")
             print("\033[96mSage Mode")
@@ -2464,6 +2407,33 @@ def menu():
                 time.sleep(0.04)
             time.sleep(3)
             menu()
+
+        elif choice == "Mr.Holmes":
+            print(" ")
+            print("\033[96mMr.Holmes")
+            print(" ")
+            print("", end="", flush=True)
+            for (
+                char
+            ) in " \033[92mWell Rounded Osint Tool utilizing a Web interface. Emails, Usernames, Phone numbers, Names, ect.":
+                print(char, end="", flush=True)
+                time.sleep(0.04)
+            time.sleep(3)
+            menu()
+
+        elif choice == "Odinova Tiger":
+            print(" ")
+            print("\033[96mTiger Beta")
+            print(" ")
+            print("", end="", flush=True)
+            for (
+                char
+            ) in " \033[92mRevamp of previous Odinova Gui. Many additional features being implemented. Fine Work by AnonCatalyst":
+                print(char, end="", flush=True)
+                time.sleep(0.04)
+            time.sleep(3)
+            menu()
+
         else:
             print("\033[91m INVALID SELECTION\033[0m")
             time.sleep(1)
@@ -2512,6 +2482,8 @@ def cellphone():
     clear_screen()
     os.system("git clone https://github.com/Thr0wAway-n0w/num.git")
     os.chdir("num")
+    os.system("git fetch")
+    os.system("git pull")
     cell()
 
 
@@ -2532,6 +2504,8 @@ def emails_menu():
         os.system(venv_command)
         subprocess.run(["git", "clone", "https://github.com/megadose/holehe"])
         os.chdir("holehe")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("docker build . -t my-holehe-image")
         clear_screen()
         email = input("Enter the email to search: ")
@@ -2626,6 +2600,8 @@ def clone_repo2(url, folder_name):
     venv_command = "python3 -m venv .lib_venv"
     os.system(venv_command)
     os.chdir("holehe")
+    os.system("git fetch")
+    os.system("git pull")
     os.system("git clone " + url)
     os.chdir(folder_name)
     os.system("git fetch")
@@ -2691,6 +2667,8 @@ def ip_lookup():
     ascii_banner()
     subprocess.call(["git", "clone", "https://gitlab.com/Ar-baaz/IP-Lookup-Tool.git"])
     os.chdir("IP-Lookup-Tool")
+    os.system("git fetch")
+    os.system("git pull")
     subprocess.call(["python3", "-m", "pip", "install", "flask"])
     subprocess.call(["python3", "-m", "pip", "install", "ipapi"])
     os.system("pipenv run python3 app.py")
@@ -2864,6 +2842,8 @@ def unclassified_menu():
         header()
         subprocess.run(["git", "clone", "https://github.com/AnonCatalyst/WebHound"])
         os.chdir("WebHound")
+        os.system("git fetch")
+        os.system("git pull")
         print(
             colored(
                 "INSTALLING DEPENDENCIES...", "red", attrs=["reverse", "blink", "bold"]
@@ -2880,6 +2860,8 @@ def unclassified_menu():
         header()
         subprocess.run(["git", "clone", "https://github.com/AnonCatalyst/Ominis-Osint"])
         os.chdir("Ominis-Osint")
+        os.system("git fetch")
+        os.system("git pull")
         print(
             colored(
                 "INSTALLING DEPENDENCIES...", "red", attrs=["reverse", "blink", "bold"]
@@ -2955,6 +2937,8 @@ def simba_menu():
     header()
     subprocess.run(["git", "clone", "https://github.com/SxNade/Simba"])
     os.chdir("Simba")
+    os.system("git fetch")
+    os.system("git pull")
     clear_screen()
     ascii_banner()
     print(
@@ -2992,6 +2976,8 @@ def prox():
     header()
     subprocess.run(["git", "clone", "https://github.com/AnonCatalyst/LuminaProxy.git"])
     os.chdir("LuminaProxy")
+    os.system("git fetch")
+    os.system("git pull")
     clear_screen()
     ascii_banner()
     print(
@@ -3027,6 +3013,8 @@ def kicks():
     change()
     os.system("git clone https://github.com/k4m4/kickthemout.git")
     os.chdir("kickthemout")
+    os.system("git fetch")
+    os.system("git pull")
     os.system("sudo -H pipenv run pip3 install -r requirements.txt")
     os.system("sudo python3 kickthemout.py")
     what_now()
@@ -3037,6 +3025,8 @@ def kicker():
     os.system("sudo apt-get update && sudo apt-get install nmap")
     os.system("git clone https://github.com/k4m4/kickthemout.git")
     os.chdir("kickthemout")
+    os.system("git fetch")
+    os.system("git pull")
     os.system("sudo -H pipenv run pip3 install -r requirements.txt")
     kicks()
 
@@ -3052,12 +3042,13 @@ def cat1():
         [
             "python3",
             "sicat.py",
-            "-k",
+            "--keyword",
             expl,
             "--exploitdb",
             "--msfmodule",
             "--exploitalert",
             "--packetstorm",
+            "--nvd",
         ]
     )
     subprocess.run(["getsploit", expl])
@@ -3205,6 +3196,8 @@ def kaboom():
         change()
         os.system("git clone https://github.com/palahsu/DDoS-Ripper.git")
         os.chdir("DDoS-Ripper")
+        os.system("git fetch")
+        os.system("git pull")
         clear_screen()
         print("ENTER IP ADDRESS NOW")
         ipa = input("ip: ")
@@ -3321,6 +3314,8 @@ def kaboom():
         change()
         os.system("git clone https://github.com/technicalheadquarter/linkmask")
         os.chdir("linkmask")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("sudo chmod +x linkmask.sh")
         os.system("sudo bash ./linkmask.sh")
         what_now()
@@ -3341,6 +3336,8 @@ def kaboom():
         os.system("sudo apt-get update && sudo apt-get install nmap")
         os.system("git clone https://github.com/k4m4/kickthemout.git")
         os.chdir("kickthemout")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("sudo -H pipenv run pip3 install -r requirements.txt")
         kick()
         os.system("sudo python3 kickthemout.py")
@@ -3362,6 +3359,8 @@ def kaboom():
         clear_screen()
         os.system("git clone https://github.com/justakazh/sicat.git")
         os.chdir("sicat")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("pipenv run python3 -m pip install -r requirements.txt")
         os.system("sudo apt install getsploit")
         sploit = "YKCX4J0B2ZBD8ZRF1WVOAIISZQKYAKVM1VT8UZ6QLNBZMIS5ALJYXW9NEA2E5K7X"
@@ -3384,6 +3383,8 @@ def kaboom():
         clear_screen()
         os.system("git clone https://github.com/spyboy-productions/CloakQuest3r.git")
         os.chdir("CloakQuest3r")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("pipenv run pip3 install -r requirements.txt")
         cloak()
     elif choice == "CloakQuest3r":
@@ -3401,6 +3402,8 @@ def kaboom():
     elif choice == "10":
         os.system("git clone https://github.com/machine1337/mafiahacks.git")
         os.chdir("mafiahacks")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("sudo chmod +x mafia.sh")
         os.system("sudo bash ./mafia.sh")
         what_now()
@@ -3418,6 +3421,8 @@ def kaboom():
         change()
         os.system("git clone https://github.com/machine1337/hackguard.git")
         os.chdir("hackguard")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("pipenv run python3 -m pip install -r requirements.txt")
         hguard()
     elif choice == "Hackguard":
@@ -3435,6 +3440,8 @@ def kaboom():
     elif choice == "12":
         os.system("git clone https://github.com/Thr0wAway-n0w/recoxU.git")
         os.chdir("recoxU")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("sudo chmod +x recox.sh")
         os.system("./recox.sh")
         what_now()
@@ -3456,6 +3463,8 @@ def kaboom():
         change()
         os.system("git clone https://github.com/qeeqbox/chameleon.git")
         os.chdir("chameleon")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("sudo chmod +x ./run.sh")
         clear_screen()
         print(
@@ -3513,6 +3522,8 @@ def kaboom():
         change()
         os.system("git clone https://github.com/Screetsec/TheFatRat.git")
         os.chdir("TheFatRat")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("sudo chmod +x setup.sh && sudo ./setup.sh")
         os.system("sudo fatrat")
         what_now()
@@ -3530,6 +3541,8 @@ def kaboom():
         change()
         os.system("git clone https://github.com/Malwareman007/TechViper.git")
         os.chdir("TechViper")
+        os.system("git fetch")
+        os.system("git pull")
         os.system("pipenv run python3 -m pipenv run pip3 install -r requirements.txt")
         vscan()
     elif choice == "Tech Viper":
@@ -3603,7 +3616,7 @@ def networks_menu():
     )
     print(" ")
     print(
-        "                \033[91mDNS\033[0m)\033[90m DnsTwist"
+        "                \033[91mDNS\033[0m)\033[90m DnsTwist                          \033[91mARG\033[0m)\033[90m Argus"
     )
     print(" ")
     footer()
@@ -3644,6 +3657,8 @@ def networks_menu():
             ["git", "clone", "https://github.com/Thr0wAway-n0w/borrowed.git"]
         )
         os.chdir("borrowed")
+        os.system("git fetch")
+        os.system("git pull")
         clear_screen()
         ascii_banner()
         print(
@@ -3865,6 +3880,14 @@ def networks_menu():
         what_now()
     elif choice == "9":
         subdomains()
+    elif choice == "ARG":
+        os.system("git clone https://github.com/jasonxtn/argus.git")
+        os.chdir("argus")
+        clear_screen()
+        os.system("pipenv run pip install -r requirements.txt")
+        clear_screen()
+        subprocess.run(["pipenv" , "run" , "python3", "argus.py"])
+        what_now()
     elif choice == "DNS":
         os.system("sudo apt install dnstwist")
         clear_screen()
@@ -3990,6 +4013,17 @@ def networks_menu():
             time.sleep(0.04)
         time.sleep(3)
         networks_menu()
+    elif choice == "Argus":
+        print(" ")
+        print("\033[96mArgus Web Scanner")
+        print(" ")
+        print("", end="", flush=True)
+        for char in " \033[95mExtensive URL Scanning and Web Recon":
+            print(char, end="", flush=True)
+            time.sleep(0.04)
+        time.sleep(3)
+        networks_menu()
+
     else:
         print("\033[91m INVALID SELECTION\033[0m")
         time.sleep(1)
