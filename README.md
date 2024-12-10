@@ -16,5 +16,14 @@ Requirements:
 python3
 pipenv
 
-"pipenv shell"
-"pipenv run python3 HELL.py"
+---INSTALLATION---
+
+sudo apt install pipenv
+
+pipenv shell
+
+git clone https://github.com/Thr0wAway-n0w/Hell0.git
+
+cd Hell0
+
+python3 HELL.py
