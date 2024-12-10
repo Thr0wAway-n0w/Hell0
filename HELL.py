@@ -263,6 +263,11 @@ def search_email(email, script_name):
             shutil.move(item_path, recycle_bin_path)
 
 
+def invalid():
+    print(colored("INVALID SELECTION", "red", attrs=["reverse", "blink", "bold"]))
+    time.sleep(2)
+    ficial()
+
 def ascii_banner():
     try:
         my_art = AsciiArt.from_url(
@@ -769,8 +774,7 @@ def geo_menu():
     elif option == "HELL":
         main_menu()
     else:
-        print("\033[91m INVALID SELECTION\033[0m")
-        time.sleep(1)
+        invalid()
         clear_screen()
         ascii_banner()
         geo_menu()
@@ -843,8 +847,7 @@ def zip_menu():
         return option
         main_menu()
     else:
-        print("\033[91m INVALID SELECTION\033[0m")
-        time.sleep(1)
+        invalid()
         clear_screen()
         ascii_banner()
         zip_menu()
@@ -954,8 +957,7 @@ def multi_menu():
         ascii_banner()
         what_now()
     else:
-        print("\033[91m INVALID SELECTION\033[0m")
-        time.sleep(1)
+        invalid()
         clear_screen()
         ascii_banner()
         multi_menu()
@@ -1180,8 +1182,7 @@ def what_now():
     elif choice == "2":
         gahhh()
     else:
-        print("\033[91m INVALID SELECTION\033[0m")
-        time.sleep(1)
+        invalid()
         clear_screen()
         ascii_banner()
         change()
@@ -1561,8 +1562,7 @@ def steg():
     elif choice == "HELL":
         main_menu()
     else:
-        print("\033[91m INVALID SELECTION\033[0m")
-        time.sleep(1)
+        valid()
         clear_screen()
         ascii_banner()
         steg()
@@ -2054,24 +2054,65 @@ def wah():
 
     choice = input("Pick Your Poison: ")
     if choice == "1":
-        ai()
+        ficial()
     elif choice == "2":
         main_menu()
     elif choice == "3":
         exit()
     else:
+        print("INVALID SELECTION")
+        time.sleep(2)
         wah() 
+
+def ficial():
+    clear_screen()
+    ascii_banner()
+    print(colored("INVOKING ARTIFICIAL INTELLIGENCE", "red", attrs=["reverse", "blink", "bold"]))
+    time.sleep(2)
+    print("\033[91m1\033[0m)\033[90m \033[0mSingle Query\033[0m")
+    print("\033[91m2\033[0m)\033[90m \033[0mInteractive Coding Model\033[0m")
+    print("\033[91m3\033[0m)\033[90m \033[0mInteractive General Model\033[0m")
+    choice=input("Select Mode: ")
+    if choice == "1":
+        ai()
+    elif choice == "2":
+        artif()
+    elif choice == "3":
+        duckbot()
+    else:
+        print(colored("INVALID SELECTION", "red", attrs=["reverse", "blink", "bold"]))
+        time.sleep(2)
+        ficial()
+
 
 def ai():
     clear_screen()
     ascii_banner()
     print(colored("INVOKING ARTIFICIAL INTELLIGENCE", "red", attrs=["reverse", "blink", "bold"]))
     time.sleep(2)
+    os.system("curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin")
     print("Welcome To HELL! How may I assist you during your stay?")
     assis=input("Prompt: ")
-    subprocess.run(["tgpt", "--provider", "blackboxai", assis])
+    subprocess.run(["pipenv", "run", "tgpt", "--provider", "phind", assis])
     wah()
 
+def artif():
+    clear_screen()
+    ascii_banner()
+    print(colored("INVOKING ARTIFICIAL INTELLIGENCE", "red", attrs=["reverse", "blink", "bold"]))
+    time.sleep(2)
+    os.system("curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin")
+    subprocess.run(["pipenv", "run", "tgpt", "--provider", "phind", "-i"])
+    wah()
+
+def duckbot():
+    clear_screen()
+    ascii_banner()
+    print(colored("INVOKING ARTIFICIAL INTELLIGENCE", "red", attrs=["reverse", "blink", "bold"]))
+    time.sleep(2)
+    os.system("curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin")
+    subprocess.run(["pipenv", "run", "tgpt", "--provider", "duckduckgo", "-i"])
+    wah()
 
 
 def main_menu():
@@ -2145,7 +2186,7 @@ def main_menu():
     elif choice == "16":
         os.system("curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin")
         clear_screen()
-        ai()
+        ficial()
     elif choice == "17":
         clear_screen()
         ascii_banner()
