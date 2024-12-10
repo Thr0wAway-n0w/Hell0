@@ -108,7 +108,7 @@ def peey():
         os.system("sudo apt full-upgrade -y")
         os.system("sudo apt autoremove")
     elif option == "2":
-        yeep()
+        install_dependencies()
     elif option == "3":
         time.sleep(0.1)
 
@@ -1025,7 +1025,7 @@ def multi_multi():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL.py; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1034,7 +1034,7 @@ def multi_multi():
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL.py; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1043,7 +1043,7 @@ def multi_multi():
         elif position == "topleft":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL.py; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1052,7 +1052,7 @@ def multi_multi():
         elif position == "bottomleft":
             geometry = "80x24+0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL.py; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -1061,7 +1061,7 @@ def multi_multi():
         elif position == "bottomright":
             geometry = "80x24-0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL; HELL.main_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL.py; HELL.main_menu()'\" &"
             )
             time.sleep(0.1)
             pyautogui.typewrite("1\n")
@@ -2043,6 +2043,36 @@ def deep_dark():
     os.system("pipenv run python3 Dark.py")
     what_now()
 
+def wah():
+    print(colored("HELLper", "red", attrs=["reverse", "blink", "bold"]))
+    time.sleep(0.01)
+    print
+    print(" ")
+    print("\033[91m1\033[0m)\033[90m \033[0mInvoke HELLper Again\033[0m")
+    print("\033[91m2\033[0m)\033[90m \033[31mGo To HELL\033[0m")
+    print("\033[91m3\033[0m)\033[90m \033[31mEXIT\033[0m")
+
+    choice = input("Pick Your Poison: ")
+    if choice == "1":
+        ai()
+    elif choice == "2":
+        main_menu()
+    elif choice == "3":
+        exit()
+    else:
+        wah() 
+
+def ai():
+    clear_screen()
+    ascii_banner()
+    print(colored("INVOKING ARTIFICIAL INTELLIGENCE", "red", attrs=["reverse", "blink", "bold"]))
+    time.sleep(2)
+    print("Welcome To HELL! How may I assist you during your stay?")
+    assis=input("Prompt: ")
+    subprocess.run(["tgpt", "--provider", "blackboxai", assis])
+    wah()
+
+
 
 def main_menu():
     change()
@@ -2058,10 +2088,13 @@ def main_menu():
     print(
         "       \033[91m3\033[0m)\033[90m Networks                  \033[91m6\033[0m)\033[90m Cameras               \033[91m9\033[0m)\033[90m Tool Repo-Depo          \033[91m12\033[0m)\033[90m\033[93m \033[41mDante's Inferno\033[0m"
     )
-    print(" ")
     print(
-        "       \033[91m13\033[0m)\033[90m DeepWeb                  \033[91m14\033[0m)\033[90m Encode-Decode        \033[91m15\033[0m)\033[90m Mapscii                \033[91m16\033[0m) \033[41mEXIT\033[0m "
+        "       \033[91m13\033[0m)\033[90m DeepWeb                  \033[91m14\033[0m)\033[90m Encode-Decode        \033[91m15\033[0m)\033[90m Mapscii                \033[91m16\033[0m) \033[44mInvoke A.I.\033[0m "
     )
+    print(
+        "       \033[91m17\033[0m) \033[41mEXIT\033[0m"
+    )
+    print(" ")
     choice = input("\033[97mSelect an option: ")
 
     if choice == "1":
@@ -2110,6 +2143,10 @@ def main_menu():
         os.system("telnet mapscii.me")
         what_now()
     elif choice == "16":
+        os.system("curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin")
+        clear_screen()
+        ai()
+    elif choice == "17":
         clear_screen()
         ascii_banner()
         gahhh()
