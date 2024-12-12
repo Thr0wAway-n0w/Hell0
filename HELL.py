@@ -10,6 +10,9 @@ import tkinter as tk
 import webbrowser
 import pyautogui
 import curses
+os.system("pipenv run pip install urllib3")
+import urllib3
+import six
 
 def run_command(command):
     try:
@@ -3266,7 +3269,7 @@ def kaboom():
         "                  ♛ \033[91m13\033[0m)\033[90mChameleon 🪬                   ♛ \033[91m14\033[0m)\033[90m DroneSploit             ♛ \033[91m15\033[0m)\033[90m FatRat   "
     )
     print(
-        "                 🪬 \033[91m16\033[0m)\033[90m Tech Viper                    🪬\033[91m17\033[0m)\033[90m DAMN "
+        "                 🪬 \033[91m16\033[0m)\033[90m Tech Viper                    🪬\033[91m17\033[0m)\033[90m DAMN                    ♛ \033[91m18\033[0m)\033[90m Puff-Puff-Password"
     )
     footer()
     choice = input("\033[0mSelect an option: ")
@@ -3662,6 +3665,26 @@ def kaboom():
         for (
             char
         ) in " \033[91mTake a look to see if there's an Angel on Your Systems shoulder, or a Devil":
+            print(char, end="", flush=True)
+            time.sleep(0.04)
+        time.sleep(3)
+        kaboom()
+    elif choice == "18":
+        change()
+        os.system("git clone https://github.com/Thr0wAway-n0w/PuffPuffPassword")
+        os.system("cd PuffPuffPassword")
+        os.system("git fetch")
+        os.system("git pull")
+        print(" ")
+        os.system("python3 pass.py")
+        what_now()
+
+    elif choice == "Puff-Puff-Password":
+        print(" ")
+        print("\033[96mGeneral Exploit and Cracking Utility")
+        print(" ")
+        print("", end="", flush=True)
+        for char in " \033[91mAutomates a few tools found in this program as well as a few new ones":
             print(char, end="", flush=True)
             time.sleep(0.04)
         time.sleep(3)
