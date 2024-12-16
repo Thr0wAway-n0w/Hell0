@@ -3271,6 +3271,9 @@ def kaboom():
     print(
         "                 🪬 \033[91m16\033[0m)\033[90m Tech Viper                    🪬\033[91m17\033[0m)\033[90m DAMN                    ♛ \033[91m18\033[0m)\033[90m Puff-Puff-Password"
     )
+    print(
+        "                 ♛ \033[91m19\033[0m)\033[90m BitBrute"
+    )
     footer()
     choice = input("\033[0mSelect an option: ")
     if choice == "1":
@@ -3672,7 +3675,7 @@ def kaboom():
     elif choice == "18":
         change()
         os.system("git clone https://github.com/Thr0wAway-n0w/PuffPuffPassword")
-        os.system("cd PuffPuffPassword")
+        os.chdir("PuffPuffPassword")
         os.system("git fetch")
         os.system("git pull")
         print(" ")
@@ -3685,6 +3688,26 @@ def kaboom():
         print(" ")
         print("", end="", flush=True)
         for char in " \033[91mAutomates a few tools found in this program as well as a few new ones":
+            print(char, end="", flush=True)
+            time.sleep(0.04)
+        time.sleep(3)
+        kaboom()
+    elif choice == "19":
+        change()
+        os.system("git clone https://github.com/Thr0wAway-n0w/BitBrute.git")
+        os.chdir("BitBrute")
+        os.system("git fetch")
+        os.system("git pull")
+        print(" ")
+        os.system("python3 -m pip install -r requirements.txt")
+        os.system("python3 rep.py")
+        what_now()
+    elif choice == "BitBrute":
+        print(" ")
+        print("\033[96mBitcoin 12th Word Recover")
+        print(" ")
+        print("", end="", flush=True)
+        for char in " \033[91mIf you can supply the first 11 words in your mnemonic phrase, this will discover the 12th. ":
             print(char, end="", flush=True)
             time.sleep(0.04)
         time.sleep(3)
