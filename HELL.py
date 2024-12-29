@@ -3712,7 +3712,7 @@ def kaboom():
             time.sleep(0.04)
         time.sleep(3)
         kaboom()
-        elif choice == "20":
+    elif choice == "20":
         change()
         os.system("git clone https://github.com/Thr0wAway-n0w/Disclose.git")
         os.chdir("Disclose")
