@@ -3272,7 +3272,7 @@ def kaboom():
         "                 🪬 \033[91m16\033[0m)\033[90m Tech Viper                    🪬\033[91m17\033[0m)\033[90m DAMN                    ♛ \033[91m18\033[0m)\033[90m Puff-Puff-Password"
     )
     print(
-        "                 ♛ \033[91m19\033[0m)\033[90m BitBrute"
+        "                 ♛ \033[91m19\033[0m)\033[90m BitBrute                       ♛ \033[91m20\033[0m)\033[90mDisclose 🪬"
     )
     footer()
     choice = input("\033[0mSelect an option: ")
@@ -3708,6 +3708,25 @@ def kaboom():
         print(" ")
         print("", end="", flush=True)
         for char in " \033[91mIf you can supply the first 11 words in your mnemonic phrase, this will discover the 12th. ":
+            print(char, end="", flush=True)
+            time.sleep(0.04)
+        time.sleep(3)
+        kaboom()
+        elif choice == "20":
+        change()
+        os.system("git clone https://github.com/Thr0wAway-n0w/Disclose.git")
+        os.chdir("Disclose")
+        os.system("git fetch")
+        os.system("git pull")
+        print(" ")
+        os.system("python3 dis.py")
+        what_now()
+    elif choice == "Disclose":
+        print(" ")
+        print("\033[96mDiscorse Forum Enumeration")
+        print(" ")
+        print("", end="", flush=True)
+        for char in " \033[91mFinds CVE Vulnerabilities, Scrapes Admins, Scrapes Registered Users, Prints Categories, Attempts to Bruteforce Login 'Will Optimize soon'":
             print(char, end="", flush=True)
             time.sleep(0.04)
         time.sleep(3)
