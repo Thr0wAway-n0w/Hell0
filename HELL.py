@@ -3263,16 +3263,16 @@ def kaboom():
         "                  ♛ \033[91m7\033[0m)\033[90m KickThemOut                    🪬\033[91m8\033[0m)\033[90m Sicat                    🪬\033[91m9\033[0m)\033[90m CloakQuest3r"
     )
     print(
-        "                  ♛ \033[91m10\033[0m)\033[90m MafiaHacks                    🪬\033[91m11\033[0m)\033[90m Hackguard               🪬\033[91m12\033[0m)\033[90m Recox"
+        "                 ♛ \033[91m10\033[0m)\033[90m MafiaHacks                    🪬\033[91m11\033[0m)\033[90m Hackguard               🪬\033[91m12\033[0m)\033[90m Recox"
     )
     print(
-        "                  ♛ \033[91m13\033[0m)\033[90mChameleon 🪬                   ♛ \033[91m14\033[0m)\033[90m DroneSploit             ♛ \033[91m15\033[0m)\033[90m FatRat   "
+        "                 ♛ \033[91m13\033[0m)\033[90m Chameleon 🪬                  ♛ \033[91m14\033[0m)\033[90m DroneSploit             ♛ \033[91m15\033[0m)\033[90m FatRat   "
     )
     print(
-        "                 🪬 \033[91m16\033[0m)\033[90m Tech Viper                    🪬\033[91m17\033[0m)\033[90m DAMN                    ♛ \033[91m18\033[0m)\033[90m Puff-Puff-Password"
+        "                🪬 \033[91m16\033[0m)\033[90m Tech Viper                    🪬\033[91m17\033[0m)\033[90m DAMN                    ♛ \033[91m18\033[0m)\033[90m Puff-Puff-Password"
     )
     print(
-        "                 ♛ \033[91m19\033[0m)\033[90m BitBrute                       ♛ \033[91m20\033[0m)\033[90mDisclose 🪬"
+        "                 ♛ \033[91m19\033[0m)\033[90m BitBrute                      ♛ \033[91m20\033[0m)\033[90m Disclose 🪬"
     )
     footer()
     choice = input("\033[0mSelect an option: ")
