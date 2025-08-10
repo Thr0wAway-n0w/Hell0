@@ -26,4 +26,4 @@ git clone https://github.com/Thr0wAway-n0w/Hell0.git
 
 cd Hell0
 
-python3 HELL.py
+python3 HELL616.py
