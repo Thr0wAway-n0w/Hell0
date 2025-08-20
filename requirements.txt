@@ -1,0 +1,16 @@
+pyautogui
+colorama
+termcolor
+ascii_magic
+requests
+six
+httpx
+trio
+geopy
+pytz
+dnspython
+reportlab
+pexpect
+aiohttp
+phonenumbers
+urllib3
