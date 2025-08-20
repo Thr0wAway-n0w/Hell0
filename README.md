@@ -26,4 +26,6 @@ git clone https://github.com/Thr0wAway-n0w/Hell0.git
 
 cd Hell0
 
+python3 -m pip install -r requirements.txt 
+
 python3 HELL616.py
