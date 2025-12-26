@@ -7,7 +7,8 @@ import time
 from ascii_magic import AsciiArt
 from colorama import Fore, Style
 from termcolor import colored
-import tk
+import tkinter
+from tkinter import simpledialog
 import webbrowser
 import curses
 os.system("pipenv run pip install urllib3")
@@ -132,7 +133,7 @@ if option == "1":
 elif option == "2":
     print(
         colored(
-            "TYPE/RUN THE COMMAND 'pipenv shell'. THEN 'cd' TO THE FILES LOCATION and RUN HELL.py AGAIN!",
+            "TYPE/RUN THE COMMAND 'pipenv shell'. THEN 'cd' TO THE FILES LOCATION and RUN HELL616.py AGAIN!",
             "red",
             attrs=["reverse", "blink", "bold"],
         )
@@ -880,7 +881,7 @@ def send_command_to_xterms():
                 "-e",
                 "python3",
                 "-c",
-                f"import Hell0; Hell0.ddos_install(); {command}",
+                f"import HELL616; HELL616.ddos_install(); {command}",
             ]
         )
         processes.append(process)
@@ -900,7 +901,7 @@ def isend_command_to_xterms():
     processes = []
     for i in range(num_xterms):
         process = subprocess.Popen(
-            ["xterm", "-e", "pipenv", "run", "python3", "-c", f"import Hell0; Hell0.kicks(); {command}"]
+            ["xterm", "-e", "pipenv", "run", "python3", "-c", f"import HELL616; HELL616.kicks(); {command}"]
         )
         processes.append(process)
 
@@ -1071,7 +1072,7 @@ def multi_multi():
             time.sleep(0.03)
             pyautogui.typewrite("3\n")
 
-    root = tk.Tk()
+    root = tkinter.Tk()
     root.withdraw()
     command = simpledialog.askstring(
         " ", "COVER THIS WITH TOP LEFT XTERM (or type 'exit' to quit): "
@@ -1131,7 +1132,7 @@ def ddos_play():
         elif position == "topleft":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.simba_menu()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL616; HELL616.simba_menu()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1139,7 +1140,7 @@ def ddos_play():
         elif position == "bottomleft":
             geometry = "80x24+0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.prox()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL616; HELL616.prox()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
@@ -1147,12 +1148,12 @@ def ddos_play():
         elif position == "bottomright":
             geometry = "80x24-0-0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.cyber()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL616; HELL616.cyber()'\" &"
             )
             pyautogui.typewrite("1\n")
             time.sleep(0.03)
             pyautogui.typewrite("3\n")
-    root = tk.Tk()
+    root = tkinter.Tk()
     root.withdraw()
     command = simpledialog.askstring(
         " ", "COVER THIS WITH TOP LEFT XTERM (or type 'exit' to quit): "
@@ -1328,16 +1329,16 @@ def wi_die():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.wlan()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL616; HELL616.wlan()'\" &"
             )
             time.sleep(0.03)
         elif position == "topright":
             geometry = "80x24-0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.ipp()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL616; HELL616.ipp()'\" &"
             )
 
-    root = tk.Tk()
+    root = tkinter.Tk()
     root.withdraw()
     command = simpledialog.askstring(" ", "type START to Begin: ")
     exit_command = "START"
@@ -1371,10 +1372,10 @@ def kick():
         if position == "center":
             geometry = "80x24+0+0"
             os.system(
-                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import Hell0; Hell0.wlan()'\" &"
+                f"xterm -geometry {geometry} -hold -e \"pipenv run python3 -c 'import HELL616; HELL616.wlan()'\" &"
             )
 
-    root = tk.Tk()
+    root = tkinter.Tk()
     root.withdraw()
     command = simpledialog.askstring(" ", "KICK THEM OUT or GO TO HELL: ")
     exit_command = "KICK THEM OUT"
@@ -3610,7 +3611,6 @@ def kaboom():
             "Make sure you install your dependencies before running any tests or the Dev"
         )
         time.sleep(1)
-        print("http://localhost:3000/d/9tnNjdiMz/chameleon")
         webbrowser.open("http://localhost:3000/d/9tnNjdiMz/chameleon")
         os.system("sudo ./run.sh auto_configure")
         what_now()
@@ -4532,5 +4532,3 @@ def uk_menu():
 
 if __name__ == "__main__":
     main_menu()
-
-
